@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: transparent;
+}
+.roundImg {
+  height: $height-logo-img;
+  width: $width-logo-img;
+  margin: auto $margin-logo-img;
+}
+.textLogo {
+  color: $header-yellow-text;
+}
+.splash {
+  height: $height-logo-img * 2;
+  width: $width-logo-img;
+  margin: auto $margin-logo-img; 
+}
