@@ -11,6 +11,7 @@ const Footer = () => {
           <button type="submit" className={styles.submitButton} onClick={submitHandler}>
               +
         </button>
+        <p>Submit</p>
       </footer>
     </div>
   );
