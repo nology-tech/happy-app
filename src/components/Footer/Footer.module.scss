@@ -1,31 +1,39 @@
+@import "../../variables.scss";
+
 .footer {
-    min-width: 100vw;
-    height: 10vh;
-    background: grey;
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    border-radius: 50%/25px 25px 0 0;
-    position: absolute;
-    bottom: 0;
+  min-width: 100vw;
+  height: 15vh;
+  background: $color-grey-light-1;
+  opacity: 0.9;
+  font-family: $default-font-family;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: none;
+  align-items: center;
+  border-radius: 50%/25px 25px 0 0;
+  position: absolute;
+  bottom: 0;
+  color: $white;
 
-    .submitButton{
-        width: 4rem;
-        height: 4rem;
-        margin-top: -20px;
-        border: none;
-        border-radius: 50%;
-        background: green;
-        text-align: center;
-        display: inline-block;
-        font-size: 2.5rem;
+  .submitButton {
+    width: 4rem;
+    height: 4rem;
+    margin-top: -2rem;
+    border: none;
+    border-radius: 50%;
+    background: $color-green-light;
+    text-align: center;
+    display: inline-block;
+    font-size: 2.5rem;
+    color: $white;
 
-            &:hover, &:active {
-            cursor: pointer;
-            outline: none;  
-            border: none;  
-            }
-
+    &:hover,
+    &:active {
+      cursor: pointer;
+      outline: none;
+      border: none;
     }
+  }
 }
