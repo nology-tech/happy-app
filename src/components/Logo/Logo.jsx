@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Logo.module.scss";
-import splash from '../Logo/splash.png';
-import myLogo from '../Logo/MY.png';
+import splash from '../../assets/images/splash.png';
+import myLogo from '../../assets/images/MY.png';
 
 const Logo = () => {
   return (
