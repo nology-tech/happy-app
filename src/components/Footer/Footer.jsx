@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <div>
       <footer className={styles.footer}>
-          <button type="submit" className={styles.submitButton} onClick={submitHandler}>
-              +
+        <button type="submit" className={styles.submitButton} onClick={submitHandler}>
+            +
         </button>
         <p>Submit</p>
       </footer>
