@@ -6,3 +6,4 @@ describe("App tests", () => {
     expect(render(<App />)).toBeTruthy();
   });
 });
+

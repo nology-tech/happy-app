@@ -1,13 +1,22 @@
+
 import './App.css';
-import Logo from './components/Logo';
+import styles from "./App.module.scss";
+import LandingPageButton from "./components/LandingPageButton";
+
+
 
 
 
 const App = () => {
+
   return (
-    <div>
-        <Logo />
-    </div>
+  
+  <div className={styles.LandingPageButtons}>
+    <LandingPageButton text={"Sign Up"} cardType="primary"/>
+    <LandingPageButton text={"Log In"} cardType="secondary"/>
+  </div>
+  
+
   );
 }
 
