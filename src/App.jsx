@@ -1,26 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import styles from "./App.module.scss";
+import LandingPageButton from "./components/LandingPageButton";
+
+
 
 const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>This is The Test</p>
-        <h1>SECOND TEST</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <> 
+  <div className={styles.LandingPageButtons}>
+    <LandingPageButton text={"Sign Up"} cardType="primary"/>
+    <LandingPageButton text={"Log In"} cardType="secondary"/>
+  </div>
+  </>
+
+
+
   );
 }
 
