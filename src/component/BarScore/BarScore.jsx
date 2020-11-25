@@ -11,7 +11,8 @@ const BarScore = () => {
 
   return (
     <main>
-      <input type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
+      
+      <input className={styles.slider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
       <span>{rangeValue}/10</span>
     </main>
   );
