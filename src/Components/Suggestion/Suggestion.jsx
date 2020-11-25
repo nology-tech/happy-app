@@ -2,12 +2,11 @@ import React from "react";
 import styles from "./Suggestion.module.scss";
 
 const Suggestion = (props) => {
-
-  //Add - Remove the Show class (display element) when clicking life component.
-
   
-  // Props = Data text that will change based on whicever life component you click on.
+    // Props = Data text that will change based on whicever life component you click on.
   const {text, isClicked} = props;
+
+    //Add - Remove the Show class (display element) when clicking life component.
   const display = isClicked ? styles.show : " ";
 
   return (
