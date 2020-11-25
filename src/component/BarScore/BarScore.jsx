@@ -6,14 +6,16 @@ const BarScore = () => {
   const [rangeValue, setRangeValue] = useState(0);
 
   const handleChange = (event) => {
+    // console.log(event)
     return setRangeValue(event.target.value)
+
   };
 
   return (
     <main>
-      
-      <input className={styles.slider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
-      <span>{rangeValue}/10</span>
+      <h2 className={styles.title}>Physical Environment</h2>
+      <span className={styles.score}>{rangeValue}/10</span>
+      <input className={styles.slider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange}  />
     </main>
   );
 };
