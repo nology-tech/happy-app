@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .primary{
-    background-color: blue;
+    background-color: $Darker-blue;
     border: none;
     color: white;
     height: 7.5vh;
@@ -10,7 +12,7 @@
     border-radius: 50px;
 }
 .secondary{
-    background-color: #FFCC33;
+    background-color: $yellow;
     border: none;
     color: white;
     height: 7.5vh;
