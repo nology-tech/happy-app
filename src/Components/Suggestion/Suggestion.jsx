@@ -3,18 +3,18 @@ import styles from "./Suggestion.module.scss";
 
 const Suggestion = (props) => {
 
-  const [click, setClick] = useState(false)
+  //Add - Remove the Show class (display element) when clicking life component.
+  const [click, setClick] = useState(false);
   const isClicked = click ? styles.show : " ";
 
-
-
-  const {text} = props
+  // Props = Data text that will change based on whicever life component you click on.
+  const {text} = props;
 
   return (
-   <article className={`${isClicked} ${styles.message}`}>
-     <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-     <p>{text}</p>
-   </article>
+  <article className={`${isClicked} ${styles.message}`}>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+    <p>{text}</p>
+  </article>
   );
 };
 
