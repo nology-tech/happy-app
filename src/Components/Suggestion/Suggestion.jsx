@@ -1,18 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./Suggestion.module.scss";
 
 const Suggestion = (props) => {
 
   //Add - Remove the Show class (display element) when clicking life component.
-  const [click, setClick] = useState(false);
-  const isClicked = click ? styles.show : " ";
 
+  
   // Props = Data text that will change based on whicever life component you click on.
-  const {text} = props;
+  const {text, isClicked} = props;
+  const display = isClicked ? styles.show : " ";
 
   return (
-  <article className={`${isClicked} ${styles.message}`}>
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+  <article className={`${display} ${styles.message}`}>
+    <h3>Please rate this life component based on the following aspects:</h3>
     <p>{text}</p>
   </article>
   );

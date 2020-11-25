@@ -8,17 +8,17 @@
   font-size: 1rem;
   text-align: center;
   background-color: $background-blue;
-  color: $color-tertiary-light;
+  color: $white;
   padding: 10px;
   border-radius: 20px;
-  // display: none;
+  display: none;
 
   & *:first-child {
     margin-bottom: 5px;
   }
   & *:nth-child(2) {
     margin-bottom: 5px;
-    color: $color-secondary-light;
+    color: $white;
   }
 }
 

@@ -4,7 +4,7 @@ import Sugestion from "./Components/Suggestion"
 
 const App = () => {
   return (
-    <Sugestion text="Dummy text..rly dummykljygdsghvdslghdkxhdhkhdbkh"/>
+    <Sugestion text="Relations with your parents, siblings, spouse, close friends. " isClicked={true}/>
   );
 }
 
