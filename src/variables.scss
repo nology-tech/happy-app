@@ -4,11 +4,15 @@ $default-font-family: Roboto,
 sans-serif;
 $font-size-header: 2rem;
 $font-size-components: 1.8rem;
+$font-size-nav: 1.3rem;
 
 $margin-logo-img: 5px;
 $height-logo-img: 25px;
 $width-logo-img: 25px;
 // Colors
+
+// App Gradient
+$gradient: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(3,159,220,1) 0%, rgba(4,141,208,1) 15%, rgba(5,111,189,1) 30%, rgba(5,101,182,1) 46%, rgba(8,42,143,1) 100%, rgba(7,60,155,1) 100%, rgba(9,19,128,1) 100%, rgba(9,9,121,1) 100%);
 
 // Colours added by Josh from wireframes
 $background-blue1:#117BA2;

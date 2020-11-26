@@ -4,11 +4,16 @@ import Logo from './components/Logo';
 import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
+import Navbar from './components/Navbar/Navbar';
+
+
 
 const App = () => {
 
   return (
-    <>
+    <div className={styles.body}>
+    
+    <Navbar text="Happiness Scores"/>
       <Sugestion text="Relations with your parents, siblings, spouse, close friends. " isClicked=  {true}/>
       <Logo />  
       <div className={styles.LandingPageButtons}>
@@ -21,7 +26,7 @@ const App = () => {
         <Graph />
 
       </div>
-    </>
+    </div>
   );
 };
 
