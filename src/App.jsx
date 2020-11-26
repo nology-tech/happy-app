@@ -5,7 +5,7 @@ import User from "./components/User"
 const App = () => {
   return (
     <div className="App">
-      <User />
+      <User userName='User Name'/>
       
     </div>
   );
