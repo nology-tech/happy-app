@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
-describe("App tests", () => {
+import Navbar from "./Navbar";
+
+describe("Navbar tests", () => {
   it("should render", () => {
-    expect(render(<App />)).toBeTruthy();
+    expect(render(<Navbar />)).toBeTruthy();
   });
 });
-
