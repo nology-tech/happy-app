@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.taskInput{
+    display: flex;
+    border-radius: 50px;
+    background-color:$darker-blue;
+    width: 100%;
+    margin-top: 10px;
+    
+    .input{
+        margin-top: 0.3%;
+        width: 100%;
+        background-color:$darker-blue;
+        border-radius: 50px;
+        height: 5vh;
+        padding-left: 2%;
+        color: white;
+        font-size: $font-size-components/2;
+        border: none;
+        display: flex;
+        align-items: center;
+        &::placeholder {
+            color: white;
+            font-size: $font-size-components/2;
+            
+          }
+        &:focus {
+            outline: none;
+        }
+        
+        
+    }
+    
+    .submitButton{
+        height: 6vh;
+        width: 6vh;
+        background-color: $submit-green;
+        border-radius: 50%;
+        border: none;
+        font-size: $font-size-components;
+        text-align: center;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+        
+    }
+    
+}
+
+
