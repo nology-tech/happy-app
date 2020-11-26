@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./BarScore.module.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const BarScore = () => {
 
@@ -15,6 +16,7 @@ const BarScore = () => {
     <main>
       <h2 className={styles.title}>Physical Environment</h2>
       <span className={styles.score}>{rangeValue}/10</span>
+      <span> <FontAwesomeIcon icon="search" /> </span>
       <input className={styles.slider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange}  />
     </main>
   );
