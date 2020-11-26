@@ -7,13 +7,15 @@ import Graph from './components/Graph';
 import Navbar from './components/Navbar/Navbar';
 
 
+import Navbar from "./components/Navbar"
+import TaskInput from "./components/TaskInput";
 
 const App = () => {
 
   return (
     <div className={styles.body}>
     
-    <Navbar text="Happiness Scores"/>
+      <Navbar text="Happiness Scores"/>
       <Sugestion text="Relations with your parents, siblings, spouse, close friends. " isClicked=  {true}/>
       <Logo />  
       <div className={styles.LandingPageButtons}>
@@ -26,6 +28,8 @@ const App = () => {
         <Graph />
 
       </div>
+      <TaskInput/>
+    
     </div>
   );
 };
