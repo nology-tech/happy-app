@@ -1,9 +1,9 @@
 import './App.css';
-import Sugestion from "./Components/Suggestion"
-import Logo from './Components/Logo';
+import Sugestion from "./components/Suggestion"
+import Logo from './components/Logo';
 import styles from "./App.module.scss";
-import LandingPageButton from "./Components/LandingPageButton";
-import Navbar from './Components/Navbar/Navbar';
+import LandingPageButton from "./components/LandingPageButton";
+import Navbar from './components/Navbar/Navbar';
 
 
 
