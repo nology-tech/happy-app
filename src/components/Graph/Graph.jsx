@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Graph.module.scss";
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
 
