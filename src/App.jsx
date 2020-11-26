@@ -5,9 +5,6 @@ import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar/Navbar';
-
-
-import Navbar from "./components/Navbar"
 import TaskInput from "./components/TaskInput";
 
 const App = () => {
@@ -22,14 +19,8 @@ const App = () => {
         <LandingPageButton text={"Sign Up"} cardType="primary"/>
         <LandingPageButton text={"Log In"} cardType="secondary"/>
       </div>
-
-      <div>
-
-        <Graph />
-
-      </div>
+      <Graph />
       <TaskInput/>
-    
     </div>
   );
 };
