@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
-describe("App tests", () => {
+import Logo from "./Logo";
+
+describe("Logo tests", () => {
   it("should render", () => {
-    expect(render(<App />)).toBeTruthy();
+    expect(render(<Logo />)).toBeTruthy();
   });
 });
-
