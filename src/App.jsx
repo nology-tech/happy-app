@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import LifeComponent from "./component/LifeComponent";
-import library from "./data/fa-library";
+import "./data/fa-library";
 
 
 const App = () => {
