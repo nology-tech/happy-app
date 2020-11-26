@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./LandingPageButton.module.scss";
- 
+
 const LandingPageButton = (props) => {
 
   const buttonStyles = [styles.button];
