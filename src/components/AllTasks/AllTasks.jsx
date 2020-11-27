@@ -3,7 +3,7 @@ import styles from "./AllTasks.module.scss";
 import TaskInput from "../TaskInput";
 import DisplayTasks from "../DisplayTasks";
 
-const AllTasks = (props) => {
+const AllTasks = () => {
   return (<>
     <section className={styles.tasksContent}>
       <TaskInput />

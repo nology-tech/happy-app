@@ -9,18 +9,20 @@ import AllTasks from "./components/AllTasks";
 
 const App = () => {
 
-  return (
-    <div className={styles.body}>
-    <Navbar text="Happiness Scores"/>
-      <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true}/>
-      <Logo />  
-      <div className={styles.LandingPageButtons}>
-        <LandingPageButton text={"Sign Up"} cardType="primary"/>
-        <LandingPageButton text={"Log In"} cardType="secondary"/>
-      </div>
-      <Graph />
-      <AllTasks />
-    </div>
+      return (
+            <div className={styles.body}>
+                  <Navbar text="Happiness Scores"/>
+                  <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true}/>
+                  <Logo />  
+                  <div>
+                        <LandingPageButton text={"Sign Up"} cardType="primary"/>
+                        <LandingPageButton text={"Log In"} cardType="secondary"/>
+                  </div>
+            <Graph />
+            <div>
+                  <AllTasks />
+            </div>
+            </div>
   );
 };
 

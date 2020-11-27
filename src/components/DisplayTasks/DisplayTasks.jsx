@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./DisplayTasks.module.scss";
 
 const DisplayTasks = (props) => {
   const [taskScore, setTaskScore] = useState(0);
-  const [tasks, setTasks] = useState([
+  const tasks = [
     {
       id: 1,
       text: "Run Marathon",
@@ -79,7 +79,7 @@ const DisplayTasks = (props) => {
       text: "Task 15",
       isCompleted: false
     }
-  ]);
+  ];
 
   const getTasksJsx = (task) => (
     <p className={styles.task} key={task.id} task={tasks.task}>
