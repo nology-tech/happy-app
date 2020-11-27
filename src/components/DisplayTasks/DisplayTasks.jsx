@@ -5,66 +5,88 @@ const DisplayTasks = (props) => {
   const [taskScore, setTaskScore] = useState(0);
   const [tasks, setTasks] = useState([
     {
+      id: 1,
       text: "Run Marathon",
       isCompleted: false
     },
     {
+      id: 2,
       text: "Get that Promotion",
       isCompleted: false
     },
     {
+      id: 3,
       text: "Task 3",
       isCompleted: false
     },
     {
+      id: 4,
       text: "Task 4",
       isCompleted: false
     },
     {
+      id: 5,
       text: "Task 5",
       isCompleted: false
     },
     {
+      id: 6,
       text: "Task 6",
       isCompleted: false
     },
     {
+      id: 7,
       text: "Task 7",
       isCompleted: false
     },
     {
+      id: 8,
       text: "Task 8",
       isCompleted: false
     },
     {
+      id: 9,
       text: "Task 9",
       isCompleted: false
     },
     {
+      id: 10,
       text: "Task 10",
       isCompleted: false
     },
     {
+      id: 11,
       text: "Task 11",
       isCompleted: false
     },
     {
+      id: 12,
       text: "Task 12",
       isCompleted: false
     },
     {
+      id: 13,
       text: "Task 13",
       isCompleted: false
     },
     {
+      id: 14,
       text: "Task 14",
       isCompleted: false
     },
     {
+      id: 15,
       text: "Task 15",
       isCompleted: false
     }
   ]);
+
+  const getTasksJsx = (task) => (
+    <p className={styles.task} key={task.id} task={tasks.task}>
+      {task.text}
+      <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
+    </p>
+  );
 
   function increment() {
     setTaskScore(prevTaskScore => prevTaskScore + 1);
@@ -86,52 +108,7 @@ const DisplayTasks = (props) => {
   return (
     <>
       <div className={styles.displayTasks}>
-        <p className={styles.task}>{tasks[0].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[1].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[2].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[3].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[4].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[5].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[6].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[7].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[8].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[9].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[10].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[11].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[12].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[13].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        <p className={styles.task}>{tasks[14].text}
-          <input type="checkbox" className={styles.checkTaskComplete} onChange={handleToggle}/>
-        </p>
-        
+        {tasks.map(getTasksJsx)}        
       </div>
     </>
   );
