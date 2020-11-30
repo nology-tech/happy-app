@@ -4,19 +4,31 @@ import Logo from './components/Logo';
 import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
-import Navbar from './components/Navbar/Navbar';
-import Footer from "./components/Footer"
+import Navbar from './components/Navbar';
+import AllTasks from "./components/AllTasks";
+import User from "./components/User"
+
+
 import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
-import User from "./components/User"
-import TaskInput from "./components/TaskInput";
 
 const App = () => {
 
-  return (
-    <div className="App">
-      <User userName='User Name' userImage={userImagePlaceHolder}/>
-    </div>
+      return (
+            <div className={styles.body}>
+                  <Navbar text="Happiness Scores"/>
+                  <User userName='User Name' userImage={userImagePlaceHolder}/>
+                  <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true}/>
+                  <Logo />  
+                  <div>
+                        <LandingPageButton text={"Sign Up"} cardType="primary"/>
+                        <LandingPageButton text={"Log In"} cardType="secondary"/>
+                  </div>
+            <Graph />
+            <div>
+                  <AllTasks />
+            </div>
+            </div>
   );
 };
 
