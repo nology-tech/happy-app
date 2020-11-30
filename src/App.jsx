@@ -2,7 +2,6 @@ import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
-import Suggestion from "./components/Suggestion"
 import Logo from './components/Logo';
 import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
