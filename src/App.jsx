@@ -1,6 +1,6 @@
 import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
-import Sugestion from "./components/Suggestion"
+import Suggestion from "./components/Suggestion"
 import './App.css';
 import Suggestion from "./components/Suggestion"
 import Logo from './components/Logo';
@@ -16,6 +16,7 @@ const App = () => {
                   <Navbar text="Happiness Scores"/>
                   <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true}/>
                   <Logo />  
+                  <LifeComponent />
                   <div>
                         <LandingPageButton text={"Sign Up"} cardType="primary"/>
                         <LandingPageButton text={"Log In"} cardType="secondary"/>
