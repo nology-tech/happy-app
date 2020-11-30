@@ -11,10 +11,10 @@ const LifeComponent = () => {
   };
 
   return (
-    <main className={styles.lifeComponentContainer}>
-      <div>
-        <h2 className={styles.lifeComponentTitle}>Physical Environment</h2>
-        <span className={styles.lifeComponentScore}>{rangeValue}/10</span>
+    <main className={styles.container}>
+      <div className={styles.titleAndScore}>
+        <h2 className={styles.title}>Physical Environment</h2>
+        <p className={styles.score}>{rangeValue}/10</p>
       </div>
       <div>
         <span><FontAwesomeIcon icon="search" /></span>

@@ -1,24 +1,34 @@
-.lifeComponentContainer {
+@import "../../variables.scss";
+
+.container {
     display: flex;
     flex-direction: column;
-  
-    .lifeComponentTitle {
-      text-align: left;
-      color: #333;
-      margin-left: 15px;
-      margin-right: 40px;
-      display: inline-block;
-      font-size: 20px;
+
+    .titleAndScore {
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        text-align: left;
+        color: #333;
+        margin-left: 10%;
+        // margin-right: 40px;
+        display: inline-block;
+        font-size: $font-size-components;
+      }
+    
+      .score {
+        display: inline-block;
+        font-size: $font-size-components;
+        color: #333;
+        margin-right: 7%;
+      }
     }
   
-    .lifeComponentScore {
-      font-size: 20px;
-      color: #333;
-    }
-  
+    //icon
     span {
       font-size: 25px;
-      margin-left: 20px;
+      margin-left: 10%;
       color: #333;
     }
     
@@ -34,11 +44,13 @@
     }
   
     .lifeComponentSlider {
-      width: 250px;
-      margin-left: 30px;
+      width: 80%;
+      margin-top: 20px;
+      margin-left: 10px;
+      // margin-left: 30px;
       border-radius: 10px;
       border: 1px solid #333;
-      transform: translateY(2px);
+      // transform: translateY(2px);
     }
     
     // Special styling for google chrome (the tube part of the slider)
@@ -50,10 +62,7 @@
   
     // All the same stuff for firefox
     input[type="range"]::-moz-range-track {
-      background: #dadada;
-      height: 20px;
-      border-radius: 10px;
-      border: #333 solid 2px;
+      //fill in when aproved the chome styling
     }
   
     // Special styling for google chrome (the ball part of the slider)
@@ -65,7 +74,7 @@
       height: 20px;
       width: 20px;
       border-radius: 50px;
-      box-shadow: -160px 0 0 150px #e7f790;
+      box-shadow: -500px 0 0 490px $yellow;
       border-radius: 10px;
       border: 1px solid #000000;
       margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
@@ -73,11 +82,7 @@
   
     // All the same stuff for firefox
     input[type="range"]::-moz-range-thumb {
-      height: 20px;
-      width: 20px;
-      background: rgb(56, 56, 56);
-      margin-top: -10px;
-      border-radius: 50%;
+      //fill in when aproved the chome styling
     }
   }
   
