@@ -1,4 +1,5 @@
 import './App.css';
+
 import Suggestion from "./components/Suggestion"
 import Logo from './components/Logo';
 import styles from "./App.module.scss";
@@ -6,6 +7,8 @@ import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
+import NavItem from "./components/NavItem";
+import Routes from "./containers/Routes";
 
 const App = () => {
 
@@ -21,6 +24,10 @@ const App = () => {
             <Graph />
             <div>
                   <AllTasks />
+            </div>
+            <div>
+                  <NavItem />
+                  <Routes />
             </div>
             </div>
   );
