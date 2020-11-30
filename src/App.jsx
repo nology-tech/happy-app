@@ -6,6 +6,7 @@ import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar/Navbar';
 import TaskInput from "./components/TaskInput";
+import AverageScore from './components/AverageScore/AverageScore';
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
       </div>
       <Graph />
       <TaskInput/>
+      <AverageScore />
     </div>
   );
 };

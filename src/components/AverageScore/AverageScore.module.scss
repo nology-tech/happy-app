@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.container {
+    width: 80vw;
+    height: 18vh;
+    background-color: green;
+    color: white;
+
+    .insideBox {
+        width: 100%;
+        height: 25%;
+        border-bottom: 2px solid white;
+    }
+}
