@@ -12,16 +12,16 @@ import TermsConditions from "../TermsConditions";
 
 const Routes = () => {
   return (
-     <Router>
-        <About path="about" />
-        <AccountSettings path="accountsettings" />
-        <Home path="/" />
-        <Login path="login" />
-        <Register path="register" />
-        <Scores path="scores" />
-        <Task path="task" />
-        <TermsConditions path="termsconditions" />
-     </Router>
+   <Router>
+      <About path="about" />
+      <AccountSettings path="accountsettings" />
+      <Home path="/" />
+      <Login path="login" />
+      <Register path="register" />
+      <Scores path="scores" />
+      <Task path="task" />
+      <TermsConditions path="termsconditions" />
+   </Router>
   );
 };
 

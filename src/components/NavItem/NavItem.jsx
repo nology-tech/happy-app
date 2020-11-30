@@ -7,35 +7,53 @@ const NavItem = () => {
     <div className={styles.navBar}>
       <ul className={styles.navList}>
 
+        <Link to="/">
+          <li>
+            Home
+          </li>
+        </Link>  
+
         <Link to="scores">
           <li>
             My Scores
           </li>
         </Link>
 
-        <li>
-          Tasks
-        </li>
+        <Link to="task">
+          <li>
+            Tasks
+          </li>
+        </Link>
+        
+        <Link to="accountsettings">
+          <li>
+            Account Settings
+          </li>
+        </Link>
 
-        <li>
-          Account Settings
-        </li>
+        <Link to="about">
+          <li>
+            About
+          </li>
+        </Link>
 
-        <li>
-          About
-        </li>
+        <Link to="termsconditions">
+          <li>
+            Terms and Conditions
+          </li>
+        </Link>
 
-        <li>
-          Terms and Conditions
-        </li>
+        <Link to="login">
+          <li>
+            Log in
+          </li>
+        </Link>
 
-        <li>
-          Log in
-        </li>
-
-        <li>
-          Register
-        </li>
+        <Link to="register">
+          <li>
+            Register
+          </li>        
+        </Link>
 
         <li className={styles.signOutButton}>
           Sign Out
