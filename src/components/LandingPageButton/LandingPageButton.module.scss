@@ -1,7 +1,6 @@
 @import '../../variables.scss';
 
-.primary{
-    background-color: $darker-blue;
+.button {
     border: none;
     color: white;
     height: 7.5vh;
@@ -11,14 +10,11 @@
     font-size: 20px;
     border-radius: 50px;
 }
+
+.primary{
+    background-color: $darker-blue;
+}
+
 .secondary{
     background-color: $yellow;
-    border: none;
-    color: white;
-    height: 7.5vh;
-    width: 200px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 50px;
 }

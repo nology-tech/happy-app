@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./LandingPageButton.module.scss";
 
 const LandingPageButton = (props) => {
-  const { clicked } = props;
 
   const buttonStyles = [styles.button];
     if (props.cardType === "primary"){
@@ -15,7 +14,7 @@ const LandingPageButton = (props) => {
 
   return (
     <>
-      <button className={buttonStyles.join(" ")} onClick={clicked} >{props.text}</button>
+      <button className={buttonStyles.join(" ")} >{props.text}</button>
     </>
   );
 };
