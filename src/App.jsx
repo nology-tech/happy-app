@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className={styles.body}>
-    <Navbar text="Happiness Scores"/>
+    {/* <Navbar text="Happiness Scores"/>
       <Suggestion text="Relations with your parents, siblings, spouse, close friends. " isClicked=  {true}/>
       <Logo />  
       <div className={styles.LandingPageButtons}>
@@ -20,7 +20,7 @@ const App = () => {
         <LandingPageButton text={"Log In"} cardType="secondary"/>
       </div>
       <Graph />
-      <TaskInput/>
+      <TaskInput/> */}
       <AverageScore />
     </div>
   );
