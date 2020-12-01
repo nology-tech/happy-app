@@ -2,6 +2,10 @@ import './App.css';
 import React from 'react';
 
 import Suggestion from "./components/Suggestion";
+import LifeComponent from "./components/LifeComponent";
+import "./data/fa-library";
+import Suggestion from "./components/Suggestion"
+import './App.css';
 import Logo from './components/Logo';
 import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
@@ -10,8 +14,9 @@ import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
+import User from "./components/User"
+import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
-const App = () => {
 
   return (
     <div className={styles.body}>
@@ -32,6 +37,5 @@ const App = () => {
       </div>
     </div>
   ); 
-};
 
 export default App; 
