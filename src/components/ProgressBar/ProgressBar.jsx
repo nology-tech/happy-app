@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./ProgressBar.module.scss";
 import Filler from "../Filler";
 
