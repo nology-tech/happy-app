@@ -7,68 +7,70 @@ const LifeComponentList = () => {
   const lifeComponents = [
     { id: 1,
       name: "Physical Environment",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 2,
       name: "Finances",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 3,
       name: "Career",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 4,
       name: "General Health",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 5,
       name: "Mental Fitness",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 6,
       name: "Physical Fitness",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 7,
       name: "Friends",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 8,
       name: "Family",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 9,
       name: "Love life",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 10,
       name: "Spirituality",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 11,
       name: "Purpose",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 12,
       name: "Self Worth",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 13,
       name: "Fun And recreation",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 14,
       name: "PlaceholderOne",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   },
     { id: 15,
       name: "PlaceholderTwo",
-      suggestion: ""
+      suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!'
   }
   ];
 
+
+
   const allLifeComponents = lifeComponents.map((component) => {
-    return <LifeComponent key={component.id} lifeComponentNames={component.name} />
+    return <LifeComponent lifeComponentSuggestion={component.suggestion}  key={component.id} lifeComponentNames={component.name} />
   })
 
   return (

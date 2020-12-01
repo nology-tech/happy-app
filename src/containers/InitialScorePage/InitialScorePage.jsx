@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./InitialScorePage.module.scss";
+import LifeComponentList from "../../components/LifeComponentList"
+import Footer from "../../components/Footer"
 
 const InitialScorePage = () => {
   return (
-    <>
-      <p>InitialScorePage works</p>
-    </>
+    <section>
+      <LifeComponentList />
+      <Footer />
+    </section>
   );
 };
 

@@ -9,7 +9,8 @@ import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 import User from "./components/User";
-import LifeComponentList from "./components/LifeComponentList";
+
+import InitialScorePage from "./containers/InitialScorePage"
 
 
 import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
@@ -22,7 +23,7 @@ const App = () => {
                   <User userName='User Name' userImage={userImagePlaceHolder} />
                   <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true} />
                   <Logo /> */}
-                  <LifeComponentList />
+                  <InitialScorePage />
                   {/* <div>
                         <LandingPageButton text={"Sign Up"} cardType="primary" />
                         <LandingPageButton text={"Log In"} cardType="secondary" />
