@@ -4,7 +4,7 @@ import styles from "./Register.module.scss";
 const Register = () => {
   return (
     <>
-      <p>Register works</p>
+      <p className={styles.text}>Register works</p>
     </>
   );
 };

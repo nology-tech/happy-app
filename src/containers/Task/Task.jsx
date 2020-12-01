@@ -4,7 +4,7 @@ import styles from "./Task.module.scss";
 const Task = () => {
   return (
     <>
-      <p>Task works</p>
+      <p className={styles.text}>Task works</p>
     </>
   );
 };

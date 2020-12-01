@@ -4,7 +4,7 @@ import styles from "./TermsConditions.module.scss";
 const TermsConditions = () => {
   return (
     <>
-      <p>TermsConditions works</p>
+      <p className={styles.text}>TermsConditions works</p>
     </>
   );
 };

@@ -4,7 +4,7 @@ import styles from "./Login.module.scss";
 const Login = () => {
   return (
     <>
-      <p>Login works</p>
+      <p className={styles.text}>Login works</p>
     </>
   );
 };

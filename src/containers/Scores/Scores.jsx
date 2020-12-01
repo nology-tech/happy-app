@@ -4,7 +4,7 @@ import styles from "./Scores.module.scss";
 const Scores = () => {
   return (
     <>
-      <p>Scores works</p>
+      <p className={styles.text}>Scores works</p>
     </>
   );
 };

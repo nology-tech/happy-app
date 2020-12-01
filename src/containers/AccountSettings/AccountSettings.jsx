@@ -4,7 +4,7 @@ import styles from "./AccountSettings.module.scss";
 const AccountSettings = () => {
   return (
     <>
-      <p>AccountSettings works</p>
+      <p className={styles.text}>AccountSettings works</p>
     </>
   );
 };
