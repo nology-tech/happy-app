@@ -12,12 +12,12 @@ const Login = () => {
         <Logo />
       </div>
       <div className={styles.button} >
-      <Link className={styles.link} to="/">
-        <LandingPageButton text={"Log In"} cardType="primary" />
-      </Link>
-      <Link className={styles.link} to="register">
-        <LandingPageButton text={"Sign Up"} cardType="secondary" />
-      </Link>
+        <Link className={styles.link} to="/">
+          <LandingPageButton text={"Log In"} cardType="primary" />
+        </Link>
+        <Link className={styles.link} to="register">
+          <LandingPageButton text={"Sign Up"} cardType="secondary" />
+        </Link>
       </div>
     </section>
   );

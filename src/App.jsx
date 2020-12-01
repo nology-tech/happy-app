@@ -5,8 +5,6 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
-import Logo from './components/Logo';
-import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
