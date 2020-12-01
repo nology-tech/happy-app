@@ -9,7 +9,7 @@ import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 import User from "./components/User"
-
+import SignupPage from "./containers/SignupPage";
 
 import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
@@ -17,19 +17,15 @@ import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 const App = () => {
       return (
             <main className={styles.body}>
-                  <Navbar text="Happiness Scores" />
+                  <SignupPage />
+                  {/* <Navbar text="Happiness Scores" />
                   <User userName='User Name' userImage={userImagePlaceHolder} />
                   <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true} />
-                  <Logo />
                   <LifeComponent />
-                  <div>
-                        <LandingPageButton text={"Sign Up"} cardType="primary" />
-                        <LandingPageButton text={"Log In"} cardType="secondary" />
-                  </div>
                   <Graph />
                   <div>
                         <AllTasks />
-                  </div>
+                  </div> */}
             </main>
       );
 };
