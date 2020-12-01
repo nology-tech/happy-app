@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const LifeComponent = () => {
+const LifeComponent = (props) => {
+
+  const {lifeComponentNames} = props
 
   const [rangeValue, setRangeValue] = useState(0);
 
@@ -13,7 +15,7 @@ const LifeComponent = () => {
   return (
     <main className={styles.container}>
       <div className={styles.titleAndScore}>
-        <h2 className={styles.title}>Physical Environment</h2>
+        <h2 className={styles.title}>{lifeComponentNames}</h2>
         <p className={styles.score}>{rangeValue}/10</p>
       </div>
       <div>
