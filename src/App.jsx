@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./App.module.scss";
-
 // import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
