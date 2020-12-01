@@ -1,23 +1,21 @@
-import './App.css';
 import React from 'react';
+import styles from "./App.module.scss";
 
-import Suggestion from "./components/Suggestion";
-import LifeComponent from "./components/LifeComponent";
+// import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
 import Logo from './components/Logo';
-import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
-import User from "./components/User"
-import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
+// import User from "./components/User"
+// import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
-
+const App = () => {
   return (
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
@@ -37,5 +35,6 @@ import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
       </div>
     </div>
   ); 
+};
 
 export default App; 

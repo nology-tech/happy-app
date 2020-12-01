@@ -4,7 +4,7 @@ import styles from "./About.module.scss";
 const About = () => {
   return (
     <>
-      <p>About works</p>
+      <p className={styles.text}>About works</p>
     </>
   );
 };
