@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import AllTasks from "./AllTasks";
+import Task from "./Task";
 
-describe("AllTasks tests", () => {
+describe("Task tests", () => {
   it("should render", () => {
-    expect(render(<AllTasks />)).toBeTruthy();
+    expect(render(<Task />)).toBeTruthy();
   });
 });

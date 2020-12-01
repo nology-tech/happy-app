@@ -5,7 +5,7 @@ import styles from "./App.module.scss";
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import Navbar from './components/Navbar';
-import AllTasks from "./components/AllTasks";
+import TasksPage from "./components/TasksPage";
 
 const App = () => {
 
@@ -20,7 +20,7 @@ const App = () => {
                   </div>
             <Graph />
             <div>
-                  <AllTasks />
+                  <TasksPage />
             </div>
             </div>
   );
