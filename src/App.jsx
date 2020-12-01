@@ -37,6 +37,7 @@ const App = () => {
       </div>
         <AverageScore />
     </div>
+    
   ); 
 };
 
