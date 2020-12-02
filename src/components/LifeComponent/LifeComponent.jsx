@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Suggestion from "../Suggestion"
@@ -6,13 +6,16 @@ import "../../data/fa-library"
 
 const LifeComponent = (props) => {
 
-  const { lifeComponentNames, lifeComponentSuggestion, lifeComponentscore } = props;
+  const { lifeComponentNames, lifeComponentSuggestion} = props;
 
-
+  const [rangeValue, setRangeValue] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
+  console.log(`${lifeComponentNames}: ${rangeValue}`)
+
+
   const handleChange = (event) => {
-    return lifeComponentscore(event.target.value)
+    return setRangeValue(event.target.value)
   };
 
   return (

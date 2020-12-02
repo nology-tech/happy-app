@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.login {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $gradient;
+    
+    .logo{
+        margin-bottom: 30px;
+    }
+
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:30px auto;
+        text-decoration: none;
+    }
+
+    .link {
+        text-decoration: none;
+    }
+}

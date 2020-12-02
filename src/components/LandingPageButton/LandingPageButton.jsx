@@ -14,7 +14,7 @@ const LandingPageButton = (props) => {
 
   return (
     <>
-      <button className={buttonStyles.join(" ")}>{props.text}</button>
+      <button className={buttonStyles.join(" ")} >{props.text}</button>
     </>
   );
 };

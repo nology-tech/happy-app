@@ -1,16 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./LifeComponentList.module.scss";
 import LifeComponent from "../LifeComponent";
 
 const LifeComponentList = () => {
 
-  const [rangeValue, setRangeValue] = useState(0);
-
   const lifeComponents = [
     { id: 1,
       name: "Physical Environment",
       suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!',
-      score: {rangeValue}
+      score: 0
   },
     { id: 2,
       name: "Finances",
@@ -87,7 +85,7 @@ const LifeComponentList = () => {
 
 
   const allLifeComponents = lifeComponents.map((component) => {
-    return <LifeComponent lifeComponentSuggestion={component.suggestion}  key={component.id} lifeComponentNames={component.name} lifeComponentscore={setRangeValue} />
+    return <LifeComponent lifeComponentSuggestion={component.suggestion}  key={component.id} lifeComponentNames={component.name} />
   })
 
 
