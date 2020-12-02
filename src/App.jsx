@@ -21,10 +21,15 @@ const App = () => {
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
       <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
-
+      <Logo />  
+      <div>
+        <LandingPageButton text={"Sign Up"} cardType="primary"/>
+        <LandingPageButton text={"Log In"} cardType="secondary"/>
+      </div>
       <Graph />
       <TaskInput/>
       <AverageScore />
+        <Graph />
       <div>
         <AllTasks />
       </div>
