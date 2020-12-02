@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
-      <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
+      {/* <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
       <Logo />  
       <div>
         <LandingPageButton text={"Sign Up"} cardType="primary"/>
@@ -35,7 +35,7 @@ const App = () => {
         <NavItem />
         <Routes />
       </div>
-        <AverageScore />
+        <AverageScore /> */}
     </div>
     
   ); 
