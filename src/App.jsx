@@ -7,6 +7,7 @@ import './App.css';
 import Logo from './components/Logo';
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
+import TaskInput from "./components/TaskInput";
 // import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
 import TasksPage from "./components/TasksPage";
@@ -26,6 +27,9 @@ const App = () => {
         <LandingPageButton text={"Sign Up"} cardType="primary"/>
         <LandingPageButton text={"Log In"} cardType="secondary"/>
       </div>
+      <Graph />
+      <TaskInput/>
+      <AverageScore />
         <Graph />
       <div>
       <TasksPage />
@@ -34,7 +38,6 @@ const App = () => {
         <NavItem />
         <Routes />
       </div>
-        <AverageScore />
     </div>
     
   ); 
