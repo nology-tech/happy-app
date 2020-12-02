@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Filler.module.scss";
 
 
 const Filler = (props) => {
-const [average, setAverage] = useState(30)
+const { percent } = props
 
-  return (
-    <div className={styles.filler} style={{ width: `${average}%` }} />
+return (
+    <div className={styles.filler} style={{ width: `${percent}%` }} />
       
   );
 };

@@ -18,17 +18,27 @@ const AverageScore = () => {
     fun: 0.4, 
     appearance: 0.9, 
     sleep: 0.4, 
-  }
+}
+ 
+  let sumOfData = 0;
+  let numberOfData = 0;
 
-  // calculate average here and pass it down the tree
-  // make variable with name average and pass it down as props - don't need state
+  for (const key in data) {
+  sumOfData += data[key]
+  numberOfData += 1 
+}
+
+const percent  = parseInt((sumOfData / numberOfData) * 100);
 
   return (
     <section className={styles.container}>
       <div className={styles.insideBox}>
-        <p>Overall Scores</p>
+        <h3>Overall Scores</h3>
       </div>
-        <ProgressBar />
+      <div className={styles.scores}>
+        <p>Happiness</p>
+        <ProgressBar percent={percent}/>
+        </div>
     </section>
   );
 };
