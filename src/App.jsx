@@ -8,9 +8,6 @@ import './App.css';
 import Graph from './components/Graph';
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
-import User from "./components/User"
-
-import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
 import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
