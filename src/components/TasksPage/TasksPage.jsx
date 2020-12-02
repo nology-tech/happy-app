@@ -5,17 +5,24 @@ import TaskList from "../TaskList";
 
 const TasksPage = () => {
   
-  const [ tasks, setTasks] = useState([
-    { text: "", isCompleted: false }
-  ])
-  
-  // const addTask = () {
-  //   // 
-  // }
+  const [ tasks, setTasks] = useState([])
+   // { text: "Something", isCompleted: false },
+    // { text: "Something else", isCompleted: false }
+
+  const addTask = (tasks) => {
+    // firestore
+    //   .collection("tasks")
+    //   .doc(tasks.id)
+    //   .set(tasks)
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err));
+  };
+
   return (
     <section className={styles.tasksContent}>
-      <TaskInput placeholder="Set task here..." addTask={addTask}/>
-      <TaskList tasks={tasks} />
+      <TaskInput addTask={addTask} />
+      {/* addTask={addTask} */}
+      <TaskList tasks={tasks}  />
     </section>
   
   );
