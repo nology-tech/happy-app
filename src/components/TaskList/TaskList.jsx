@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./TaskList.module.scss";
 import Task from "../Task";
 
-const TaskList = ({tasks}) => {
+const TaskList = ({tasks}, ) => {
   // const [taskScore, setTaskScore] = useState(0);
 
 

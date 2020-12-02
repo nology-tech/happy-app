@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import styles from "./TasksPage.module.scss";
 import TaskInput from "../TaskInput";
 import TaskList from "../TaskList";
+// import { firestore } from "../../firebase";
 
-const TasksPage = () => {
+const TasksPage = ({addTask}) => {
   
-  const [ tasks, setTasks] = useState([])
-   // { text: "Something", isCompleted: false },
-    // { text: "Something else", isCompleted: false }
+  const [ tasks, setTasks] = useState([]);
 
-  const addTask = (tasks) => {
-    // firestore
-    //   .collection("tasks")
-    //   .doc(tasks.id)
-    //   .set(tasks)
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
-  };
+//  const tasks = [
+//     { id: 1, 
+//       text: "Finish this list", 
+//       isCompleted: false },
+//     { id: 2, 
+//       text: "Compete in a 10K run", 
+//       isCompleted: false }
+//     ];
+
+
+
 
   return (
     <section className={styles.tasksContent}>

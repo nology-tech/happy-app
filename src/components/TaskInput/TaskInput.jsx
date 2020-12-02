@@ -4,7 +4,7 @@ import styles from "./TaskInput.module.scss";
 
 const emptyTask = {
   id: "",
-  text: "",
+  name: "",
   // lifeComponent: [],
   isCompleted: false
 };
@@ -12,29 +12,27 @@ const emptyTask = {
 
 const TaskInput = (props) => {
   const [tasks, setTasks] = useState(emptyTask);
-  // const { placeholder,  }
+  
   const { addTask } = props;
-  // const { id, text, isCompleted } = tasks;
-  // const { addTask } = props;
 
   const {
     id,
-    text,
+    name,
     isCompleted
   } = tasks;
 
 
   const handleChange = ({ target }) => {
-    // let text = "";
-    let text = target.text;
-    console.log(text);
-    setTasks({ ...tasks, [text]: target.value})
+    let name = "";
+    name = target.name;
+    console.log(name);
+    setTasks({ ...tasks, [name]: target.value})
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const cleanedTask = CleanFormValues(tasks);
-    addTask(cleanedTask);
+    // addTask(cleanedTask);
     alert("Task added, Good Job!!!!");
     clearForm();
   }
@@ -46,40 +44,17 @@ const TaskInput = (props) => {
   const clearForm = () => {
     setTasks(emptyTask);
   };
-  // const getTask = (event) => {
-  //   event.preventDefault();
-  //   // let taskText = "";
-  //   // taskText = event.target.value;
-  //   // let taskData =[];
-  //   // taskData.push(taskText);
-  //   // console.log(taskData);
-  //   // return taskData;
-  // }
 
 
-  // const singleTask = (task) => {
-  //   return {
-  //     ...task,
-  //     text: getTask(task),
-  //     isCompleted: false,
-  //   };
+  // const checkFormCompleted = () => {
+  //   let isCompleted = true;
+  //   for (const field in tasks) {
+  //     if (tasks[field] === "") isCompleted = false;
+  //   }
+  //   return isCompleted;
   // };
 
- 
 
-  
-
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //     setTask(() => ({
-  //       task: {
-  //         ...tasks, 
-  //         text: "",
-  //         isCompleted: false}
-  //     }));
-  //   // text = handleInput();
-  // }
 
   return (  
       <div>
@@ -87,7 +62,7 @@ const TaskInput = (props) => {
         <input 
         className={styles.input} 
         type="text" 
-        name="text"
+        name="name"
         placeholder="Set task here..." 
         autofocus={true}
         onChange={handleChange} 
@@ -97,7 +72,8 @@ const TaskInput = (props) => {
           type="submit" 
           value="+"
           className={`${styles.submitButton}`}
-          onChange={handleChange} />
+          onChange={handleChange}
+          />
         </form>
       </div>
     
