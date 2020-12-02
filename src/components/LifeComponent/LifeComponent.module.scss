@@ -1,36 +1,38 @@
 @import "../../variables.scss";
 
 .container {
-    display: flex;
-    flex-direction: column;
+  width: 70%;
+  margin: auto;
 
-    .titleAndScore {
+  .titleAndScore {
+    display: flex;
+    justify-content: space-between;
+
+    .titleAndIcon {
       display: flex;
-      justify-content: space-between;
 
       .title {
-        text-align: left;
-        color: #333;
-        margin-left: 10%;
-        // margin-right: 40px;
-        display: inline-block;
-        font-size: $font-size-components;
+        font-size: 20px;
       }
+
+      .infoIcon {
+        margin-left: 20px;
+        font-size: 20px;
+        color: $yellow;
+      }
+    }
+
+    .score {
+      // margin-right: 16%;
+      font-size: 20px;
+    }
+  }
+
+  .iconAndBar {
+    display: flex;
+    margin-top: 20px;
+  }
     
-      .score {
-        display: inline-block;
-        font-size: $font-size-components;
-        color: #333;
-        margin-right: 7%;
-      }
-    }
-  
-    //icon
-    span {
-      font-size: 25px;
-      margin-left: 10%;
-      color: #333;
-    }
     
   
     //SLIDER STYLING BELOW HERE
@@ -44,12 +46,10 @@
     }
   
     .lifeComponentSlider {
-      width: 80%;
-      margin-top: 20px;
-      margin-left: 10px;
-      // margin-left: 30px;
+      width: 100%;
       border-radius: 10px;
       border: 1px solid #333;
+      margin-left: 10px;
       // transform: translateY(2px);
     }
     
@@ -74,7 +74,7 @@
       height: 20px;
       width: 20px;
       border-radius: 50px;
-      box-shadow: -500px 0 0 490px $yellow;
+      box-shadow: -500px 0 0 490px $submit-green;
       border-radius: 10px;
       border: 1px solid #000000;
       margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */

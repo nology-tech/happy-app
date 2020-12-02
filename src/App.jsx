@@ -18,7 +18,7 @@ import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
 const App = () => {
       return (
-            <main className={styles.body}>
+            <main>
                   {/* <Navbar text="Happiness Scores" />
                   <User userName='User Name' userImage={userImagePlaceHolder} />
                   <Suggestion text="Relations with your parents, siblings, spouse, close friends." isClicked={true} />
