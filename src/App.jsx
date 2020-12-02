@@ -9,15 +9,12 @@ import TaskInput from "./components/TaskInput";
 // import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
-<<<<<<< HEAD
 import User from "./components/User";
 
 import InitialScorePage from "./containers/InitialScorePage"
 
 
 import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
-=======
->>>>>>> 8a669fbafcdd52bb3165ddb2b992a304061be6f3
 
 import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
@@ -26,7 +23,6 @@ import AverageScore from "./components/AverageScore"
 // import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
 const App = () => {
-<<<<<<< HEAD
       return (
             <main>
                   {/* <Navbar text="Happiness Scores" />
@@ -44,26 +40,6 @@ const App = () => {
                   </div> */}
             </main>
       );
-=======
-  return (
-    <div className={styles.body}>
-      <Navbar text="Happiness Scores"/>
-      <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
-      <Graph />
-      <TaskInput/>
-      <AverageScore />
-        <Graph />
-      <div>
-        <AllTasks />
-      </div>
-      <div>
-        <NavItem />
-        <Routes />
-      </div>
-    </div>
-    
-  ); 
->>>>>>> 8a669fbafcdd52bb3165ddb2b992a304061be6f3
 };
 
 export default App; 
