@@ -7,7 +7,6 @@ import './App.css';
 import Logo from './components/Logo';
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
-import Navbar from './components/Navbar/Navbar';
 import TaskInput from "./components/TaskInput";
 // import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
