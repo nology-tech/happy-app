@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./App.module.scss";
-
 // import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
@@ -8,10 +7,12 @@ import './App.css';
 import Logo from './components/Logo';
 import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
+// import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
+import AverageScore from "./components/AverageScore"
 // import User from "./components/User"
 // import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
 
@@ -33,7 +34,9 @@ const App = () => {
         <NavItem />
         <Routes />
       </div>
+        <AverageScore />
     </div>
+    
   ); 
 };
 
