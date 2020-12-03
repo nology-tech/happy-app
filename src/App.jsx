@@ -61,8 +61,6 @@ const App = () => {
       <div>
         <NavItem />
         <Routes />
-    
-      
       </div>
     </div>
     
