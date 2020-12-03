@@ -55,12 +55,14 @@ const App = () => {
       <TaskInput/>
       <AverageScore />
         <Graph />
+        <button>{authLink}</button>
       <div>
         <AllTasks />
       </div>
       <div>
         <NavItem />
         <Routes />
+
       </div>
     </div>
     
