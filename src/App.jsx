@@ -4,8 +4,6 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
-import Logo from './components/Logo';
-import LandingPageButton from "./components/LandingPageButton";
 import Graph from './components/Graph';
 import TaskInput from "./components/TaskInput";
 // import TaskInput from "./components/TaskInput";
@@ -22,11 +20,6 @@ const App = () => {
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
       <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
-      <Logo />  
-      <div>
-        <LandingPageButton text={"Sign Up"} cardType="primary"/>
-        <LandingPageButton text={"Log In"} cardType="secondary"/>
-      </div>
       <Graph />
       <TaskInput/>
       <AverageScore />
