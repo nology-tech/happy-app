@@ -43,18 +43,6 @@ const NavItem = () => {
           </li>
         </Link>
 
-        <Link to="login">
-          <li>
-            Log in
-          </li>
-        </Link>
-
-        <Link to="register">
-          <li>
-            Register
-          </li>        
-        </Link>
-
         <li className={styles.signOutButton}>
           Sign Out
         </li>
