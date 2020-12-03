@@ -45,7 +45,7 @@ const App = () => {
     getUser();
   }, []);
   
-  const authLink = user ? (<a onClick={signOut}>Sign Out</a>) : (<a onClick={signIn}>Log In</a>)
+  const authLink = user ? (<a href="#" onClick={signOut}>Sign Out</a>) : (<a href="#" onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
@@ -57,7 +57,7 @@ const App = () => {
         <Graph />
 
         <button>{authLink}</button>
-        
+
       <div>
         <AllTasks />
       </div>
