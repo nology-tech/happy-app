@@ -11,12 +11,12 @@ const Navbar = (props) => {
 
   let menu;
   if (openMenu) {
-    menu = <NavItem className={styles.slide}/>
+    menu = <NavItem className={styles.slide} setOpenMenu={setOpenMenu}/>
   }
 
   return (
     <div className={styles.nav}>
-      <div onClick={() => setOpenMenu(!openMenu)} className={styles.burger}>
+      <div onClick={() => setOpenMenu(true)} className={styles.burger}>
         <div></div>
         <div></div>
         <div></div>

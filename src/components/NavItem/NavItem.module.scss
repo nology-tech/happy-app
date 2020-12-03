@@ -1,12 +1,16 @@
 @import "../../variables.scss";
 .navBar {
-    background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
-    // min-height: calc(100vh - 75px);
-    width: 60vw;
+    // background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
+
+    background-color: darken(blue, 20);
+    width: 70vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     
         .navList {
@@ -17,13 +21,13 @@
         line-height: 3.2rem;
         text-align: center;
         cursor: pointer;
-        
+
     a:link {
         text-decoration: none;
     }
     a:visited {
         text-decoration: none;
-        // color: $white;
+        color: $white;
     }
     
     a:hover {
@@ -33,7 +37,15 @@
     a:active {
         text-decoration: none;
     }
-    }
+
+}
+        .faIcon {
+            font-size: 3rem;
+            top: 0;
+            left: 0;
+            position: fixed;
+            margin: 5%;
+        }
 }
 
 
