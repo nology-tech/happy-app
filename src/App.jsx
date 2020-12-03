@@ -5,8 +5,6 @@ import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
 import Graph from './components/Graph';
-import TaskInput from "./components/TaskInput";
-// import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
 import TasksPage from "./components/TasksPage";
 import NavItem from "./components/NavItem";
@@ -51,7 +49,6 @@ const App = () => {
       <Navbar text="Happiness Scores"/>
       <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
       <Graph />
-      <TaskInput/>
       <AverageScore />
         <Graph />
 
