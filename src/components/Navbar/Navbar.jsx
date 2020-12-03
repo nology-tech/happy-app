@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.scss";
 import personLogo from '../../assets/images/person-logo.png';
 
+
 const Navbar = (props) => {
   const { text } = props; 
   const openMenu = () => alert("This was clicked");
