@@ -3,6 +3,7 @@ import styles from "./Navbar.module.scss";
 import personLogo from "../../assets/images/person-logo.png";
 import NavItem from "../NavItem";
 
+
 const Navbar = (props) => {
   const { text } = props; 
   // const openMenu = () => alert("This was clicked");
