@@ -45,7 +45,7 @@ const App = () => {
     getUser();
   }, []);
   
-  const authLink = user ? (<a href="#" onClick={signOut}>Sign Out</a>) : (<a href="#" onClick={signIn}>Log In</a>)
+  const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
