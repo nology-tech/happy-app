@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
-      <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
+      {/* <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
       <Graph />
       <TaskInput/>
       <AverageScore />
@@ -31,7 +31,7 @@ const App = () => {
       <div>
         <NavItem />
         <Routes />
-      </div>
+      </div> */}
     </div>
     
   ); 

@@ -9,6 +9,11 @@ const Navbar = (props) => {
 
   const [openMenu, setOpenMenu] = useState(false)
 
+  let menu;
+  if (openMenu) {
+    menu = <NavItem className={styles.slide}/>
+  }
+
   return (
     <div className={styles.nav}>
       <div onClick={() => setOpenMenu(!openMenu)} className={styles.burger}>
@@ -17,6 +22,7 @@ const Navbar = (props) => {
         <div></div>
       </div>
       <div>{text}</div>
+      <div>{ menu }</div>
       <img src={personLogo} alt="logo"/>
     </div>
     );
