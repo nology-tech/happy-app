@@ -3,7 +3,6 @@ import styles from "./TaskInput.module.scss";
 
 
 const emptyTask = {
-  id: "",
   name: "",
   // lifeComponent: [],
   isCompleted: false
@@ -11,12 +10,11 @@ const emptyTask = {
 
 
 const TaskInput = (props) => {
-  
+  // const [ idValue, setIdValue ] = useState(1)
   const [tasks, setTasks] = useState(emptyTask);
   const { addTask } = props;
 
   const {
-    id,
     name,
     isCompleted
   } = tasks;
@@ -24,7 +22,6 @@ const TaskInput = (props) => {
 
   const handleChange = ({ target }) => {
     let name = target.name;
-    console.log(name);
     setTasks({ ...tasks, [name]: target.value})
   };
 
@@ -32,13 +29,13 @@ const TaskInput = (props) => {
     event.preventDefault();
     const cleanedTask = CleanFormValues(tasks);
     console.log(cleanedTask);
-    // addTask(cleanedTask); //We Need this to work
+    addTask(cleanedTask);
     alert("Task added, Good Job!!!!");
     clearForm();
   }
+    // setIdValue(prevState => prevState + 1);
 
   const CleanFormValues = (formValues) => {
-    // formValues.id  SOMETHING NEEDS TO GO HERE?
     formValues.isCompleted = false;
     return formValues;
   }

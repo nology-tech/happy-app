@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./TaskList.module.scss";
 import Task from "../Task";
+import { firestore } from "../../firebase";
 
-const TaskList = ({tasks}, ) => {
+const TaskList = ({tasks, setTasks}) => {
   // const [taskScore, setTaskScore] = useState(0);
+  // const [ tasks, setTasks] = useState([]);
 
+  const fetchTasks = () => {
+    firestore
+      .collection("users")
+      .doc("testuser")
+      // .where("isCompleted", "==", false)
+      .get()
+      .then((querySnapshot) => {
+          querySnapshot.docs.map((doc) => doc.data());
+          setTasks(tasks)
+          })
+      .catch((error) => console.log("Error getting documents: ", error));
+    };
+    
+    useEffect(() => {
+      fetchTasks();
+    }, []);
 
-
-  const getTasksJsx = (task) => (
+  const getTasksJsx = (tasks) => (
     <div className={styles.task} key={tasks.id} >
-      <Task task={task}/>
+      <Task tasks={tasks}/>
     </div>
 );
 

@@ -9,17 +9,9 @@ import Register from "../Register";
 import Scores from "../Scores";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
-import { firestore } from "../../firebase";
 
 
-const addTask = (tasks) => {
-  firestore
-    .collection("tasks")
-    .doc(tasks.id)
-    .set(tasks)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
-};
+
 
 const Routes = () => {
   return (
@@ -30,7 +22,7 @@ const Routes = () => {
       <Login path="login" />
       <Register path="register" />
       <Scores path="scores" />
-      <Task path="task" addTask={addTask} />
+      <Task path="task" />
       <TermsConditions path="termsconditions" />
    </Router>
   );
