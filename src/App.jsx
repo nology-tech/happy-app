@@ -5,7 +5,7 @@ import "./data/fa-library";
 import Routes from "./containers/Routes";
 
 
-import firebase, { googleProvider } from './firebase';
+import firebase from './firebase';
 
 // DONT ADD ANYTHING HERE - GO TO CONTAINERS AND RENDER STUFF THERE
 const App = () => {
