@@ -19,25 +19,24 @@ const [ user, setUser ] = useState(null);
 //     firebase.auth().signOut();
 //   };
 
-// const getUser = () => {
-//   firebase.auth().onAuthStateChanged ((user) => {
-//      if (user) {
-//       setUser(user);
-//     } else {
-//       setUser(null);
-//     }
-//   });
-// };
+const getUser = () => {
+  firebase.auth().onAuthStateChanged ((user) => {
+     if (user) {
+      setUser(user);
+    } else {
+      setUser(null);
+    }
+  });
+};
 
-// useEffect(() => {
-//   getUser();
-// }, []);
+useEffect(() => {
+  getUser();
+}, []);
   
-// const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
-      <Routes />
+      <Routes user={user}/>
     </div>
   ); 
 };
