@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const LifeComponent = () => {
-
+const LifeComponent = (props) => {
   const [rangeValue, setRangeValue] = useState(0);
+
+  const { isReadOnly, component } = props;
 
   const handleChange = (event) => {
     return setRangeValue(event.target.value)
@@ -13,12 +14,15 @@ const LifeComponent = () => {
   return (
     <main className={styles.container}>
       <div className={styles.titleAndScore}>
-        <h2 className={styles.title}>Physical Environment</h2>
+        <h2 className={styles.title}>{component.name}</h2>
         <p className={styles.score}>{rangeValue}/10</p>
       </div>
       <div>
         <span><FontAwesomeIcon icon="search" /></span>
-        <input className={styles.lifeComponentSlider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
+        {isReadOnly 
+        ? <input className={styles.lifeComponentSlider} type="range" value={rangeValue} min="0" max="10" step="1" readOnly />
+        : <input className={styles.lifeComponentSlider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
+      }
       </div>
     </main>
   );

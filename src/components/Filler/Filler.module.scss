@@ -1,5 +1,7 @@
+@import "../../variables.scss";
+
 .filler {
-    background: rgb(236, 163, 27);
+    background: $color-green-light;
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;

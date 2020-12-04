@@ -9,6 +9,7 @@ import Register from "../Register";
 import Scores from "../Scores";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
+import ScoreDisplay from "../ScoreDisplay"
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
       <Login path="login" />
       <Register path="register" />
       <Scores path="scores" />
+      <ScoreDisplay path="scoreDisplay" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
    </Router>

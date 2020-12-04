@@ -32,12 +32,12 @@ const percent  = parseInt((sumOfData / numberOfData) * 100);
 
   return (
     <section className={styles.container}>
-      <div className={styles.insideBox}>
+      {/* <div className={styles.insideBox}>
         <h3>Overall Scores</h3>
-      </div>
+      </div> */}
       <div className={styles.scores}>
-        <p>Happiness</p>
-        <ProgressBar percent={percent}/>
+        <p>Overall Happiness</p>
+         <ProgressBar percent={percent}/>
         </div>
     </section>
   );

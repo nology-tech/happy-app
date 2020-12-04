@@ -19,6 +19,12 @@ const NavItem = () => {
           </li>
         </Link>
 
+        <Link to="scoreDisplay">
+          <li>
+            Score Display
+          </li>
+        </Link>
+
         <Link to="task">
           <li>
             Tasks
