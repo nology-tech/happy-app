@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, ref } from "react";
+import React, { useState } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Suggestion from "../Suggestion"
@@ -10,7 +10,7 @@ import { firestore } from "../../firebase"
 const LifeComponent = (props) => {
 
   const { lifeComponentNames, lifeComponentSuggestion, handleChange, rangeValue} = props;
-  
+
   const [isClicked, setIsClicked] = useState(false);  
 
   return (
