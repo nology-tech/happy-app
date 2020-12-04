@@ -4,18 +4,20 @@ import TaskInput from "../TaskInput";
 import TaskList from "../TaskList";
 import { firestore } from "../../firebase";
 
-const TasksPage = () => {
-  
+const TasksPage = (props) => {
+  const { user } = props;
   const [ tasks, setTasks] = useState([]);
-
+  
 const addTask = (tasks) => {
   firestore
     .collection("users")
-    .doc("testUser")
-    .set({tasks})
+    .doc("testUser") 
+    .set({...tasks})
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 };
+    // .doc(tasks.id + user.uid)
+    // .set({...tasks, uid: user.uid})
 
 
   return (

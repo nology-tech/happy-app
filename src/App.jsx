@@ -55,7 +55,7 @@ const App = () => {
         <button>{authLink}</button>
 
       <div>
-      <TasksPage />
+      <TasksPage user={user} />
       </div>
       <div>
         <NavItem />
