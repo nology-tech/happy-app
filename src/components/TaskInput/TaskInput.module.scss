@@ -1,0 +1,46 @@
+@import '../../variables.scss';
+.taskInput {
+    display: flex;
+    border-radius: 50px;
+    border: none;
+    background-color: $darker-blue;
+    width: 95%;
+    box-shadow: 5px 4px 6px lighten($black, 4);
+    margin: 10px auto;
+    .input {
+        position: relative;
+        margin-top: 0.3%;
+        width: 100%;
+        background: $darker-blue;
+        border-radius: 50px;
+        height: 5vh;
+        padding: 0% 2%;
+        color: white;
+        font-size: $font-size-components/2;
+        border: none;
+        display: flex;
+        align-self: space-between;
+        justify-content: center;
+        &::placeholder {
+            color: white;
+            font-size: $font-size-components/2;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .submitButton {
+        height: 5vh;
+        width: 10%;
+        background: repeating-radial-gradient(circle at -60% -40%, $background-purple 10%, $color-green-light 60px, $submit-green);
+        border-radius: 50px;
+        border: none;
+        font-size: $font-size-components/1.6;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+}

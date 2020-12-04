@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
-describe("App tests", () => {
+import Graph from "./Graph";
+
+describe("Graph tests", () => {
   it("should render", () => {
-    expect(render(<App />)).toBeTruthy();
+    expect(render(<Graph />)).toBeTruthy();
   });
 });
-

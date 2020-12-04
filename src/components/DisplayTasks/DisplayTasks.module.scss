@@ -1,0 +1,50 @@
+@import '../../variables.scss';
+.displayTasks {
+    // display: flex;
+    border-radius: 50px;
+    width: 90%;
+    margin: 10px auto;
+    .task {
+        font-size: $font-size-components/1.5;
+        // padding: 20px;
+        min-height: 2rem;
+        margin-top: 3%;
+        width: 100%;
+        background: linear-gradient(to left top, $color-primary-dark 25%, $darker-blue 45%, $color-tertiary-dark 75%, $color-violet 90%);
+        box-shadow: 5px 4px 6px $black;
+        border-radius: 50px;
+        height: 5vh;
+        padding: 0.5% 2.5% 0.5% 2.5%;
+        color: white;
+        // font-size: 2rem;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:focus {
+            outline: none;
+        }
+        .checkTaskComplete {
+            height: 160%;
+            width: 5vw;
+            //color: $background-blue1;
+            background: $submit-green;
+            //border-radius: 50%;
+            border: none;
+            font-size: $font-size-components;
+            color: $submit-green;
+            clip-path: circle(21%);
+            cursor: pointer;
+            &:hover {
+                backdrop-filter: sepia(100%);
+            }
+            &:active {
+                filter: brightness(0.4);
+                -webkit-filter: brightness(0.4);
+            }
+            mix-blend-mode: lighten;
+            filter: hue-rotate(-110deg);
+            -webkit-filter: hue-rotate(-110deg);
+        }
+    }
+}

@@ -4,6 +4,11 @@ $default-font-family: Roboto,
 sans-serif;
 $font-size-header: 2rem;
 $font-size-components: 1.8rem;
+$font-size-nav: 1.3rem;
+
+$margin-logo-img: 5px;
+$height-logo-img: 25px;
+$width-logo-img: 25px;
 // Colors
 
 // updated variable names
@@ -54,6 +59,7 @@ $color-green-medium: #095E4C;
 $color-green-strong: #0F4440;
 $color-yellow:#F1B22D;
 $color-yellow-dark: #88610E;
+$header-yellow-text: #F1B32C;
 $button-inactive: #0C5B7F;
 $navy-blue: #074783;
 $hot-spot-color: #FF0000;
@@ -83,3 +89,4 @@ $button-border-radius: 15px;
         clear: both;
     }
 }
+

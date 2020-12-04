@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+.navList {
+    list-style-type: none;
+    color: $white;
+    padding: 20px;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navBar {
+    background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
+    min-height: calc(100vh - 75px);
+    width: 600px;
+}
+
+.signOutButton {
+    color: $color-orange;
+    border-top: 2px solid $color-grey-dark-3;
+}
