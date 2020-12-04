@@ -3,7 +3,7 @@ import styles from "./App.module.scss";
 
 import "./data/fa-library";
 import Routes from "./containers/Routes";
-import Navbar from "./components/Navbar"
+
 
 import firebase, { googleProvider } from './firebase';
 
@@ -33,7 +33,7 @@ useEffect(() => {
   getUser();
 }, []);
   
-const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
+// const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
