@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, ref } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Suggestion from "../Suggestion"
 import "../../data/fa-library"
 
+import { firestore } from "../../firebase"
+
+
 const LifeComponent = (props) => {
 
-  const { lifeComponentNames, lifeComponentSuggestion} = props;
-
-  const [rangeValue, setRangeValue] = useState(0);
-  const [isClicked, setIsClicked] = useState(false);
-
-  console.log(`${lifeComponentNames}: ${rangeValue}`)
-
-
-  const handleChange = (event) => {
-    return setRangeValue(event.target.value)
-  };
+  const { lifeComponentNames, lifeComponentSuggestion, handleChange, rangeValue} = props;
+  
+  const [isClicked, setIsClicked] = useState(false);  
 
   return (
     <main className={styles.container}>
