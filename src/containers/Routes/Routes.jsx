@@ -11,7 +11,9 @@ import Task from "../Task";
 import TermsConditions from "../TermsConditions";
 import ScoreDisplay from "../ScoreDisplay"
 
-const Routes = () => {
+const Routes = (props) => {
+  const { user } = props;
+
   return (
    <Router>
       <About path="about" />
@@ -20,7 +22,7 @@ const Routes = () => {
       <Login path="login" />
       <Register path="register" />
       <Scores path="scores" />
-      <ScoreDisplay path="scoreDisplay" />
+      <ScoreDisplay path="scoreDisplay" user={user} />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
    </Router>

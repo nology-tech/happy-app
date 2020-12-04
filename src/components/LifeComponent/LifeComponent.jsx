@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const LifeComponent = (props) => {
   const [rangeValue, setRangeValue] = useState(0);
 
-  const { isReadOnly, component } = props;
+  const { isReadOnly, score } = props;
 
   const handleChange = (event) => {
     return setRangeValue(event.target.value)
@@ -14,7 +14,7 @@ const LifeComponent = (props) => {
   return (
     <main className={styles.container}>
       <div className={styles.titleAndScore}>
-        <h2 className={styles.title}>{component.name}</h2>
+        <h2 className={styles.title}>{score.name}</h2>
         <p className={styles.score}>{rangeValue}/10</p>
       </div>
       <div>

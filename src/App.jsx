@@ -40,27 +40,26 @@ const App = () => {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [user]);
   
-  const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
+  const authLink = user ? (<a onClick={signOut}>Sign Out</a>) : (<a onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
-      <Navbar text="Happiness Scores"/>
+      {/* <Navbar text="Happiness Scores"/>
       <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
       <Graph />
       <TaskInput/>
-      <AverageScore />
-        <Graph />
+      <AverageScore />       */}
 
         <button>{authLink}</button>
 
       <div>
-        <AllTasks />
+        {/* <AllTasks /> */}
       </div>
       <div>
-        <NavItem />
-        <Routes />
+        {/* <NavItem /> */}
+        <Routes user={user} />
 
       </div>
     </div>
