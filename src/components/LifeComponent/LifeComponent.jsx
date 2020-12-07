@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Suggestion from "../Suggestion"
-import "../../data/fa-library"
-
-import { firestore } from "../../firebase"
-
+import Suggestion from "../Suggestion";
+import "../../data/fa-library";
 
 const LifeComponent = (props) => {
 
@@ -25,7 +22,14 @@ const LifeComponent = (props) => {
       </div>
       <div className={styles.iconAndBar}>
         <span><FontAwesomeIcon icon="search" /></span>
-        <input className={styles.lifeComponentSlider} type="range" value={rangeValue} min="0" max="10" step="1" onChange={handleChange} />
+        <input 
+        className={styles.lifeComponentSlider} 
+        type="range" 
+        value={rangeValue} 
+        min="0" 
+        max="10" 
+        step="1" 
+        onChange={handleChange} />
       </div>
       <Suggestion isClicked={isClicked} lifeComponentSuggestion={lifeComponentSuggestion} />
     </main>
