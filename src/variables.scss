@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-$default-font-family: Roboto, "Open Sans", sans-serif;
+$default-font-family: Roboto,
+"Open Sans",
+sans-serif;
 $font-size-header: 2rem;
 $font-size-components: 1.8rem;
 $font-size-nav: 1.3rem;
-
 $margin-logo-img: 5px;
 $height-logo-img: 45px;
 $width-logo-img: 45px;
 // Colors
-
 // updated variable names
-
 $background-gradient-1: #003333;
 $background-gradient-2: #0057bc;
 $colour-1: #ff00cc;
@@ -21,12 +20,14 @@ $text-colour-secondary: #666666;
 $tick-colour: #ffffff;
 $white: #fdfdfd; // Off-white
 $black: #1d1b1b; // off-black
-
 // App Gradient
 // $gradient: linear-gradient(0deg, rgb(58, 0, 70) 0%, rgb(31, 0, 80) 72%);
-
-$gradient: linear-gradient(to top, #001544, #032056, #052b69, #05377d, #014491);
-
+$gradient: linear-gradient(to top,
+#001544,
+#032056,
+#052b69,
+#05377d,
+#014491);
 // Colours added by Josh from wireframes
 $background-blue1: #117ba2;
 $background-blue2: #0057bc;
@@ -34,7 +35,6 @@ $darker-blue: #003399;
 $submit-green: #99cc66;
 $grey: #999999;
 $yellow: #ffcc33;
-
 // Initial colours
 $background-purple: #5d116d;
 $color-blue-light: #1d85c2;
@@ -66,7 +66,6 @@ $header-yellow-text: #f1b32c;
 $button-inactive: #0c5b7f;
 $navy-blue: #074783;
 $hot-spot-color: #ff0000;
-
 // Fonts
 // Whilst html is set to 10px, default font size variable set at 1.6rem will mean that everything to this variable will be 16px
 $default-font-size: 1.6rem;
@@ -76,21 +75,21 @@ $comp-button-height: 50px;
 $button-border-radius: 15px;
 // Placeholder Selectors for use with @extend directive
 %button {
-  width: 100px;
-  height: 50px;
-  border-radius: $button-border-radius;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    outline: none;
-  }
+    width: 100px;
+    height: 50px;
+    border-radius: $button-border-radius;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        outline: none;
+    }
 }
 
 %clearfix {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
