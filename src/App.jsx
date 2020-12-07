@@ -32,7 +32,7 @@ const signIn = () => {
 
 const getUser = () => {
   firebase.auth().onAuthStateChanged ((user) => {
-     if (user) {
+    if (user) {
       setUser(user);
 
     } else {

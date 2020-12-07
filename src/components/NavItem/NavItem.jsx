@@ -1,20 +1,14 @@
 import React from "react";
 import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const NavItem = (props) => {
-  const { setOpenMenu, signOut } = props
+  const { signOut } = props
   return (
     <div className={styles.navBar}>
-      <span onClick={() => {
-        setOpenMenu(false)
-      }}>
-       <FontAwesomeIcon icon="times" className={styles.faIcon} />
-       </span>
       <ul className={styles.navList}>
-    
+
         <Link to="/">
           <li>
             Home
