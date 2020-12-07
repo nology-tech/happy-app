@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./LifeComponentList.module.scss";
+// import styles from "./LifeComponentList.module.scss";
 import LifeComponent from "../LifeComponent";
 
 const LifeComponentList = (props) => {

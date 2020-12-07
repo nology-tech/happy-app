@@ -10,10 +10,10 @@ const Navbar = (props) => {
 
   const [openMenu, setOpenMenu] = useState(false)
 
-  let menu;
-  if (openMenu) {
-    menu = <NavItem className={styles.slide} setOpenMenu={setOpenMenu} signOut={signOut} />
-  }
+  // let menu;
+  // if (openMenu) {
+    // menu = <NavItem className={styles.slide} setOpenMenu={setOpenMenu} signOut={signOut} />
+  // }
 
   return (
     <div className={styles.nav}>
