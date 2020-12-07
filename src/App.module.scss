@@ -1,11 +1,17 @@
 @import "./variables.scss";
 
-.signUp{
-    color: blue;
+.signUp {
+  color: blue;
 }
 
 .body {
-    background: $gradient;
-    min-height: 100vh;
-    // background-color: $darker-blue;
+  background-image: linear-gradient(
+    to top,
+    #001544,
+    #032056,
+    #052b69,
+    #05377d,
+    #014491
+  );
+  min-height: 100vh;
 }
