@@ -3,7 +3,12 @@ import { render } from "@testing-library/react";
 import TaskList from "./TaskList";
 
 describe("TaskList tests", () => {
-  it("should render", () => {
-    expect(render(<TaskList />)).toBeTruthy();
-  });
+  const tasks = [
+    {
+      id: "2", 
+      text: "Run Marathon"
+    }];
+    it("should render", () => {
+        expect(render( <TaskList tasks={tasks} /> )).toBeTruthy();
+    });
 });

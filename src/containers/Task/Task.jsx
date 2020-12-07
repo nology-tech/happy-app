@@ -40,4 +40,5 @@ const addTaskToDatabase = (task) => {
 
 };
 
+
 export default Task;

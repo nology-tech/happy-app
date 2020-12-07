@@ -14,7 +14,7 @@ const TaskList = (props) => {
   );
   return (
     <>
-      <TaskInput  addTaskToDatabase={addTaskToDatabase}  addTask={addTask}/>
+      <TaskInput  addTaskToDatabase={addTaskToDatabase} addTask={addTask}/>
       <section className={styles.displayTasks}>{tasks.map(getTaskJsx)}</section>
     </>
     
