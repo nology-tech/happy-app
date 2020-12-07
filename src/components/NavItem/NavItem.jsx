@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 
 
 const NavItem = (props) => {
-  const { setOpenMenu, signOut } = props
+  const { signOut } = props
   return (
     <div className={styles.navBar}>
       <ul className={styles.navList}>
