@@ -58,7 +58,7 @@ const App = () => {
         {/* <AllTasks /> */}
       </div>
       <div>
-        {/* <NavItem /> */}
+        <NavItem />
         <Routes user={user} />
 
       </div>
