@@ -5,10 +5,9 @@ import Footer from "../../components/Footer"
 import lifeComponents from "../../data/lifeComponents"
 import { firestore } from "../../firebase"
 
-
 const InitialScorePage = () => {
-  const [scores, setScores] = useState(lifeComponents);
 
+  const [scores, setScores] = useState(lifeComponents);
 
   const updateScore = (event, id) => {
     const newScores = scores.map(scoreObj => {
@@ -23,15 +22,15 @@ const InitialScorePage = () => {
   }
 
   const lifeComponentScores = scores.map(score => {
-    const name = score.name
-    const score1 = Number(score.score)
-    return  {[name] : score1}
+    const databaseName = score.name
+    const databaseScore = Number(score.score)
+    return  {[databaseName] : databaseScore}
   })
 
-  console.log(lifeComponentScores);
-
   const addScoreToDataBase = () => {
-    firestore.collection("users").doc('Ezio').set({
+    firestore.collection("users")
+    .doc('Ezio') // Change this to UID of user, evenually
+    .set({
       lifeComponentScores
     })
   .then(() => {
@@ -41,7 +40,6 @@ const InitialScorePage = () => {
       console.error("Error writing document: ", error);
   });
   }
-
 
   return (
     <section>

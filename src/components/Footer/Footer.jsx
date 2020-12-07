@@ -7,7 +7,10 @@ const Footer = (props) => {
   return (
     <div>
       <footer className={styles.footer}>
-        <button type="submit" className={styles.submitButton} onClick={addScoreToDataBase}>
+        <button 
+        type="submit" 
+        className={styles.submitButton} 
+        onClick={addScoreToDataBase}>
             +
         </button>
         <p>Submit</p>
