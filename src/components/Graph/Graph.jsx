@@ -30,20 +30,20 @@ const defaultOptions = {
     {
       data: {
         generalHappiness: 0.4, 
-        finances: 0.8,
+        finances: 0.6,
         career: 0.9,
-        loveLife: 0.7,
+        loveLife: 0.5,
         family: 0.3, 
         friends: 0.5, 
         funAndRecreation: 0.4, 
         physicalHealth: 0.4,
         mentalHealth: 0.8,
         contributionToSociety: 0.7, 
-        selfWorth: 1, 
-        personalDevelopment: 0.3, 
-        physicalEnvironment: 1,
+        selfWorth: 0.5, 
+        personalDevelopment: 0.8, 
+        physicalEnvironment: 0.5,
         purpose: 0.8,
-        spirituality: 0.8, 
+        spirituality: 0.4, 
       },
       meta: {color:'#8007f1'}
 

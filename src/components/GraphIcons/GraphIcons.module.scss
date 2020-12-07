@@ -4,10 +4,11 @@
 .iconsDiv {
   background: transparent;
   position: absolute;
-  top: 225px;
-  left: 530px;
+  top: -3%;
+  left: 0 ;
   margin: auto;
   z-index: 1;
+
 
   
 }
@@ -57,43 +58,30 @@
     
     &:hover {
       cursor: pointer;
-      color: $color-yellow;
+      color: rgb(0, 110, 255);
     }
   }
 }
 @media screen and (min-width: 320px) {
+ 
+  
   .circleContainer {
     @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 5px);
 
   }
   .iconsDiv {
-    top: 330px;
-    left: 60px;
     margin: auto;
   }
 }
-@media screen and (min-width: 375px) {
-  .iconsDiv {
-    top: 330px;
-    left: 87px;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 425px) {
-  .iconsDiv {
-    top: 330px;
-    left: 112px;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 500px) {
   .circleContainer {
     @include on-circle($item-count: 15, $circle-size: 15em, $item-size: 4em);
   }
-
+  
   .iconsDiv {
-    top: 455px;
-    left: 290px;
+    top: 31%;
+    left: 31%;
     margin: auto;
     .faStyle {
       width: 2em;
@@ -102,19 +90,3 @@
     }
   }
 }
-@media screen and (min-width: 1024px) {
-  .iconsDiv {
-    top: 455px;
-    left: 416px;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .iconsDiv {
-    top: 495px;
-    left: 625px;
-    margin: auto;
-  }
-}
-
-
