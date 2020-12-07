@@ -5,13 +5,6 @@
 }
 
 .body {
-  background-image: linear-gradient(
-    to top,
-    #001544,
-    #032056,
-    #052b69,
-    #05377d,
-    #014491
-  );
+  background-image: $gradient;
   min-height: 100vh;
 }

@@ -30,16 +30,12 @@ $yellow: #ffcc33;
 
 // App Gradient
 $gradient: linear-gradient(
-  -45deg,
-  rgba(0, 212, 255, 1) 0%,
-  rgba(3, 159, 220, 1) 0%,
-  rgba(4, 141, 208, 1) 15%,
-  rgba(5, 111, 189, 1) 30%,
-  rgba(5, 101, 182, 1) 46%,
-  rgba(8, 42, 143, 1) 100%,
-  rgba(7, 60, 155, 1) 100%,
-  rgba(9, 19, 128, 1) 100%,
-  rgba(9, 9, 121, 1) 100%
+  to top,
+  #001544,
+  #032056,
+  #052b69,
+  #05377d,
+  #014491
 );
 
 // Initial colours
