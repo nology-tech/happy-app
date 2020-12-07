@@ -79,13 +79,13 @@ const lifeComponents = [
     },
     {
         id: 14,
-        name: "PlaceholderOne",
+        name: "Contribution to Society",
         suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!',
         score: 0
     },
     {
         id: 15,
-        name: "PlaceholderTwo",
+        name: "Personal Development",
         suggestion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse eum error impedit rem aliquid omnis. Deleniti possimus nobis vero!',
         score: 0
     }

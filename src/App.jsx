@@ -48,10 +48,10 @@ useEffect(() => {
   
   return (
     <div className={styles.body}>
+      <Navbar signOut={signOut}/>
       <Routes user={user}
        signIn = {signIn}
       />
-      <Navbar signOut={signOut}/>
     </div>
   ); 
 };
