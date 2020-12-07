@@ -1,73 +1,59 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from "react";
 import styles from "./App.module.scss";
-import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
-import Suggestion from "./components/Suggestion"
-import './App.css';
-import Graph from './components/Graph';
-import TaskInput from "./components/TaskInput";
-import Navbar from './components/Navbar';
-import AllTasks from "./components/AllTasks";
-
-// import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
-import AverageScore from "./components/AverageScore"
-import firebase, { googleProvider } from './firebase';
-// import User from "./components/User"
-// import userImagePlaceHolder from "./assets/images/userImagePlaceHolder.png";
+import { navigate } from "@reach/router";
+import Navbar from "./components/Navbar";
 
 
 
+import firebase, { googleProvider } from "./firebase";
+
+
+// DONT ADD ANYTHING HERE - GO TO CONTAINERS AND RENDER STUFF THERE
 const App = () => {
+const [ user, setUser ] = useState(null);
 
-  const [ user, setUser ] = useState(null);
-
-  const signIn = () => {
-    firebase.auth().signInWithRedirect(googleProvider);
+const signIn = () => {
+    firebase.auth().signInWithRedirect(googleProvider); 
+    navigate("/"); 
   };
 
   const signOut = () => {
-    firebase.auth().signOut();
-  };
-
-  const getUser = () => {
-    firebase.auth().onAuthStateChanged ((user) => {
-      if (user) {
-        setUser(user);
-      } else {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
         setUser(null);
-      }
-    });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+const getUser = () => {
+  firebase.auth().onAuthStateChanged ((user) => {
+    if (user) {
+      setUser(user);
+
+    } else {
+      setUser(null);
+    }
+  });
+};
+
+useEffect(() => {
+  getUser();
+}, []);
   
-  const authLink = user ? (<a href="www.google.com" onClick={signOut}>Sign Out</a>) : (<a href="www.google.com" onClick={signIn}>Log In</a>)
   
   return (
     <div className={styles.body}>
-      <Navbar text="Happiness Scores"/>
-    <Suggestion text="Relations with your parents, siblings, spouse, close friends."  isClicked={true}/> 
-
-      <TaskInput/>
-      <AverageScore />
-        <Graph />
-
-        <button>{authLink}</button>
-
-      <div>
-        <AllTasks />
-      </div>
-      <div>
-        {/*<NavItem />*/}
-         <Routes />
-
-      </div>
+      <Navbar signOut={signOut}/>
+      <Routes user={user}
+       signIn = {signIn}
+      />
     </div>
-    
   ); 
 };
-
 export default App; 

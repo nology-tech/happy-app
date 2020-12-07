@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Scores.module.scss";
 
-const Scores = () => {
+const Scores = (props) => {
   return (
     <>
-      <p className={styles.text}>Scores works</p>
+      <p className={styles.text}></p>
     </>
   );
 };

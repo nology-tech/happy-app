@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = (props) => {
+  const { addScoreToDataBase } = props;
   
-  const submitHandler = () => alert("This was clicked");
-
   return (
     <div>
       <footer className={styles.footer}>
-        <button type="submit" className={styles.submitButton} onClick={submitHandler}>
+        <button 
+        type="submit" 
+        className={styles.submitButton} 
+        onClick={addScoreToDataBase}>
             +
         </button>
         <p>Submit</p>

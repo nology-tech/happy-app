@@ -1,5 +1,18 @@
 @import "../../variables.scss";
-.navList {
+.navBar {
+  // background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
+
+  background: $gradient;
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navList {
     list-style-type: none;
     color: $white;
     padding: 20px;
@@ -7,15 +20,35 @@
     line-height: 3.2rem;
     text-align: center;
     cursor: pointer;
-}
+    text-decoration: none;
 
-.navBar {
-    background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
-    min-height: calc(100vh - 75px);
-    width: 600px;
+    a:link {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+      color: $white;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+  }
+  .faIcon {
+    font-size: 3rem;
+    top: 0;
+    left: 0;
+    position: fixed;
+    margin: 5%;
+    color: $colour-2;
+  }
 }
 
 .signOutButton {
-    color: $color-orange;
-    border-top: 2px solid $color-grey-dark-3;
+  color: $colour-1;
+  // border-top: 2px solid  $color-grey-dark-3;
 }
