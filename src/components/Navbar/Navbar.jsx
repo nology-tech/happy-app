@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import personLogo from '../../assets/images/person-logo.png';
 
-import NavItem from "../NavItem"
+// import NavItem from "../NavItem"
 
 const Navbar = (props) => {
-  const { text, signOut } = props; 
+  const { text } = props; 
   // const openMenu = () => alert("This was clicked");
 
-  const [openMenu, setOpenMenu] = useState(false)
+  const [openMenu] = useState(false)
 
   // let menu;
   // if (openMenu) {
