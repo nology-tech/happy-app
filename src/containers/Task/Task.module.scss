@@ -1,6 +1,6 @@
 @import "../../variables";
 .tasksContent {
-    background: linear-gradient(to bottom, $background-gradient-1, $background-gradient-2);
+    background: $gradient;
     padding-bottom: 40px;
     padding-top: 40px;
     text-align: center;

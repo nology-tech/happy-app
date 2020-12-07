@@ -4,8 +4,9 @@
     border-radius: 50px;
     border: none;
     width: 90%;
+    font-weight: 400;
     margin: 40px auto;
-    background: #034884;
+    background: $color-primary-dark;
     .input {
         position: relative;
         width: 100%;
@@ -13,7 +14,7 @@
         height: 5vh;
         background: transparent;
         padding: 0% 2%;
-        color: white;
+        color: $colour-2;
         font-size: $font-size-components/2;
         border: none;
         display: flex;

@@ -33,7 +33,7 @@ const addTaskToDatabase = (task) => {
     <NavBar />
 
       <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
-      <Footer />
+      {/* <Footer /> */}
 
     </section>
   );
