@@ -3,8 +3,9 @@ import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 const NavItem = (props) => {
-  const { setOpenMenu } = props
+  const { setOpenMenu, signOut } = props
   return (
     <div className={styles.navBar}>
       <span onClick={() => {
@@ -50,7 +51,7 @@ const NavItem = (props) => {
           </li>
         </Link>
 
-        <li className={styles.signOutButton}>
+        <li className={styles.signOutButton} onClick={signOut}>
           Sign Out
         </li>
       </ul>

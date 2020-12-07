@@ -6,7 +6,7 @@ import { Link } from "@reach/router";
 
 const Login = (props) => {
 
-   const {signIn} = props;
+   const { signIn } = props;
 
   return (
     <section className={styles.login} >
@@ -14,9 +14,7 @@ const Login = (props) => {
         <Logo />
       </div>
       <div className={styles.button} >
-        {/* <Link className={styles.link} to="/"> */}
-          <LandingPageButton text={"Log In"} cardType="primary"   onClick={signIn} />
-        {/* </Link> */}
+          <LandingPageButton text={"Log In"} cardType="primary" click={signIn} />
         <Link className={styles.link} to="register">
           <LandingPageButton text={"Sign Up"} cardType="secondary" />
         </Link>
