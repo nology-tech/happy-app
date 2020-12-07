@@ -1,20 +1,24 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .button {
-    border: none;
-    color: white;
-    height: 7.5vh;
-    width: 200px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 50px;
+  border: none;
+  color: $white;
+  height: 7.5vh;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
-.primary{
-    background-color: $darker-blue;
+.primary {
+  background-color: $colour-2;
 }
 
-.secondary{
-    background-color: $yellow;
+.secondary {
+  background-color: $colour-1;
 }
