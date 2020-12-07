@@ -4,7 +4,9 @@ import Logo from "../../components/Logo";
 import LandingPageButton from "../../components/LandingPageButton";
 import { Link } from "@reach/router";
 
-const Login = () => {
+const Login = (props) => {
+
+   const {signIn} = props;
 
   return (
     <section className={styles.login} >
@@ -12,9 +14,9 @@ const Login = () => {
         <Logo />
       </div>
       <div className={styles.button} >
-        <Link className={styles.link} to="/">
-          <LandingPageButton text={"Log In"} cardType="primary" />
-        </Link>
+        {/* <Link className={styles.link} to="/"> */}
+          <LandingPageButton text={"Log In"} cardType="primary"   onClick={signIn} />
+        {/* </Link> */}
         <Link className={styles.link} to="register">
           <LandingPageButton text={"Sign Up"} cardType="secondary" />
         </Link>

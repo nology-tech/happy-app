@@ -5,19 +5,27 @@ import "./data/fa-library";
 import Routes from "./containers/Routes";
 
 
-import firebase from './firebase';
+import firebase, { googleProvider }from './firebase';
 
 // DONT ADD ANYTHING HERE - GO TO CONTAINERS AND RENDER STUFF THERE
 const App = () => {
 const [ user, setUser ] = useState(null);
 
-// const signIn = () => {
-//     firebase.auth().signInWithRedirect(googleProvider);
-//   };
+const signIn = () => {
+    firebase.auth().signInWithRedirect(googleProvider);
+  };
 
-// const signOut = () => {
-//     firebase.auth().signOut();
-//   };
+  const signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
 const getUser = () => {
   firebase.auth().onAuthStateChanged ((user) => {
@@ -36,7 +44,10 @@ useEffect(() => {
   
   return (
     <div className={styles.body}>
-      <Routes user={user}/>
+      <Routes user={user}
+       signIn ={signIn}
+       signOut ={signOut}
+      />
     </div>
   ); 
 };
