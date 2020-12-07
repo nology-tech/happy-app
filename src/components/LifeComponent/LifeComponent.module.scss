@@ -1,91 +1,90 @@
 @import "../../variables.scss";
 
-.container {
+.lifeComponent {
   width: 70%;
   margin: auto;
 
-  .titleAndScore {
+  .lifeComponent__topElements {
     display: flex;
     justify-content: space-between;
 
-    .titleAndIcon {
-      display: flex;
-
-      .title {
-        font-size: 20px;
-      }
-
-      .infoIcon {
-        margin-left: 20px;
-        font-size: 20px;
-        color: $yellow;
-      }
+    .lifeComponent__title {
+      margin-left: 5%;
+      font-size: 20px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
     }
 
-    .score {
+    .lifeComponent__infoIcon {
+      margin-left: 20px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .lifeComponent__score {
       // margin-right: 16%;
       font-size: 20px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
     }
   }
 
-  .iconAndBar {
+  .lifeComponent__bottomElements {
     display: flex;
-    margin-top: 20px;
-  }
-    
-    
-  
-    //SLIDER STYLING BELOW HERE
-  
-    // Removes defult range input styling 
-    input[type=range] {
-      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-      // width: 100%; /* Specific width is required for Firefox. */
-      background: transparent; /* Otherwise white in Chrome */
-      overflow: hidden;
-    }
-  
-    .lifeComponentSlider {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #333;
-      margin-left: 10px;
-      // transform: translateY(2px);
-    }
-    
-    // Special styling for google chrome (the tube part of the slider)
-    input[type=range]::-webkit-slider-runnable-track {
-      cursor: pointer;
-      height: 20px;
-      background: #dadada;
-    }
-  
-    // All the same stuff for firefox
-    input[type="range"]::-moz-range-track {
-      //fill in when aproved the chome styling
-    }
-  
-    // Special styling for google chrome (the ball part of the slider)
-    input[type=range]::-webkit-slider-thumb {
-      box-sizing: border-box;
-      -webkit-appearance: none;
-      cursor: pointer;
-      background-color: rgb(209, 209, 209);
-      height: 20px;
-      width: 20px;
-      border-radius: 50px;
-      box-shadow: -500px 0 0 490px $submit-green;
-      border-radius: 10px;
-      border: 1px solid #000000;
-      margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-    }
-  
-    // All the same stuff for firefox
-    input[type="range"]::-moz-range-thumb {
-      //fill in when aproved the chome styling
+
+    .lifeComponent__icons {
+      color: $colour-2;
     }
   }
-  
-  
-  
-  
+
+  //SLIDER STYLING BELOW HERE
+
+  // Removes defult range input styling
+  input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    // width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    overflow: hidden;
+  }
+
+  .lifeComponentSlider {
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 0px 10px 0px $colour-2;
+    // transform: translateY(2px);
+  }
+
+  // Special styling for google chrome (the tube part of the slider)
+  input[type="range"]::-webkit-slider-runnable-track {
+    cursor: pointer;
+    height: 20px;
+    background-color: hsla(168, 100%, 50%, 0.5);
+  }
+
+  // All the same stuff for firefox
+  input[type="range"]::-moz-range-track {
+    //fill in when aproved the chome styling
+  }
+
+  // Special styling for google chrome (the ball part of the slider)
+  input[type="range"]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: rgb(209, 209, 209);
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    box-shadow: -500px 0 0 490px $colour-2;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+
+  // All the same stuff for firefox
+  input[type="range"]::-moz-range-thumb {
+    //fill in when aproved the chome styling
+  }
+}

@@ -22,14 +22,15 @@
     margin-top: -3.3rem;
     border: none;
     border-radius: 50%;
-    background: $color-green-light;
+    background: $colour-1;
     text-align: center;
     display: inline-block;
     font-size: 2.5rem;
     color: $white;
 
     &:hover,
-    &:active, &:focus {
+    &:active,
+    &:focus {
       cursor: pointer;
       outline: none;
       border: none;
