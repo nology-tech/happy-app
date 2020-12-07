@@ -3,7 +3,6 @@ import styles from "./Task.module.scss";
 import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 
 const Task = () => {
 
@@ -33,7 +32,6 @@ const addTaskToDatabase = (task) => {
     <NavBar />
 
       <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
-      {/* <Footer /> */}
 
     </section>
   );
