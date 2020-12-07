@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+
+.graphContainer {
+  background-color: $color-primary;
+  text-align: center;
+
+  border-radius: 50%;
+ 
+}
+@media screen and (min-width: 320px) {
+  .graphContainer {
+  
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .graphContainer {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+  }
+}
+
+

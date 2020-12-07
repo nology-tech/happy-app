@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import styles from "./App.module.scss";
-// import LifeComponent from "./components/LifeComponent";
+import LifeComponent from "./components/LifeComponent";
 import "./data/fa-library";
 import Suggestion from "./components/Suggestion"
 import './App.css';
 import Graph from './components/Graph';
 import TaskInput from "./components/TaskInput";
-// import TaskInput from "./components/TaskInput";
 import Navbar from './components/Navbar';
 import AllTasks from "./components/AllTasks";
 
-import NavItem from "./components/NavItem";
+// import NavItem from "./components/NavItem";
 import Routes from "./containers/Routes";
 import AverageScore from "./components/AverageScore"
 import firebase, { googleProvider } from './firebase';
@@ -50,8 +49,8 @@ const App = () => {
   return (
     <div className={styles.body}>
       <Navbar text="Happiness Scores"/>
-      <Suggestion text="Relations with your parents, siblings, spouse, close friends."       isClicked={true}/>
-      <Graph />
+    <Suggestion text="Relations with your parents, siblings, spouse, close friends."  isClicked={true}/> 
+
       <TaskInput/>
       <AverageScore />
         <Graph />
@@ -62,8 +61,8 @@ const App = () => {
         <AllTasks />
       </div>
       <div>
-        <NavItem />
-        <Routes />
+        {/*<NavItem />*/}
+         <Routes />
 
       </div>
     </div>
