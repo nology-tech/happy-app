@@ -6,16 +6,11 @@
   margin: auto;
   background-color: transparent;
 
-  .roundLogo {
-    height: $height-logo-img;
-    width: $width-logo-img;
-    margin: auto $margin-logo-img;
-  }
   .textLogo {
     color: $text-colour-primary;
   }
   .personLogo {
-    height: $height-logo-img * 2;
+    height: $height-logo-img;
     width: $width-logo-img;
     margin: auto $margin-logo-img;
   }
