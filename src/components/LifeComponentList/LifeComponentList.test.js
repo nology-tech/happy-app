@@ -4,6 +4,11 @@ import LifeComponentList from "./LifeComponentList";
 
 describe("LifeComponentList tests", () => {
   it("should render", () => {
-    expect(render(<LifeComponentList />)).toBeTruthy();
+    const scores = [
+      {
+        text: "Life component",
+        score: "2", 
+      }];
+    expect(render(<LifeComponentList scores={scores} />)).toBeTruthy();
   });
 });

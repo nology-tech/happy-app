@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import personLogo from '../../assets/images/person-logo.png';
+
+import NavItem from "../NavItem"
 
 const Navbar = (props) => {
   const { text, signOut } = props; 
