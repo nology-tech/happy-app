@@ -6,8 +6,6 @@ import Routes from "./containers/Routes";
 import { navigate } from "@reach/router";
 import Navbar from "./components/Navbar";
 
-import Navbar from "./components/Navbar"
-
 
 import firebase, { googleProvider } from "./firebase";
 

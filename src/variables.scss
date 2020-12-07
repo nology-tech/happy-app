@@ -23,12 +23,9 @@ $white: #fdfdfd; // Off-white
 $black: #1d1b1b; // off-black
 
 // App Gradient
-$gradient: linear-gradient(
-  0deg,
-  rgba(2, 0, 36, 1) 0%,
-  rgba(66, 0, 77, 1) 35%,
-  rgba(45, 5, 139, 1) 100%
-);
+// $gradient: linear-gradient(0deg, rgb(58, 0, 70) 0%, rgb(31, 0, 80) 72%);
+
+$gradient: linear-gradient(to top, #001544, #032056, #052b69, #05377d, #014491);
 
 // Colours added by Josh from wireframes
 $background-blue1: #117ba2;
