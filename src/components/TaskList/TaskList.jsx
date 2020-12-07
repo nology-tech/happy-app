@@ -1,57 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./TaskList.module.scss";
-import Task from "../Task";
-import { firestore } from "../../firebase";
+import TaskInput from "../TaskInput";
+import IndivualTask from "../IndividualTask";
 
-const TaskList = ({tasks, setTasks}) => {
-  // const [taskScore, setTaskScore] = useState(0);
-  // const [ tasks, setTasks] = useState([]);
+const TaskList = (props) => {
 
-  const fetchTasks = () => {
-    firestore
-      .collection("users")
-      .doc("testuser")
-      // .where("isCompleted", "==", false)
-      .get()
-      .then((querySnapshot) => {
-          querySnapshot.docs.map((doc) => doc.data());
-          setTasks(tasks)
-          })
-      .catch((error) => console.log("Error getting documents: ", error));
-    };
-    
-    useEffect(() => {
-      fetchTasks();
-    }, []);
+  const {addTask, tasks, addTaskToDatabase} = props;
 
-  const getTasksJsx = (tasks) => (
-    <div className={styles.task} key={tasks.id} >
-      <Task tasks={tasks}/>
+  const getTaskJsx = (task) => (
+    <div className={styles.task} key={task.id}>
+      <IndivualTask taskText={task.text}/>
     </div>
-);
-
-
-  // function increment() {
-  //   setTaskScore(prevTaskScore => prevTaskScore + 1);
-  // }
-  // function decrement() {
-  //   setTaskScore(prevTaskScore => prevTaskScore - 1);
-  // }
-
-  // function handleToggle(event) {
-  //   if (event.target.checked) {
-  //     // TO DO: Add a function to update state -> isCompleted: true and save completed task to another dataset?
-  //     increment();
-  //       alert(`Congratulations for finishing your task!\nUpdate your life component slider to show your happiness\nYou have completed ${taskScore + 1} tasks`);
-  //   } else {
-  //     decrement();
-  //   };
-  // };
-
+  );
   return (
-    <div className={styles.displayTasks}>
-      {tasks.map(getTasksJsx)}
-    </div>
+    <>
+      <TaskInput  addTaskToDatabase={addTaskToDatabase}  addTask={addTask}/>
+      <section className={styles.displayTasks}>{tasks.map(getTaskJsx)}</section>
+    </>
+    
   );
 };
 

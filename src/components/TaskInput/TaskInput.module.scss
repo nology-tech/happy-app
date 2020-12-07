@@ -3,17 +3,15 @@
     display: flex;
     border-radius: 50px;
     border: none;
-    background-color: $darker-blue;
-    width: 95%;
-    box-shadow: 5px 4px 6px lighten($black, 4);
-    margin: 10px auto;
+    width: 90%;
+    margin: 40px auto;
+    background: #034884;
     .input {
         position: relative;
-        margin-top: 0.3%;
         width: 100%;
-        background: $darker-blue;
         border-radius: 50px;
         height: 5vh;
+        background: transparent;
         padding: 0% 2%;
         color: white;
         font-size: $font-size-components/2;
@@ -31,8 +29,8 @@
     }
     .submitButton {
         height: 5vh;
-        width: 10%;
-        background: repeating-radial-gradient(circle at -60% -40%, $background-purple 10%, $color-green-light 60px, $submit-green);
+        width: 5%;
+        background: $colour-2;
         border-radius: 50px;
         border: none;
         font-size: $font-size-components/1.6;

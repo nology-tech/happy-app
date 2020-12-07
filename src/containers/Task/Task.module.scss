@@ -1,3 +1,12 @@
-.text {
-  text-align: center;
+@import "../../variables";
+.tasksContent {
+    background: linear-gradient(to bottom, $background-gradient-1, $background-gradient-2);
+    padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+    height: 100vh;
+}
+
+.logo {
+    margin-bottom: 30px;
 }

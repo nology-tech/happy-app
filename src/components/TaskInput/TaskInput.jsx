@@ -3,80 +3,54 @@ import styles from "./TaskInput.module.scss";
 
 
 const emptyTask = {
-  name: "",
-  // lifeComponent: [],
-  isCompleted: false
+  id: "",
+  text: "",
 };
 
+const TaskInput = ({addTask, addTaskToDatabase}) => {
 
-const TaskInput = (props) => {
-  // const [ idValue, setIdValue ] = useState(1)
-  const [tasks, setTasks] = useState(emptyTask);
-  const { addTask } = props;
-
-  const {
-    name,
-    isCompleted
-  } = tasks;
+const [inputtedTasktext, setInputttedTasktext] = useState("");
+const [idCount, setIdCount] = useState(1);
+const [task, setTask] = useState(emptyTask)
 
 
-  const handleChange = ({ target }) => {
-    let name = target.name;
-    setTasks({ ...tasks, [name]: target.value})
-  };
+const handleChange = (e) => {
+  setInputttedTasktext(e.target.value);
+  setTask({
+    id: idCount,
+    text: inputtedTasktext,
+  });
+}
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const cleanedTask = CleanFormValues(tasks);
-    console.log(cleanedTask);
-    addTask(cleanedTask);
-    alert("Task added, Good Job!!!!");
-    clearForm();
-  }
-    // setIdValue(prevState => prevState + 1);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setIdCount(idCount + 1);
+  addTask({
+    id: idCount,
+    text: inputtedTasktext
+  });
+  console.log(task);
+  addTaskToDatabase(task);
+  setInputttedTasktext("");
+};
 
-  const CleanFormValues = (formValues) => {
-    formValues.isCompleted = false;
-    return formValues;
-  }
-
-  const clearForm = () => {
-    setTasks(emptyTask);
-  };
-
-  
-  // const checkFormCompleted = () => {
-  //   let isCompleted = true;
-  //   for (const field in tasks) {
-  //     if (tasks[field] === "") isCompleted = false;
-  //   }
-  //   return isCompleted;
-  // };
-
-
-
-  return (  
-      <div>
-      <form className={styles.taskInput} onSubmit={handleSubmit}>
-        <input 
-        className={styles.input} 
-        type="text" 
-        name="name"
-        placeholder="Set task here..." 
-        autofocus={true}
-        onChange={handleChange} 
-        required
-        />
-        <input 
-          type="submit" 
-          value="+"
-          className={`${styles.submitButton}`}
-          onChange={handleChange}
-          />
-        </form>
-      </div>
-    
+  return (
+    <>
+      <form className={styles.taskInput} onSubmit={handleSubmit} action="">
+      <input 
+      className={styles.input} 
+      onChange={handleChange}
+      type="text" 
+      name="" 
+      placeholder="Set task here..." 
+      id=""
+      required
+      value={inputtedTasktext}/>
+      <button type="submit" className={`${styles.submitButton}`}>+</button>
+    </form>
+    </>
   );
+
 };
 
 export default TaskInput;
