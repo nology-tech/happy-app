@@ -2,13 +2,9 @@ import React from "react";
 import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
 
-<<<<<<< HEAD
-const NavItem = () => {
-=======
 
 const NavItem = (props) => {
   const { setOpenMenu, signOut } = props
->>>>>>> b3e435d3e3956a3f3ce64bf2121e6404111eccf0
   return (
     <div className={styles.navBar}>
       <ul className={styles.navList}>

@@ -49,11 +49,7 @@ useEffect(() => {
   return (
     <div className={styles.body}>
       <Routes user={user}
-<<<<<<< HEAD
-        signIn = {signIn}
-=======
        signIn = {signIn}
->>>>>>> b3e435d3e3956a3f3ce64bf2121e6404111eccf0
       />
       <Navbar signOut={signOut}/>
     </div>
