@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-$default-font-family: Roboto,
-'Open Sans',
-sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+$default-font-family: Roboto, "Open Sans", sans-serif;
 $font-size-header: 2rem;
 $font-size-components: 1.8rem;
 $font-size-nav: 1.3rem;
@@ -14,60 +12,64 @@ $width-logo-img: 25px;
 // updated variable names
 
 $background-gradient-1: #003333;
-$background-gradient-2: #0057BC;
-$colour-1: #FF00CC;
-$colour-2: #00FFCC;
-$text-colour-primary: #CCCCCC;
+$background-gradient-2: #0057bc;
+$colour-1: #ff00cc;
+$colour-2: #00ffcc;
+$colour-3: #a825c7;
+$text-colour-primary: #cccccc;
 $text-colour-secondary: #666666;
-$tick-colour: #FFFFFF;
-
-
-// Colours added by Josh from wireframes
-$background-blue1:#117BA2;
-$background-blue2: #0057BC;
-$darker-blue: #003399;
-$submit-green: #99CC66;
-$grey:#999999;
-$yellow: #FFCC33;
-
-
+$tick-colour: #ffffff;
+$white: #fdfdfd; // Off-white
+$black: #1d1b1b; // off-black
 
 // App Gradient
-$gradient: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(3,159,220,1) 0%, rgba(4,141,208,1) 15%, rgba(5,111,189,1) 30%, rgba(5,101,182,1) 46%, rgba(8,42,143,1) 100%, rgba(7,60,155,1) 100%, rgba(9,19,128,1) 100%, rgba(9,9,121,1) 100%);
+$gradient: linear-gradient(
+  0deg,
+  rgba(2, 0, 36, 1) 0%,
+  rgba(66, 0, 77, 1) 35%,
+  rgba(45, 5, 139, 1) 100%
+);
+
+// Colours added by Josh from wireframes
+$background-blue1: #117ba2;
+$background-blue2: #0057bc;
+$darker-blue: #003399;
+$submit-green: #99cc66;
+$grey: #999999;
+$yellow: #ffcc33;
 
 // Initial colours
 $background-purple: #5d116d;
-$color-blue-light: #1D85C2;
-$color-blue-bright: #1DB7C2;
-$color-fire: #C21D1D;
-$color-primary: #4A0FD3;
-$color-orange: #EB6121;
-$color-red: #EB213C;
-$color-neon: #21EB3C;
-$color-bluesky: #21EBEB;
-$color-violet: #D421EB;
-$color-primary-light: #9585EE;
-$color-primary-dark: #000D80;
-$color-secondary-light: #E65A76;
-$color-secondary-dark: #BB4F65;
-$color-tertiary-light: #F309F3;
-$color-tertiary-dark: #8F058F;
-$color-grey-light-1: #C0BFBF;
-$color-grey-light-2: #C5BABA;
-$color-grey-dark: #665D5D;
-$color-grey-dark-2: #796F6F;
-$color-grey-dark-3: #4E4646;
+$color-blue-light: #1d85c2;
+$color-blue-bright: #1db7c2;
+$color-fire: #c21d1d;
+$color-primary: #4a0fd3;
+$color-orange: #eb6121;
+$color-red: #eb213c;
+$color-neon: #21eb3c;
+$color-bluesky: #21ebeb;
+$color-violet: #d421eb;
+$color-primary-light: #9585ee;
+$color-primary-dark: #000d80;
+$color-secondary-light: #e65a76;
+$color-secondary-dark: #bb4f65;
+$color-tertiary-light: #f309f3;
+$color-tertiary-dark: #8f058f;
+$color-grey-light-1: #c0bfbf;
+$color-grey-light-2: #c5baba;
+$color-grey-dark: #665d5d;
+$color-grey-dark-2: #796f6f;
+$color-grey-dark-3: #4e4646;
 $color-green-light: #1eca1e;
-$color-green-medium: #095E4C;
-$color-green-strong: #0F4440;
-$color-yellow:#F1B22D;
-$color-yellow-dark: #88610E;
-$header-yellow-text: #F1B32C;
-$button-inactive: #0C5B7F;
+$color-green-medium: #095e4c;
+$color-green-strong: #0f4440;
+$color-yellow: #f1b22d;
+$color-yellow-dark: #88610e;
+$header-yellow-text: #f1b32c;
+$button-inactive: #0c5b7f;
 $navy-blue: #074783;
-$hot-spot-color: #FF0000;
-$white: #dad4d4; // Off-white
-$black: #1D1B1B; // off-black
+$hot-spot-color: #ff0000;
+
 // Fonts
 // Whilst html is set to 10px, default font size variable set at 1.6rem will mean that everything to this variable will be 16px
 $default-font-size: 1.6rem;
@@ -77,19 +79,21 @@ $comp-button-height: 50px;
 $button-border-radius: 15px;
 // Placeholder Selectors for use with @extend directive
 %button {
-    width: 100px;
-    height: 50px;
-    border-radius: $button-border-radius;
-    &:focus {
-        outline-style: none;
-    }
+  width: 100px;
+  height: 50px;
+  border-radius: $button-border-radius;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    outline: none;
+  }
 }
 
 %clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-

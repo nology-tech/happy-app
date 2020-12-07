@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .logoContainer {
   display: flex;
@@ -12,11 +12,11 @@
     margin: auto $margin-logo-img;
   }
   .textLogo {
-    color: $header-yellow-text;
+    color: $text-colour-primary;
   }
   .personLogo {
     height: $height-logo-img * 2;
     width: $width-logo-img;
-    margin: auto $margin-logo-img; 
+    margin: auto $margin-logo-img;
   }
 }

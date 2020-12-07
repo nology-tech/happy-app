@@ -4,6 +4,8 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Routes from "./containers/Routes";
 
+import Navbar from "./components/Navbar"
+
 
 import firebase from './firebase';
 
@@ -36,6 +38,7 @@ useEffect(() => {
   
   return (
     <div className={styles.body}>
+      <Navbar />
       <Routes user={user}/>
     </div>
   ); 
