@@ -2,31 +2,30 @@
 
 .lifeComponent {
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
+  padding: 10px;
 
   .lifeComponent__topElements {
     display: flex;
     justify-content: space-between;
+    margin: 20px 0;
+    margin-left: 37px;
 
     .lifeComponent__title {
-      margin-left: 5%;
       font-size: 20px;
       color: #fff;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
+      font-weight: 200;
     }
 
     .lifeComponent__infoIcon {
       margin-left: 20px;
-      font-size: 20px;
+      font-size: 15px;
       color: #fff;
     }
 
     .lifeComponent__score {
-      // margin-right: 16%;
       font-size: 20px;
       color: #fff;
-      font-family: "Montserrat", sans-serif;
     }
   }
 
@@ -35,6 +34,8 @@
 
     .lifeComponent__icons {
       color: $colour-2;
+      margin-right: 20px;
+      opacity: 0.7;
     }
   }
 
@@ -51,8 +52,8 @@
   .lifeComponentSlider {
     width: 100%;
     border-radius: 10px;
-    margin-left: 10px;
-    box-shadow: 0px 0px 10px 0px $colour-2;
+    // margin-left: 10px;
+    // box-shadow: 0px 0px 10px 0px $colour-2;
     // transform: translateY(2px);
   }
 
