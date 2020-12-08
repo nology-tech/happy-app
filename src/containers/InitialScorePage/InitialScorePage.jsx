@@ -47,7 +47,7 @@ const InitialScorePage = () => {
       </p>
       <hr />
       <LifeComponentList scores={scores} updateScore={updateScore} />
-      <Footer addScoreToDataBase={addScoreToDataBase} />
+      <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} />
     </section>
   );
 };

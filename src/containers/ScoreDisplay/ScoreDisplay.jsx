@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScoreDisplay.module.scss";
 
-import NavBar from "../../components/Navbar";
+// import NavBar from "../../components/Navbar";
 import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
 import { firestore } from "../../firebase";
 
 const ScoreDisplay = (props) => {
   const { user } = props;
-  const [scores, setScore] = useState({ lifeComponentScores: [] });
-
-  console.log(user);
+  const [scores, setScore] = useState([{ lifeComponentScores: [] }]);
 
   const getScores = () => {
     firestore
@@ -25,12 +23,10 @@ const ScoreDisplay = (props) => {
       .catch((err) => console.error(err));
   };
 
-  console.log(scores);
-
   useEffect(() => {
-    // if (user) {
-    getScores();
-    // }
+    if (user) {
+      getScores(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+    }
   }, [user]);
 
   const getComponents = scores.map((score) => {
@@ -47,7 +43,9 @@ const ScoreDisplay = (props) => {
   return (
     <section className={styles.scoreDisplay}>
       {/* <NavBar text="Happiness Scores" /> */}
-      <AverageScore />
+      <div className={styles.overallContainer}>
+        <AverageScore />
+      </div>
       {getComponents}
     </section>
   );

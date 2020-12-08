@@ -21,18 +21,22 @@ const LifeComponent = (props) => {
         <h2 className={styles.lifeComponent__title}>
           {lifeComponentNames}{" "}
           <span className={styles.lifeComponent__infoIcon}>
-            <FontAwesomeIcon
-              onClick={() => setIsClicked(!isClicked)}
-              icon={["fas", "info"]}
-            />
+            {isReadOnly ? (
+              ""
+            ) : (
+              <FontAwesomeIcon
+                onClick={() => setIsClicked(!isClicked)}
+                icon={["fas", "info"]}
+              />
+            )}
           </span>
         </h2>
         <p className={styles.lifeComponent__score}>{rangeValue}/10</p>
       </div>
 
       <div className={styles.lifeComponent__bottomElements}>
-        <span className={styles.lifeComponent__icons}>
-          <FontAwesomeIcon icon="search" />
+        <span>
+          <div className={styles.lifeComponent__circle}></div>
         </span>
         {isReadOnly ? (
           <input
@@ -49,11 +53,10 @@ const LifeComponent = (props) => {
             className={styles.lifeComponentSlider}
             type="range"
             value={rangeValue}
-            min="0"
+            min="1"
             max="10"
             step="1"
             onChange={handleChange}
-            required
           />
         )}
       </div>
