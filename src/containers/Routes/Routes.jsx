@@ -6,10 +6,10 @@ import AccountSettings from "../AccountSettings";
 import Home from "../Home";
 import Login from "../Login";
 import Register from "../Register";
-import Scores from "../Scores";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
 import InitialScorePage from "../InitialScorePage";
+import HappinessGraphPage from "../HappinessGraphPage";
 
 const Routes = (props) => {
   const { signIn } = props;
@@ -21,10 +21,10 @@ const Routes = (props) => {
       <Home path="/" />
       <Login path="login" signIn={signIn} />
       <Register path="register" />
-      <Scores path="scores" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
       <InitialScorePage path="setscores" />
+      <HappinessGraphPage path="happinessgraph" />
     </Router>
   );
 };
