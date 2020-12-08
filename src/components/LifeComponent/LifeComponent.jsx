@@ -10,6 +10,7 @@ const LifeComponent = (props) => {
     lifeComponentSuggestion,
     handleChange,
     rangeValue,
+    isReadOnly,
   } = props;
 
   const [isClicked, setIsClicked] = useState(false);
@@ -33,15 +34,28 @@ const LifeComponent = (props) => {
         <span className={styles.lifeComponent__icons}>
           <FontAwesomeIcon icon="search" />
         </span>
-        <input
-          className={styles.lifeComponentSlider}
-          type="range"
-          value={rangeValue}
-          min="0"
-          max="10"
-          step="1"
-          onChange={handleChange}
-        />
+        {isReadOnly ? (
+          <input
+            className={styles.lifeComponentSlider}
+            type="range"
+            value={rangeValue}
+            min="0"
+            max="10"
+            step="1"
+            readOnly
+          />
+        ) : (
+          <input
+            className={styles.lifeComponentSlider}
+            type="range"
+            value={rangeValue}
+            min="0"
+            max="10"
+            step="1"
+            onChange={handleChange}
+            required
+          />
+        )}
       </div>
       <Suggestion
         isClicked={isClicked}

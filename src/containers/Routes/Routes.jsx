@@ -8,12 +8,13 @@ import Login from "../Login";
 import Register from "../Register";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
-import InitialScorePage from '../InitialScorePage';
-import HappinessGraphPage from '../HappinessGraphPage';
+import InitialScorePage from "../InitialScorePage";
+import HappinessGraphPage from "../HappinessGraphPage";
+import ScoreDisplay from "../ScoreDisplay";
 
-
+const Routes = () => {
   return (
-   <Router>
+    <Router>
       <About path="about" />
       <AccountSettings path="accountsettings" />
       <Home path="/" />
@@ -21,9 +22,10 @@ import HappinessGraphPage from '../HappinessGraphPage';
       <Register path="register" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
-      <InitialScorePage path='initialscorepage'/>
-      <HappinessGraphPage path='happinessgraph' />
-   </Router>
+      <InitialScorePage path="initialscorepage" />
+      <HappinessGraphPage path="happinessgraph" />
+      <ScoreDisplay path="scoredisplay" />
+    </Router>
   );
 };
 
