@@ -1,8 +1,8 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 
 .graphContainer {
-  background-color: rgb(0, 255, 115);
+  background-color: $colour-2;
   text-align: center;
 
   position: relative;

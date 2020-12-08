@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 
 .iconsDiv {
@@ -9,8 +9,6 @@
   margin: auto;
   z-index: 1;
 
-
-  
 }
 
 
@@ -58,10 +56,14 @@
     
     &:hover {
       cursor: pointer;
-      color: rgb(0, 110, 255);
+      color: $color-primary;
     }
   }
 }
+
+
+  
+
 @media screen and (min-width: 320px) {
  
   

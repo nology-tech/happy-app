@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Graph.module.scss";
-import RadarChart from 'react-svg-radar-chart';
-import 'react-svg-radar-chart/build/css/index.css';
-import GraphIcons from '../GraphIcons'
+import RadarChart from "react-svg-radar-chart";
+import "react-svg-radar-chart/build/css/index.css";
+import GraphIcons from "../GraphIcons";
 
 
 const Graph = () => {
@@ -45,28 +45,28 @@ const defaultOptions = {
         purpose: 0.8,
         spirituality: 0.4, 
       },
-      meta: {color:'#8007f1'}
+      meta: {color: "#4a0fd3"}
 
     },
 
   ];
 
   const captions = {
-        generalHappiness: 'General Happiness',
-        finances:'Finances',
-        career:  'Career',
-        loveLife: 'Love Life',
-        family: 'Family',
-        friends: 'Friends',
-        funAndRecreation: 'Fun and Recreation',
-        physicalHealth: 'Physical Health',
-        mentalHealth: 'Mental Health',
-        contributionToSociety: 'Contribution to Society',
-        selfWorth: 'Selfworth',
-        personalDevelopment: 'Personal Development',
-        physicalEnvironment: 'Physical Environment',
-        purpose: 'Purpose',
-        spirituality: 'Spirituality',
+        generalHappiness: "General Happiness",
+        finances:"Finances",
+        career:  "Career",
+        loveLife: "Love Life",
+        family: "Family",
+        friends: "Friends",
+        funAndRecreation: "Fun and Recreation",
+        physicalHealth: "Physical Health",
+        mentalHealth: "Mental Health",
+        contributionToSociety: "Contribution to Society",
+        selfWorth: "Selfworth",
+        personalDevelopment: "Personal Development",
+        physicalEnvironment: "Physical Environment",
+        purpose: "Purpose",
+        spirituality: "Spirituality",
   };
   useEffect(() => {
     let size;

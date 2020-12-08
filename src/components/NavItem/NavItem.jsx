@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 const NavItem = (props) => {
   const { setOpenMenu, signOut } = props
   return (
@@ -16,8 +18,11 @@ const NavItem = (props) => {
           <li>
             Home
           </li>
-        </Link>  
-        <Link to="scores">
+        </Link> 
+        <Link to='happinessgraph'>
+          <li>Happiness Graph</li>
+        </Link> 
+        <Link to="initialscorepage">
           <li>
             My Scores
           </li>
