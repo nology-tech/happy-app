@@ -8,23 +8,27 @@ import Login from "../Login";
 import Register from "../Register";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
-import InitialScorePage from '../InitialScorePage';
-import HappinessGraphPage from '../HappinessGraphPage';
+import InitialScorePage from "../InitialScorePage";
+import HappinessGraphPage from "../HappinessGraphPage";
+import PrivateRoutes from "../../containers/PrivateRoutes";
 
+const Routes = (props) => {
+  const { signIn, user } = props;
 
-const Routes = () => {
   return (
-   <Router>
-      <About path="about" />
-      <AccountSettings path="accountsettings" />
+    <Router>
       <Home path="/" />
-      <Login path="login" />
+      <About path="about" />
+      <Login path="login" signIn={signIn} />
       <Register path="register" />
-      <Task path="task" />
+      <PrivateRoutes path="/" user={user}>
+        <Task path="task" />
+        <InitialScorePage path="initialscorepage" />
+        <HappinessGraphPage path="happinessgraph" />
+        <AccountSettings path="accountsettings" />
+      </PrivateRoutes>
       <TermsConditions path="termsconditions" />
-      <InitialScorePage path='initialscorepage'/>
-      <HappinessGraphPage path='happinessgraph' />
-   </Router>
+    </Router>
   );
 };
 
