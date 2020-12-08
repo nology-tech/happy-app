@@ -62,7 +62,7 @@ const defaultOptions = {
         physicalHealth: "Physical Health",
         mentalHealth: "Mental Health",
         contributionToSociety: "Contribution to Society",
-        selfWorth: "Selfworth",
+        selfWorth: "Self Worth",
         personalDevelopment: "Personal Development",
         physicalEnvironment: "Physical Environment",
         purpose: "Purpose",
