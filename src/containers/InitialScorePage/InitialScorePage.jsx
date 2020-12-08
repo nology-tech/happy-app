@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./InitialScorePage.module.scss";
 import LifeComponentList from "../../components/LifeComponentList";
 import Footer from "../../components/Footer";
@@ -29,9 +29,12 @@ const InitialScorePage = () => {
     firestore
       .collection("users")
       .doc("Ezio") // Change this to UID of user, evenually
-      .set({
+      .collection("scores")
+      .add({
         lifeComponentScores,
+        date: new Date(),
       })
+
       .then(() => {
         console.log("Document successfully written!");
       })

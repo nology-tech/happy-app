@@ -9,13 +9,13 @@ import Register from "../Register";
 import Scores from "../Scores";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
-import InitialScorePage from "../InitialScorePage"
+import InitialScorePage from "../InitialScorePage";
 
 const Routes = (props) => {
-  const { signIn } = props
+  const { signIn } = props;
 
   return (
-   <Router>
+    <Router>
       <About path="about" />
       <AccountSettings path="accountsettings" />
       <Home path="/" />
@@ -24,8 +24,8 @@ const Routes = (props) => {
       <Scores path="scores" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
-      <InitialScorePage path="initialscorepage"/>
-   </Router> 
+      <InitialScorePage path="setscores" />
+    </Router>
   );
 };
 
