@@ -6,13 +6,11 @@ import AccountSettings from "../AccountSettings";
 import Home from "../Home";
 import Login from "../Login";
 import Register from "../Register";
-import Scores from "../Scores";
 import Task from "../Task";
 import TermsConditions from "../TermsConditions";
-import ScoreDisplay from "../ScoreDisplay"
+import InitialScorePage from '../InitialScorePage';
+import HappinessGraphPage from '../HappinessGraphPage';
 
-const Routes = (props) => {
-  const { user } = props;
 
   return (
    <Router>
@@ -21,10 +19,10 @@ const Routes = (props) => {
       <Home path="/" />
       <Login path="login" />
       <Register path="register" />
-      <Scores path="scores" />
-      <ScoreDisplay path="scoreDisplay" user={user} />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
+      <InitialScorePage path='initialscorepage'/>
+      <HappinessGraphPage path='happinessgraph' />
    </Router>
   );
 };

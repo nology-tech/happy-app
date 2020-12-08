@@ -1,126 +1,90 @@
 @import "../../variables.scss";
 
-.container {
+.lifeComponent {
+  width: 90%;
+  margin: 0 auto;
+
+  .lifeComponent__topElements {
     display: flex;
-    flex-direction: column;
-    width: 80vw;
-    margin: $base-margin * 2 auto;
+    justify-content: space-between;
+    margin: 20px 0;
+    margin-left: 37px;
 
-    .titleAndScore {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .title {
-        text-align: left;
-        color: $text-colour-primary;
-        margin-left: $base-margin * 4.5;
-        display: inline-block;
-        font-size: $font-size-components * 0.7;
-      }
-    
-      .score {
-        display: inline-block;
-        align-self: right;
-        font-size: $font-size-components * 0.7;
-        color: $text-colour-primary;
-        margin-right: $base-margin * 2;
-      }
-    }
-  
-    //icon
-    span {
-      font-size: 10px;
-      margin-left: $base-margin * 2;
-      color: $text-colour-primary;
-      padding: 5px;
-      height: 10px;
-      width: 10px;
-      line-height: 10px;
-      box-sizing: border-box;
-      border: 2px solid $text-colour-secondary;
-      border-radius: 50%;
-      cursor:pointer;
+    .lifeComponent__title {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 200;
     }
 
-    .component {
-      height: 40px;
-      display: grid;
-      // background-color: red;
-      grid-template-columns: repeat(35, 1fr);
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-
-      .circle {
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        background-color: $tick-colour;
-      }
+    .lifeComponent__infoIcon {
+      margin-left: 20px;
+      font-size: 15px;
+      color: #fff;
     }
 
-    
-  
-    //SLIDER STYLING BELOW HERE
-  
-    // Removes defult range input styling 
-    input[type=range] {
-      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-      // width: 100%; /* Specific width is required for Firefox. */
-      background: transparent; /* Otherwise white in Chrome */
-      overflow: hidden;
-      outline: none;
-    }
-  
-    .lifeComponentSlider {
-      width: 98%;
-      border-radius: 10px; 
-      grid-column: 2 / -1;        
-    }
-    
-    // Special styling for google chrome (the tube part of the slider)
-    input[type=range]::-webkit-slider-runnable-track {
-      cursor: pointer;
-      height: 20px;
-      background: rgba($colour-2, 0.5);
-    }
-  
-    // All the same stuff for firefox
-    input[type="range"]::-moz-range-track {
-      //fill in when aproved the chome styling
-    }
-  
-    // Special styling for google chrome (the ball part of the slider)
-    input[type=range]::-webkit-slider-thumb {
-      // box-sizing: border-box;
-      -webkit-appearance: none;
-      cursor: pointer;
-      background-color: rgb(209, 209, 209);
-      height: 20px;
-      width: 20px;
-      box-shadow: -2000px 0 0 1990px $colour-2;
-      border-radius: 10px;
-      border: 1px solid #000000;
-      margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-    }
-
-    
-  
-    // All the same stuff for firefox
-    input[type="range"]::-moz-range-thumb {
-      //fill in when aproved the chome styling
+    .lifeComponent__score {
+      font-size: 20px;
+      color: #fff;
     }
   }
-  
-  
-  @media only screen and (max-width: 500px) {
-      .title {        
-        font-size: $font-size-components * 0.4;
-        margin-bottom: $base-margin *0.5;
-      }
 
-      
+  .lifeComponent__bottomElements {
+    display: flex;
+
+    .lifeComponent__icons {
+      color: $colour-2;
+      margin-right: 20px;
+      opacity: 0.7;
+    }
   }
-  
-  
+
+  //SLIDER STYLING BELOW HERE
+
+  // Removes defult range input styling
+  input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    // width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    overflow: hidden;
+  }
+
+  .lifeComponentSlider {
+    width: 100%;
+    border-radius: 10px;
+    // margin-left: 10px;
+    // box-shadow: 0px 0px 10px 0px $colour-2;
+    // transform: translateY(2px);
+  }
+
+  // Special styling for google chrome (the tube part of the slider)
+  input[type="range"]::-webkit-slider-runnable-track {
+    cursor: pointer;
+    height: 20px;
+    background-color: hsla(168, 100%, 50%, 0.5);
+  }
+
+  // All the same stuff for firefox
+  input[type="range"]::-moz-range-track {
+    //fill in when aproved the chome styling
+  }
+
+  // Special styling for google chrome (the ball part of the slider)
+  input[type="range"]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: rgb(209, 209, 209);
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    box-shadow: -500px 0 0 490px $colour-2;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+
+  // All the same stuff for firefox
+  input[type="range"]::-moz-range-thumb {
+    //fill in when aproved the chome styling
+  }
+}
