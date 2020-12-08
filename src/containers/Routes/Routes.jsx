@@ -12,17 +12,19 @@ import InitialScorePage from "../InitialScorePage";
 import HappinessGraphPage from "../HappinessGraphPage";
 import ScoreDisplay from "../ScoreDisplay";
 
-const Routes = () => {
+const Routes = (props) => {
+  const { signIn } = props;
+
   return (
     <Router>
       <About path="about" />
       <AccountSettings path="accountsettings" />
       <Home path="/" />
-      <Login path="login" />
+      <Login path="login" signIn={signIn} />
       <Register path="register" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />
-      <InitialScorePage path="initialscorepage" />
+      <InitialScorePage path="setscores" />
       <HappinessGraphPage path="happinessgraph" />
       <ScoreDisplay path="scoredisplay" />
     </Router>

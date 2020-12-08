@@ -29,9 +29,12 @@ const InitialScorePage = () => {
     firestore
       .collection("users")
       .doc("Ezio") // Change this to UID of user, evenually
-      .set({
+      .collection("scores")
+      .add({
         lifeComponentScores,
+        date: new Date(),
       })
+
       .then(() => {
         console.log("Document successfully written!");
       })
