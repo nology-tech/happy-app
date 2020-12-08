@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./InitialScorePage.module.scss";
 import LifeComponentList from "../../components/LifeComponentList";
 import Footer from "../../components/Footer";
