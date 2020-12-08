@@ -7,10 +7,11 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    left:0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 
     
         .navList {
@@ -54,3 +55,4 @@
     color: $color-orange;
     // border-top: 2px solid  $color-grey-dark-3;
 }
+

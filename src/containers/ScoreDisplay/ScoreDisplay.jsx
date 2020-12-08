@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScoreDisplay.module.scss";
-import components from "../../data/data";
 
 import NavBar from "../../components/Navbar";
 import AverageScore from "../../components/AverageScore";
@@ -10,22 +9,24 @@ import { firestore } from "../../firebase";
 
 const ScoreDisplay = (props) => {
   const { user } = props;
-  const [scores, setScore] = useState([]);
+  const [scores, setScore] = useState({lifeComponentScores: []});
   
+  console.log(user);
+
   const getScores = () => {
     firestore
-      .collection("users")    
+      .collection("users") 
+      .doc("Ezio")
       .get()
-      .then((lifeComponentScores) => {
-        const score = lifeComponentScores.docs.map((doc) => doc.data());
+      .then((Ezio) => {
+        const score = Ezio.data();
+        console.log((score.scores));
         setScore(score);
       })
       .catch((err) => console.error(err));
   };
 
-  console.log(scores);
-  // console.log((scores[0]).lifeComponentScores);
-  console.log((scores[0]));
+  console.log((scores.lifeComponentScores));
 
   useEffect(() => {
     if (user) { 
@@ -33,8 +34,8 @@ const ScoreDisplay = (props) => {
     }
   }, [user]);
 
-    const getComponents = scores.map((score) => {
-      return <LifeComponent isReadOnly score={score.name} score={score} key={score.id}/>     
+    const getComponents = scores.lifeComponentScores.map((score) => {
+      return <LifeComponent isReadOnly name={score.name} score={score.score} key={score.id}/>     
     })
 
   return (
