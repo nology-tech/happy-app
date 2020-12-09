@@ -1,5 +1,13 @@
 @import "../../variables.scss";
 
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .footer {
   min-width: 100vw;
   height: 10vh;
@@ -12,8 +20,6 @@
   gap: none;
   align-items: center;
   border-radius: 50%/25px 25px 0 0;
-  // position: absolute;
-  // bottom: 0;
   color: $white;
   margin-top: 50px;
 
