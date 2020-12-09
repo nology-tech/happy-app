@@ -1,7 +1,14 @@
 @import "../../variables.scss";
-.navBar {
-  // background: linear-gradient(to right, $color-blue-light 16%, $background-blue2 84%, rgba($color-primary-dark, 0.8) 98%);
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navBar {
+  z-index: 2;
   background: $gradient;
   width: 60vw;
   height: 100vh;
@@ -50,5 +57,4 @@
 
 .signOutButton {
   color: $colour-1;
-  // border-top: 2px solid  $color-grey-dark-3;
 }
