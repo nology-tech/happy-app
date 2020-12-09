@@ -13,7 +13,7 @@ import HappinessGraphPage from "../HappinessGraphPage";
 import PrivateRoutes from "../../containers/PrivateRoutes";
 
 const Routes = (props) => {
-  const { signIn, user } = props;
+  const { signIn } = props;
 
   return (
     <Router>
@@ -21,7 +21,7 @@ const Routes = (props) => {
       <About path="about" />
       <Login path="login" signIn={signIn} />
       <Register path="register" />
-      <PrivateRoutes path="/" user={user}>
+      <PrivateRoutes path="/">
         <Task path="task" />
         <InitialScorePage path="initialscorepage" />
         <HappinessGraphPage path="happinessgraph" />
