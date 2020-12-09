@@ -1,5 +1,9 @@
-@import "../../variables";
+@import "../../variables.scss";
 
-.happinessPageDiv {
-    margin: 40px auto;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

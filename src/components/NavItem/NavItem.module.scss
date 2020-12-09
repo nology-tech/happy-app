@@ -1,6 +1,14 @@
 @import "../../variables.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .navBar {
-   z-index: 2;
+  z-index: 2;
   background: $gradient;
   width: 60vw;
   height: 100vh;
