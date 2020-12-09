@@ -4,10 +4,17 @@ import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
+const emptyTask = {
+  id: "",
+  text: "",
+};
+
+
 const Task = () => {
 
   const [tasks, settasks] = useState([]);
-
+  const [task, setTask] = useState(emptyTask);
+  
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
   settasks(newtasks);
@@ -29,9 +36,8 @@ const addTaskToDatabase = (task) => {
 
   return (
     <section className={styles.tasksContent}>
-    <NavBar />
 
-      <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
+      <TaskList setTasks={settasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
 
     </section>
   );

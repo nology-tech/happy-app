@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import styles from "./TaskInput.module.scss";
 
 
-const emptyTask = {
-  id: "",
-  text: "",
-};
 
-const TaskInput = ({addTask, addTaskToDatabase}) => {
+const TaskInput = ({task, setTask, addTask, addTaskToDatabase}) => {
 
 const [inputtedTasktext, setInputttedTasktext] = useState("");
 const [idCount, setIdCount] = useState(1);
-const [task, setTask] = useState(emptyTask)
+
 
 
 const handleChange = (e) => {

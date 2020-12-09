@@ -1,11 +1,20 @@
 import React from "react";
 import styles from "./IndividualTask.module.scss";
 
-const IndividualTask = ({taskText}) => {
+const IndividualTask = ({task, tasks, setTasks, taskText}) => {
+
+  const deleteTask = () => {
+    setTasks(tasks.filter((el) => el.id !== task.id)) 
+  }
   return (
     <>
       <p className={styles.task}>{taskText}
-      <input type="checkbox" className={styles.checkTaskComplete} /></p>
+      <div>
+        <button className={styles.checkTaskComplete}>checkbox</button>
+        <button onClick={deleteTask}>delete</button>
+      </div>
+      
+      </p>
     </>
   );
 };
