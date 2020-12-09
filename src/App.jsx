@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className={styles.body}>
       <Navbar signOut={signOut} />
-      <Routes signIn={signIn} />
+      <Routes user={user} signIn={signIn} />
     </div>
   );
 };
