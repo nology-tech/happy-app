@@ -1,10 +1,10 @@
 @import "../../variables.scss";
 
 .footer {
-  min-width: 100vw;
-  height: 10vh;
+  max-width: 100vw;
+  width: 100%;
+  height: 8vh;
   background: $gradient;
-  // opacity: 0.9;
   font-family: $default-font-family;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,7 @@
   align-items: center;
   border-radius: 50%/25px 25px 0 0;
   color: $white;
-  margin-top: 50px;
-  position: fixed;
   bottom: 0;
-  width: 100%;
-
-  // height: min-content;
 
   .submitButton {
     width: 4rem;
@@ -39,6 +34,20 @@
       cursor: pointer;
       outline: none;
       border: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    position: fixed;
+    margin-top: 11vh;
+
+    .submitButton {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      margin-top: -2rem;
     }
   }
 }
