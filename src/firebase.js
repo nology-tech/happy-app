@@ -2,6 +2,7 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBta08ifXtszI3nFkSCCFLW3CkiQ2xmqgc",
   authDomain: "happy-app-dbb3b.firebaseapp.com",
