@@ -23,7 +23,7 @@ const Routes = (props) => {
       <Register path="register" />
       <PrivateRoutes path="/">
         <Task path="task" />
-        <InitialScorePage path="initialscorepage" />
+        <InitialScorePage path="setscores" />
         <HappinessGraphPage path="happinessgraph" />
         <AccountSettings path="accountsettings" />
       </PrivateRoutes>
