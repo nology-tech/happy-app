@@ -22,11 +22,7 @@ const NavItem = (props) => {
           <li>Set Scores</li>
         </Link>
         <Link to="scoredisplay">
-          <li>Score Display</li>
-        </Link>
-        <Link to="scores">
           <li>My Scores</li>
-          <li>Home</li>
         </Link>
         <Link to="happinessgraph">
           <li>Happiness Graph</li>
