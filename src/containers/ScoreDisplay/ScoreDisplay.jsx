@@ -8,7 +8,7 @@ import { firestore } from "../../firebase";
 
 const ScoreDisplay = (props) => {
   const { user } = props;
-  const [scores, setScore] = useState([{ lifeComponentScores: [] }]);
+  const [scores, setScore] = useState(null);
 
   const getScores = () => {
     firestore
@@ -16,9 +16,11 @@ const ScoreDisplay = (props) => {
       .doc("Ezio")
       .collection("scores")
       .get()
-      .then((giraffe) => {
-        const score = giraffe.docs.map((doc) => doc.data());
-        setScore(score[0].lifeComponentScores);
+      .then((input) => {
+        const score = input.docs
+          .map((doc) => doc.data())
+          .sort((a, b) => b.date.seconds - a.date.seconds)[0];
+        setScore(score);
       })
       .catch((err) => console.error(err));
   };
@@ -29,22 +31,30 @@ const ScoreDisplay = (props) => {
     }
   }, [user]);
 
-  const getComponents = scores.map((score) => {
-    return (
-      <LifeComponent
-        isReadOnly
-        lifeComponentNames={score.name}
-        rangeValue={score.score}
-        key={score.id}
-      />
-    );
-  });
+  const currentScores = scores
+    ? scores.lifeComponentScores.map((score) => {
+        return score.score;
+      })
+    : null;
+
+  const getComponents = scores
+    ? scores.lifeComponentScores.map((score) => {
+        return (
+          <LifeComponent
+            isReadOnly
+            lifeComponentNames={score.name}
+            rangeValue={score.score}
+            key={score.name}
+          />
+        );
+      })
+    : null;
 
   return (
     <section className={styles.scoreDisplay}>
       {/* <NavBar text="Happiness Scores" /> */}
       <div className={styles.overallContainer}>
-        <AverageScore />
+        <AverageScore data={currentScores} />
       </div>
       {getComponents}
     </section>

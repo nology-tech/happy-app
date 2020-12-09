@@ -13,7 +13,7 @@ import HappinessGraphPage from "../HappinessGraphPage";
 import ScoreDisplay from "../ScoreDisplay";
 
 const Routes = (props) => {
-  const { signIn } = props;
+  const { signIn, user } = props;
 
   return (
     <Router>
@@ -26,7 +26,7 @@ const Routes = (props) => {
       <TermsConditions path="termsconditions" />
       <InitialScorePage path="setscores" />
       <HappinessGraphPage path="happinessgraph" />
-      <ScoreDisplay path="scoredisplay" />
+      <ScoreDisplay user={user} path="scoredisplay" />
     </Router>
   );
 };
