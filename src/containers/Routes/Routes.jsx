@@ -11,9 +11,10 @@ import TermsConditions from "../TermsConditions";
 import InitialScorePage from "../InitialScorePage";
 import HappinessGraphPage from "../HappinessGraphPage";
 import PrivateRoutes from "../../containers/PrivateRoutes";
+import ScoreDisplay from "../ScoreDisplay";
 
 const Routes = (props) => {
-  const { signIn } = props;
+  const { signIn, user } = props;
 
   return (
     <Router>
@@ -26,6 +27,7 @@ const Routes = (props) => {
         <InitialScorePage path="setscores" />
         <HappinessGraphPage path="happinessgraph" />
         <AccountSettings path="accountsettings" />
+        <ScoreDisplay user={user} path="scoredisplay" />
       </PrivateRoutes>
       <TermsConditions path="termsconditions" />
     </Router>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
-import personLogo from "../../assets/images/person-logo.png";
+import happyLogo from "../../assets/images/happy-logo.png";
 import NavItem from "../NavItem";
 const Navbar = (props) => {
   const { text, signOut } = props; 
@@ -19,8 +19,9 @@ const Navbar = (props) => {
         <div></div>
       </div>
       <div>{text}</div>
-      <div>{ menu }</div>
-      <img src={personLogo} alt="logo"/>
+      <div>{ menu }
+        <img src={happyLogo} alt="logo"/>      
+      </div>
     </div>
     );
 };

@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../data/fa-library";
 
 const Footer = (props) => {
-  const { addScoreToDataBase } = props;
+  const { addScoreToDataBase, scores } = props;
+  const allScore = scores.map((score) => Number(score.score));
 
   return (
     <div>
@@ -12,7 +13,13 @@ const Footer = (props) => {
         <button
           type="submit"
           className={styles.submitButton}
-          onClick={addScoreToDataBase}
+          onClick={() => {
+            if (!allScore.includes(0)) {
+              addScoreToDataBase();
+            } else {
+              alert("Please rate all your score to submit them, thanks :)");
+            }
+          }}
         >
           <FontAwesomeIcon icon={["fas", "plus"]} />
         </button>
@@ -21,5 +28,4 @@ const Footer = (props) => {
     </div>
   );
 };
-
 export default Footer;

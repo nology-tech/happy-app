@@ -17,7 +17,7 @@ const LifeComponentList = (props) => {
     );
   });
 
-  return <main>{allLifeComponents}</main>;
+  return <>{allLifeComponents}</>;
 };
 
 export default LifeComponentList;

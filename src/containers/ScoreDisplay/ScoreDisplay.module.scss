@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.scoreDisplay {
+  background-image: linear-gradient(
+    to top,
+    #001544,
+    #032056,
+    #052b69,
+    #05377d,
+    #014491
+  );
+  padding-bottom: 50px;
+}
