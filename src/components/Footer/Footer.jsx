@@ -14,7 +14,7 @@ const Footer = (props) => {
             if (!allScore.includes(0)) {
               addScoreToDataBase();
             } else {
-              alert("Please rate all yout score to submit them, thanks :)");
+              alert("Please rate all your score to submit them, thanks :)");
             }
           }}
         >
