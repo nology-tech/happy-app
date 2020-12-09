@@ -1,7 +1,7 @@
 @import "../../variables";
 .task {
     font-size: $font-size-components/1.75;
-    height: 4vh;
+    height: 4.5vh;
     width: 100%;
     margin: 10% 0;
     background: $bar-colour;
@@ -25,8 +25,8 @@
     
     .taskComplete {
         background-color: $colour-2;
-        height: 4vh;
-        width:4vh;
+        height: 4.5vh;
+        width:4.5vh;
         color: $tick-colour;
         border: none;
         border-radius: 50%;
@@ -35,8 +35,8 @@
 
     .taskDelete {
         background-color: $colour-2;
-        height: 4vh;
-        width: 4vh;
+        height: 4.5vh;
+        width: 4.5vh;
         color: $tick-colour;
         border: none;
         border-radius: 50%;

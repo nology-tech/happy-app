@@ -48,7 +48,7 @@ useEffect(() => {
 
   return (
     <section className={styles.tasksContent}>
-
+      <NavBar />
       <TaskList setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
 
     </section>
