@@ -11,7 +11,6 @@ import TermsConditions from "../TermsConditions";
 import InitialScorePage from "../InitialScorePage";
 import HappinessGraphPage from "../HappinessGraphPage";
 import ScoreDisplay from "../ScoreDisplay";
-import LifeComponentList from "../../components/LifeComponentList";
 
 const Routes = (props) => {
   const { signIn, user } = props;
@@ -28,7 +27,6 @@ const Routes = (props) => {
       <InitialScorePage path="setscores" />
       <HappinessGraphPage path="happinessgraph" />
       <ScoreDisplay user={user} path="scoredisplay" />
-      <LifeComponentList path="lifecomponentlist" />
     </Router>
   );
 };
