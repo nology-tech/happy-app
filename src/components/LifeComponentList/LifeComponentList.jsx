@@ -12,7 +12,7 @@ const LifeComponentList = (props) => {
         rangeValue={component.score}
         handleChange={(event) => updateScore(event, component.id)}
         lifeComponentSuggestion={component.suggestion}
-        key={component.id}
+        key={component.name}
         lifeComponentNames={component.name}
       />
     );
