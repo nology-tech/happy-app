@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Task.module.scss";
 import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
@@ -9,15 +9,16 @@ const emptyTask = {
   text: "",
 };
 
+const LOCAL_STORAGE_KEY = "happy-app";
 
 const Task = () => {
 
-  const [tasks, settasks] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState(emptyTask);
   
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
-  settasks(newtasks);
+  setTasks(newtasks);
   console.log([task, ...tasks])
 }
 
@@ -34,10 +35,21 @@ const addTaskToDatabase = (task) => {
   })
 }
 
+useEffect (() => {
+  const storageTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  if (storageTasks) {
+    setTasks(storageTasks)
+  }
+},[]);
+
+useEffect(() => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+},[tasks])
+
   return (
     <section className={styles.tasksContent}>
 
-      <TaskList setTasks={settasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
+      <TaskList setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
 
     </section>
   );

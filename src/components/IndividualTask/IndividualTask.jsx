@@ -7,15 +7,13 @@ const IndividualTask = ({task, tasks, setTasks, taskText}) => {
     setTasks(tasks.filter((el) => el.id !== task.id)) 
   }
   return (
-    <>
-      <p className={styles.task}>{taskText}
-      <div>
-        <button className={styles.checkTaskComplete}>checkbox</button>
-        <button onClick={deleteTask}>delete</button>
+    <div className={styles.task}>{taskText}
+        <div className={styles.buttonContainer}>
+          <button className={styles.taskDelete} onClick={deleteTask}>D</button>
+          <button className={styles.taskComplete}>C</button>
+        </div>
       </div>
-      
-      </p>
-    </>
+    
   );
 };
 

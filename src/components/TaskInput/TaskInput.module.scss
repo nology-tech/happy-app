@@ -5,17 +5,17 @@
     border: none;
     width: 90%;
     font-weight: 400;
-    margin: 40px auto;
-    background: $color-primary-dark;
+    margin: 0 auto;
+    background:$bar-colour;
     .input {
         position: relative;
         width: 100%;
         border-radius: 50px;
         height: 5vh;
         background: transparent;
-        padding: 0% 2%;
-        color: $colour-2;
-        font-size: $font-size-components/2;
+        padding-left: 25px;
+        color: $tick-colour;
+        font-size: $font-size-components/1.5;
         border: none;
         display: flex;
         align-self: space-between;
@@ -30,9 +30,9 @@
     }
     .submitButton {
         height: 5vh;
-        width: 5%;
+        width: 5vh;
         background: $colour-2;
-        border-radius: 50px;
+        border-radius: 50%;
         border: none;
         font-size: $font-size-components/1.6;
         text-align: center;

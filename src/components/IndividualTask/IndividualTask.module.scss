@@ -1,17 +1,13 @@
 @import "../../variables";
 .task {
-    font-size: $font-size-components/1.5;
-    // padding: 20px;
-    min-height: 2rem;
-    margin-top: 3%;
+    font-size: $font-size-components/1.75;
+    height: 4vh;
     width: 100%;
-    background: $color-primary-dark;
-    // box-shadow: 5px 4px 16px $black;
+    margin: 10% 0;
+    background: $bar-colour;
     border-radius: 50px;
-    height: 5vh;
-    padding: 0.5% 2.5% 0.5% 2.5%;
+    padding-left:5%;
     color: white;
-    // font-size: 2rem;
     border: none;
     display: flex;
     align-items: center;
@@ -19,26 +15,32 @@
     &:focus {
         outline: none;
     }
-    .checkTaskComplete {
-        height: 160%;
-        width: 5vw;
-        //color: $background-blue1;
-        background: $submit-green;
-        //border-radius: 50%;
+    .buttonContainer {
+        height: 100%;
+        width:25%;
+        color: $bar-colour;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    .taskComplete {
+        background-color: $colour-2;
+        height: 4vh;
+        width:4vh;
+        color: $tick-colour;
         border: none;
-        font-size: $font-size-components;
-        color: $submit-green;
-        clip-path: circle(21%);
-        cursor: pointer;
-        &:hover {
-            backdrop-filter: sepia(100%);
-        }
-        &:active {
-            filter: brightness(0.4);
-            -webkit-filter: brightness(0.4);
-        }
-        mix-blend-mode: lighten;
-        filter: hue-rotate(-110deg);
-        -webkit-filter: hue-rotate(-110deg);
+        border-radius: 50%;
+        outline: none;
     }
+
+    .taskDelete {
+        background-color: $colour-2;
+        height: 4vh;
+        width: 4vh;
+        color: $tick-colour;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+    }
+}
 }
