@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "../../variables.scss";
 
 .initialScorePage {
   padding-bottom: 50px;
@@ -12,7 +8,7 @@
 
   .initialScorePage__question {
     text-align: center;
-    color: #fff;
+    color: $white;
     padding: 20px;
   }
 }

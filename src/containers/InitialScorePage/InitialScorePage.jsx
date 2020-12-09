@@ -44,14 +44,16 @@ const InitialScorePage = () => {
   };
 
   return (
-    <section>
-      <p className={styles.initialScorePage__question}>
-        Please rate your happiness for each component out of 10
-      </p>
-      <hr />
-      <LifeComponentList scores={scores} updateScore={updateScore} />
+    <>
+      <section className={styles.initialScorePage}>
+        <p className={styles.initialScorePage__question}>
+          Please rate your happiness for each component out of 10
+        </p>
+        <hr />
+        <LifeComponentList scores={scores} updateScore={updateScore} />
+      </section>
       <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} />
-    </section>
+    </>
   );
 };
 
