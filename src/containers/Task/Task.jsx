@@ -9,8 +9,6 @@ const emptyTask = {
   text: "",
 };
 
-const LOCAL_STORAGE_KEY = "happy-app";
-
 const Task = () => {
 
   const [tasks, setTasks] = useState([]);
@@ -35,21 +33,32 @@ const addTaskToDatabase = (task) => {
   })
 }
 
-useEffect (() => {
-  const storageTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  if (storageTasks) {
-    setTasks(storageTasks)
-  }
-},[]);
+// const removeTaskFromDatabase = (task) => {
+//   firestore
+//     .collection("tasks")
+//     .doc(task.id)
+//     .delete()
+//     .then(this.setTaskState)
+//     .catch((err) => console.log(err));
+// };
 
-useEffect(() => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
-},[tasks])
+// useEffect(() => {
+//   firebase
+//   .firestore
+//   .collection("tasks")
+//   .doc()
+//   .get()
+//   .then(() => {
+    
+//   })
+// },[])
 
   return (
     <section className={styles.tasksContent}>
       <NavBar />
-      <TaskList setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
+      <TaskList 
+      // removeTaskFromDatabase={removeTaskFromDatabase} 
+      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
 
     </section>
   );

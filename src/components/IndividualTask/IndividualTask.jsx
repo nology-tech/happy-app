@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./IndividualTask.module.scss";
 
-const IndividualTask = ({task, tasks, setTasks, taskText}) => {
+const IndividualTask = ({task, tasks, setTasks, taskText, removeTaskFromDatabase}) => {
 
   const deleteTask = () => {
-    setTasks(tasks.filter((el) => el.id !== task.id)) 
+    setTasks(tasks.filter((el) => el.id !== task.id)) ;
+    removeTaskFromDatabase((el) => el.id !== task.id);
   }
   return (
     <div className={styles.task}>{taskText}
