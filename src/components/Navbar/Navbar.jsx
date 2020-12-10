@@ -1,42 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import happyLogo from "../../assets/images/happy-logo.png";
 import NavItem from "../NavItem";
-import firebase from "../../firebase";
-
 const Navbar = (props) => {
-  const { text } = props; 
+  const { text, signOut } = props; 
   
   const [openMenu, setOpenMenu] = useState(false)
-
-
-
-  
-  const signOut = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        setUser(null);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const getUser = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   let menu;
   if (openMenu) {

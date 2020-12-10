@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Routes from "./containers/Routes";
 import { navigate } from "@reach/router";
+import Navbar from "./components/Navbar";
 
 import firebase, { googleProvider } from "./firebase";
 
@@ -15,6 +16,32 @@ const signIn = () => {
     navigate("setscores"); 
   
   };
+
+  const signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getUser = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+  };
+
+  useEffect(() => { 
+    getUser();
+  },);
 
   return (
     <div className={styles.body}>
