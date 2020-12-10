@@ -21,9 +21,8 @@ const NavItem = (props) => {
         <Link to="setscores">
           <li>Set Scores</li>
         </Link>
-        <Link to="scores">
+        <Link to="scoredisplay">
           <li>My Scores</li>
-         
         </Link>
         <Link to="happinessgraph">
           <li>Happiness Graph</li>
@@ -37,7 +36,6 @@ const NavItem = (props) => {
         <Link to="about">
           <li>About</li>
         </Link>
-       
         <li className={styles.signOutButton} onClick={signOut}>
           Sign Out
         </li>

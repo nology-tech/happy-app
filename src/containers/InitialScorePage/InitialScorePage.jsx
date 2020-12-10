@@ -52,15 +52,14 @@ const InitialScorePage = (props) => {
     
       <Navbar signOut={signOut}/> 
      
-      
       <p className={styles.initialScorePage__question}>
         Please rate your happiness for each component out of 10
       </p>
-      
      
       <LifeComponentList scores={scores} updateScore={updateScore} />
       <Footer addScoreToDataBase={addScoreToDataBase} />
     </section>
+   
   );
 };
 
