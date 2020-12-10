@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import happyLogo from "../../assets/images/happy-logo.png";
 import NavItem from "../NavItem";
+import firebase from "../../firebase";
 
 const Navbar = (props) => {
   const { text } = props; 
