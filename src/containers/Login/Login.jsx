@@ -18,6 +18,9 @@ const Login = (props) => {
         <Link className={styles.link} to="register">
           <LandingPageButton text={"Sign Up"} cardType="secondary" />
         </Link>
+        <Link className={styles.link} to="termsconditions">
+          <li className={styles.TandC}>Terms and Conditions</li>
+        </Link>
       </div>
     </section>
   );

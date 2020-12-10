@@ -8,6 +8,8 @@
     flex-direction: column;
     justify-content: center;
     background: $gradient;
+   
+    
     
     .logo{
         margin-bottom: 30px;
@@ -24,5 +26,15 @@
 
     .link {
         text-decoration: none;
+    }
+
+    .TandC{
+        text-align: center;
+        list-style: none;
+        color: $white;
+     &:hover{
+        text-decoration: underline;
+        text-decoration-color: $white;
+     }
     }
 }

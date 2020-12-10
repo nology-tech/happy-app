@@ -23,7 +23,7 @@ const NavItem = (props) => {
         </Link>
         <Link to="scores">
           <li>My Scores</li>
-          <li>Home</li>
+         
         </Link>
         <Link to="happinessgraph">
           <li>Happiness Graph</li>
@@ -37,9 +37,7 @@ const NavItem = (props) => {
         <Link to="about">
           <li>About</li>
         </Link>
-        <Link to="termsconditions">
-          <li>Terms and Conditions</li>
-        </Link>
+       
         <li className={styles.signOutButton} onClick={signOut}>
           Sign Out
         </li>

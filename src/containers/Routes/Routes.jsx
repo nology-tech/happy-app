@@ -18,8 +18,7 @@ const Routes = (props) => {
     <Router>
       <About path="about" />
       <AccountSettings path="accountsettings" />
-      <Home path="/" />
-      <Login path="login" signIn={signIn} />
+      <Login path="/" signIn={signIn} />
       <Register path="register" />
       <Task path="task" />
       <TermsConditions path="termsconditions" />

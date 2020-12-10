@@ -9,9 +9,9 @@
   .textLogo {
     color: $text-colour-primary;
   }
-  .personLogo {
-    height: $height-logo-img;
-    width: $width-logo-img;
+  .newLogo {
+    height: $height-logo-img * 3;
+    width: $width-logo-img * 3;
     margin: auto $margin-logo-img;
   }
 }

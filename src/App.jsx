@@ -16,7 +16,7 @@ const [ user, setUser ] = useState(null);
 
 const signIn = () => {
     firebase.auth().signInWithRedirect(googleProvider); 
-    navigate("/"); 
+    navigate("setscores"); 
   };
 
   const signOut = () => {
@@ -49,7 +49,6 @@ useEffect(() => {
   
   return (
     <div className={styles.body}>
-      <Navbar signOut={signOut}/>
       <Routes user={user}
        signIn = {signIn}
       />
