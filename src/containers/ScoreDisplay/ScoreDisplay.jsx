@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScoreDisplay.module.scss";
 
-// import NavBar from "../../components/Navbar";
+ import NavBar from "../../components/Navbar"
 import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
 import { firestore } from "../../firebase";
