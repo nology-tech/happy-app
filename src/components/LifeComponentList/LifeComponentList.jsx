@@ -18,9 +18,7 @@ const LifeComponentList = (props) => {
   });
 
   return (
-  <>
    {allLifeComponents}
-  </>
  );
 };
 
