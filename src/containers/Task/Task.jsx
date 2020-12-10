@@ -22,8 +22,10 @@ const addTask = (task) => {
 
 const addTaskToDatabase = (task) => {
   firestore
+  .collection("users")
+  .doc("Ezio")
   .collection("tasks")
-  .doc()
+  .doc(`${task.id}`)
   .set(task)
   .then(function () {
     console.log("document written!");
@@ -33,14 +35,41 @@ const addTaskToDatabase = (task) => {
   })
 }
 
-// const removeTaskFromDatabase = (task) => {
-//   firestore
-//     .collection("tasks")
-//     .doc(task.id)
-//     .delete()
-//     .then(this.setTaskState)
-//     .catch((err) => console.log(err));
-// };
+const fetchTaskFromDataBase = () => {
+  firestore
+    .collection("users")
+    .doc("Ezio")
+    .collection("tasks")
+    .get()
+    .then((querySnapshot) => {
+      const currentData = querySnapshot.docs.map((doc) => doc.data());
+      setTasks(currentData);
+    });
+};
+
+const RemoveTaskFromDatabase = (id) => {
+  firestore
+  .collection("users")
+  .doc("Ezio")
+  .collection("tasks")
+  .doc(`${id}`)
+  .delete()
+  .then(function() {
+    console.log("Document successfully deleted!");
+    fetchTaskFromDataBase();
+  }).catch(function(error) {
+    console.error("Error removing document: ", error);
+  });
+
+  // console.log(id)
+};
+
+
+
+useEffect(() =>{
+  fetchTaskFromDataBase();
+},[])
+
 
 // useEffect(() => {
 //   firebase
@@ -57,7 +86,7 @@ const addTaskToDatabase = (task) => {
     <section className={styles.tasksContent}>
       <NavBar />
       <TaskList 
-      // removeTaskFromDatabase={removeTaskFromDatabase} 
+      RemoveTaskFromDatabase={RemoveTaskFromDatabase} 
       setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
 
     </section>
@@ -67,3 +96,22 @@ const addTaskToDatabase = (task) => {
 
 
 export default Task;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

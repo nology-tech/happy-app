@@ -5,11 +5,11 @@ import IndivualTask from "../IndividualTask";
 
 const TaskList = (props) => {
 
-  const {task, setTask, setTasks, addTask, tasks, addTaskToDatabase, removeTaskFromDatabase } = props;
+  const {task, setTask, setTasks, addTask, tasks, addTaskToDatabase, RemoveTaskFromDatabase } = props;
 
   const getTaskJsx = (task) => (
     <div className={styles.task} key={task.id}>
-      <IndivualTask removeTaskFromDatabase={removeTaskFromDatabase} setTasks={setTasks} task={task} tasks={tasks} taskText={task.text}/>
+      <IndivualTask RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tasks={tasks} taskText={task.text}/>
     </div>
   );
   return (
