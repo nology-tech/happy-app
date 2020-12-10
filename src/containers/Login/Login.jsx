@@ -5,16 +5,15 @@ import LandingPageButton from "../../components/LandingPageButton";
 import { Link } from "@reach/router";
 
 const Login = (props) => {
-
-   const { signIn } = props;
+  const { signIn } = props;
 
   return (
-    <section className={styles.login} >
-      <div className={styles.logo} >
+    <section className={styles.login}>
+      <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles.button} >
-          <LandingPageButton text={"Log In"} cardType="primary" click={signIn} />
+      <div className={styles.button}>
+        <LandingPageButton text={"Log In"} cardType="primary" click={signIn} />
         <Link className={styles.link} to="register">
           <LandingPageButton text={"Sign Up"} cardType="secondary" />
         </Link>

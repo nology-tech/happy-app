@@ -10,6 +10,7 @@ import Task from "../Task";
 import TermsConditions from "../TermsConditions";
 import InitialScorePage from "../InitialScorePage";
 import HappinessGraphPage from "../HappinessGraphPage";
+import PrivateRoutes from "../../containers/PrivateRoutes";
 import ScoreDisplay from "../ScoreDisplay";
 
 const Routes = (props) => {
@@ -17,16 +18,18 @@ const Routes = (props) => {
 
   return (
     <Router>
-      <About path="about" />
-      <AccountSettings path="accountsettings" />
       <Home path="/" />
+      <About path="about" />
       <Login path="login" signIn={signIn} />
       <Register path="register" />
-      <Task path="task" />
+      <PrivateRoutes path="/">
+        <Task path="task" />
+        <InitialScorePage path="setscores" />
+        <HappinessGraphPage path="happinessgraph" />
+        <AccountSettings path="accountsettings" />
+        <ScoreDisplay user={user} path="scoredisplay" />
+      </PrivateRoutes>
       <TermsConditions path="termsconditions" />
-      <InitialScorePage path="setscores" />
-      <HappinessGraphPage path="happinessgraph" />
-      <ScoreDisplay user={user} path="scoredisplay" />
     </Router>
   );
 };

@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../../data/fa-library";
+
 const Footer = (props) => {
   const { addScoreToDataBase, scores } = props;
   const allScore = scores.map((score) => Number(score.score));
@@ -18,9 +21,9 @@ const Footer = (props) => {
             }
           }}
         >
-          +
+          <FontAwesomeIcon icon={["fas", "plus"]} />
         </button>
-        <p>Submit</p>
+        {/* <p>Submit</p> */}
       </footer>
     </div>
   );

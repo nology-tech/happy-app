@@ -6,7 +6,6 @@ const LifeComponentList = (props) => {
   const { scores, updateScore } = props;
 
   const allLifeComponents = scores.map((component) => {
-    console.log(component.id);
     return (
       <LifeComponent
         rangeValue={component.score}
