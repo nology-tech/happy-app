@@ -1,6 +1,5 @@
 @import "../../variables.scss";
 
-
 *,
 *::before,
 *::after {
@@ -10,74 +9,76 @@
 }
 
 .iconsDiv {
-    background: transparent;
-    position: absolute;
-    top: -3%;
-    left: 0;
-    margin: auto;
-    z-index: 1;
+  background: transparent;
+  position: absolute;
+  top: -3%;
+  left: 0;
+  margin: auto;
+  z-index: 1;
 }
 
 @mixin on-circle($item-count, $circle-size, $item-size) {
-    position: relative;
-    width: $circle-size;
-    height: $circle-size;
-    border-radius: 50%;
-    padding: 0;
-    >* {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -($item-size / 2);
-        width: $item-size;
-        height: $item-size;
-        $angle: (360 / $item-count);
-        $rot: -89;
-        @for $i from 1 through $item-count {
-            &:nth-of-type(#{$i}) {
-                transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
-            }
-            $rot: $rot+$angle;
-        }
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  padding: 0;
+  > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -($item-size / 2);
+    width: $item-size;
+    height: $item-size;
+    $angle: (360 / $item-count);
+    $rot: -89;
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: rotate($rot * 1deg)
+          translate($circle-size / 2)
+          rotate($rot * -1deg);
+      }
+      $rot: $rot + $angle;
     }
+  }
 }
 
 .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 28em, $item-size: 4em);
-    .faStyle {
-        color: $color-tertiary-light;
-        text-align: center;
-        padding-top: 10px;
-        padding-left: 5px;
-        &:hover {
-            cursor: pointer;
-            color: $color-primary;
-        }
+  @include on-circle($item-count: 15, $circle-size: 28em, $item-size: 4em);
+  .faStyle {
+    color: $colour-2;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    &:hover {
+      cursor: pointer;
+      color: $color-primary;
     }
+  }
 }
 
 @media screen and (min-width: 320px) {
-    .circleContainer {
-        @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 5px);
-    }
-    .iconsDiv {
-        margin: auto;
-    }
+  .circleContainer {
+    @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 5px);
+  }
+  .iconsDiv {
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 500px) {
-    .circleContainer {
-        @include on-circle($item-count: 15, $circle-size: 15em, $item-size: 4em);
+  .circleContainer {
+    @include on-circle($item-count: 15, $circle-size: 15em, $item-size: 4em);
+  }
+  .iconsDiv {
+    top: 31%;
+    left: 31%;
+    margin: auto;
+    .faStyle {
+      width: 2em;
+      height: 2em;
+      font-size: 30px;
     }
-    .iconsDiv {
-        top: 31%;
-        left: 31%;
-        margin: auto;
-        .faStyle {
-            width: 2em;
-            height: 2em;
-            font-size: 30px;
-        }
-    }
+  }
 }

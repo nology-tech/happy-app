@@ -1,7 +1,5 @@
 @import "../../variables.scss";
 
-
-
 *,
 *::before,
 *::after {
@@ -10,7 +8,8 @@
   box-sizing: border-box;
 }
 .graphContainer {
-  background-color: $colour-2;
+  margin-top: 200px;
+  background-color: $colour-1;
   text-align: center;
 
   position: relative;
@@ -19,7 +18,6 @@
 
 @media screen and (min-width: 320px) {
   .graphContainer {
-  
     width: 200px;
     height: 200px;
     margin: auto;
@@ -30,8 +28,6 @@
   .graphContainer {
     width: 500px;
     height: 500px;
-    margin: auto;
+    margin: 200px auto; // MARGIN TOP
   }
 }
-
-
