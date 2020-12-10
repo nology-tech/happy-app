@@ -3,7 +3,6 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Routes from "./containers/Routes";
 import { navigate } from "@reach/router";
-import Navbar from "./components/Navbar";
 
 import firebase, { googleProvider } from "./firebase";
 
@@ -46,7 +45,8 @@ const signIn = () => {
   return (
     <div className={styles.body}>
       <Routes user={user}
-       signIn = {signIn}
+       signIn={signIn}
+       signOut={signOut}
       />
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import happyLogo from "../../assets/images/happy-logo.png";
 import NavItem from "../NavItem";
+
 const Navbar = (props) => {
   const { text, signOut } = props; 
   
