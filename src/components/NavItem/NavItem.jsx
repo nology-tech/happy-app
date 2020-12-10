@@ -18,22 +18,22 @@ const NavItem = (props) => {
         <Link to="/">
           <li>Home</li>
         </Link>
-        <Link to="setscores">
+        <Link to="../setscores">
           <li>Set Scores</li>
         </Link>
-        <Link to="scoredisplay">
+        <Link to="../scoredisplay">
           <li>My Scores</li>
         </Link>
-        <Link to="happinessgraph">
+        <Link to="../happinessgraph">
           <li>Happiness Graph</li>
         </Link>
-        <Link to="task">
+        <Link to="../task">
           <li>Tasks</li>
         </Link>
-        <Link to="accountsettings">
+        <Link to="../accountsettings">
           <li>Account Settings</li>
         </Link>
-        <Link to="about">
+        <Link to="../about">
           <li>About</li>
         </Link>
         <li className={styles.signOutButton} onClick={signOut}>

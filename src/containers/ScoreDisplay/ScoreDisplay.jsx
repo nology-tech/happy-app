@@ -7,7 +7,8 @@ import LifeComponent from "../../components/LifeComponent";
 import { firestore } from "../../firebase";
 
 const ScoreDisplay = (props) => {
-  const { user } = props;
+  const { signOut, user } = props;
+
   const [scores, setScore] = useState(null);
 
   const getScores = () => {
