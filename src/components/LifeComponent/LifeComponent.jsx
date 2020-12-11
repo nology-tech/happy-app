@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Suggestion from "../Suggestion";
 import "../../data/fa-library";
 
+import lifeComponents from "../../data/lifeComponents";
+
 const LifeComponent = (props) => {
   const {
     lifeComponentNames,
@@ -11,10 +13,16 @@ const LifeComponent = (props) => {
     handleChange,
     rangeValue,
     isReadOnly,
+    icon
   } = props;
 
   const [isClicked, setIsClicked] = useState(false);
 
+  const icons = () => {
+    lifeComponents.map(component => {
+      console.log(component.icon); 
+    })
+  }
   return (
     <main className={styles.lifeComponent}>
       <div className={styles.lifeComponent__topElements}>
@@ -36,7 +44,7 @@ const LifeComponent = (props) => {
 
       <div className={styles.lifeComponent__bottomElements}>
         <span>
-          <div className={styles.lifeComponent__circle}></div>
+          <div className={styles.lifeComponent__circle}> <FontAwesomeIcon className={styles.icon} icon={icon} /></div>
         </span>
         {isReadOnly ? (
           <input

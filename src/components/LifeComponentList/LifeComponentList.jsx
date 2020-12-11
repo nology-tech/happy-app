@@ -13,6 +13,7 @@ const LifeComponentList = (props) => {
         lifeComponentSuggestion={component.suggestion}
         key={component.id}
         lifeComponentNames={component.name}
+        icon={component.icon}
       />
     );
   });

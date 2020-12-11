@@ -6,9 +6,16 @@ import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
 import { firestore } from "../../firebase";
 
+import lifeComponents from "../../data/lifeComponents";
+
 const ScoreDisplay = (props) => {
   const { user } = props;
   const [scores, setScore] = useState(null);
+
+  // console.log(lifeComponents.map(component => {
+  //   return component.icon
+  //   })
+  // );
 
   const getScores = () => {
     firestore
@@ -45,6 +52,7 @@ const ScoreDisplay = (props) => {
             lifeComponentNames={score.name}
             rangeValue={score.score}
             key={score.name}
+            // icon={icon}
           />
         );
       })
