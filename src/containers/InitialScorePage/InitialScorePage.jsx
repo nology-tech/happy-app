@@ -48,8 +48,8 @@ const InitialScorePage = (props) => {
   };
 
   return (
+    <>
     <section>
-    
       <Navbar signOut={signOut}/> 
      
       <p className={styles.initialScorePage__question}>
@@ -57,9 +57,10 @@ const InitialScorePage = (props) => {
       </p>
      
       <LifeComponentList scores={scores} updateScore={updateScore} />
-      <Footer scores={scores} addScoreToDataBase={addScoreToDataBase} />
+      
     </section>
-   
+   <Footer scores={scores} addScoreToDataBase={addScoreToDataBase} />
+   </>
   );
 };
 
