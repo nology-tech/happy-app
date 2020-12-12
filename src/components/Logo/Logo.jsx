@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./Logo.module.scss";
-import personLogo from '../../assets/images/person-logo.png';
-
+import newLogo from '../../assets/images/new-logo.png'
 
 const Logo = () => {
   return (
     <div className={styles.logoContainer}>
-      <h2 className={styles.textLogo}>Happy</h2>
-      <img src={personLogo} alt='happy person logo' className={styles.personLogo}/>
+      <img src={newLogo} alt='new logo' className={styles.newLogo}/>
     </div>
   );
 };
