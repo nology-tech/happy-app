@@ -47,6 +47,10 @@
     position: fixed;
     margin: 5%;
     color: $colour-2;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

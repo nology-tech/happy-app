@@ -15,14 +15,14 @@
         background: transparent;
         padding: 0% 2%;
         color: $colour-2;
-        font-size: $font-size-components/2;
+        font-size: $font-size-components/ 1.2;
         border: none;
         display: flex;
         align-self: space-between;
         justify-content: center;
         &::placeholder {
             color: white;
-            font-size: $font-size-components/2;
+            font-size: $font-size-components / 1.2;
         }
         &:focus {
             outline: none;
@@ -34,9 +34,9 @@
         background: $colour-2;
         border-radius: 50px;
         border: none;
-        font-size: $font-size-components/1.6;
+        font-size: $font-size-components * 1.5;
         text-align: center;
-        color: white;
+        color: $colour-1;
         cursor: pointer;
         &:focus {
             outline: none;
