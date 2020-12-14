@@ -9,6 +9,7 @@ const Graph = () => {
   const [graphSize, setGraphSize] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
   const [scores, setScore] = useState(null);
+
   const defaultOptions = {
     axes: true,
     scales: 10,
@@ -23,9 +24,10 @@ const Graph = () => {
       },
       mouseLeave: (dot) => {
         console.log(dot);
-      },
-    }),
+      }
+    })
   };
+
   const getScores = () => {
     firestore
       .collection("users")
@@ -33,13 +35,12 @@ const Graph = () => {
       .collection("scores")
       .get()
       .then((input) => {
-        const score = input.docs
-          .map((doc) => doc.data())
-          .sort((a, b) => b.date.seconds - a.date.seconds)[0];
+        const score = input.docs.map((doc) => doc.data()).sort((a, b) => b.date.seconds - a.date.seconds)[0];
         setScore(score);
       })
       .catch((err) => console.error(err));
   };
+
   const getScore = () => {
     const emptyObj = {};
     if (scores) {
@@ -63,16 +64,18 @@ const Graph = () => {
         "Personal Development": 0.1,
         "Physical Environment": 0.1,
         Purpose: 0.1,
-        Spirituality: 0.1,
+        Spirituality: 0.1
       };
     }
   };
+
   const data = [
     {
       data: getScore(),
-      meta: { color: "#4a0fd3" },
-    },
+      meta: { color: "#4a0fd3" }
+    }
   ];
+
   const captions = {
     "Contribution to Society": "Contribution to Society",
     Career: "Career",
@@ -88,10 +91,12 @@ const Graph = () => {
     "Physical Environment": "Physical Environment",
     Purpose: "Purpose",
     "Self Worth": "Self Worth",
-    Spirituality: "Spirituality",
+    Spirituality: "Spirituality"
   };
+
   useEffect(() => {
     getScores();
+
     let size;
     if (width > 300 && width < 500) {
       size = 200;
@@ -100,30 +105,25 @@ const Graph = () => {
     } else {
       size = 200;
     }
+
     setGraphSize(size);
+
     const handleResize = () => setWidth(window.innerWidth);
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
 
   return (
     <div>
-      <button  onClick={getScores}>
-        Today
-      </button>
-  
-    <div className={styles.graphContainer}>
-      <RadarChart
-        captions={captions}
-        data={data}
-        size={graphSize}
-        options={defaultOptions}
-      />
-      <GraphIcons />
-    </div>
+      <button onClick={getScores}>Today</button>
+
+      <div className={styles.graphContainer}>
+        <RadarChart captions={captions} data={data} size={graphSize} options={defaultOptions} />
+        <GraphIcons />
+      </div>
     </div>
   );
 };
 export default Graph;
-
-

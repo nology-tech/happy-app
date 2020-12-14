@@ -7,7 +7,8 @@ describe("LifeComponentList tests", () => {
     const scores = [
       {
         text: "Life component",
-        score: "2", 
+        score: "2",
+        id: 1 
       }];
     expect(render(<LifeComponentList scores={scores} />)).toBeTruthy();
   });
