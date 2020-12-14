@@ -12,11 +12,6 @@ const ScoreDisplay = (props) => {
   const { user } = props;
   const [scores, setScore] = useState(null);
 
-  // console.log(lifeComponents.map(component => {
-  //   return component.icon
-  //   })
-  // );
-
   const getScores = () => {
     firestore
       .collection("users")
@@ -46,13 +41,20 @@ const ScoreDisplay = (props) => {
 
   const getComponents = scores
     ? scores.lifeComponentScores.map((score) => {
+      const getIcon = lifeComponents.find((lifecomponent) => {
+        if(lifecomponent.name === score.name) {
+          console.log(lifecomponent.name);
+          return lifecomponent.icon;
+        }
+      })
+
         return (
           <LifeComponent
             isReadOnly
             lifeComponentNames={score.name}
             rangeValue={score.score}
             key={score.name}
-            // icon={icon}
+            icon={getIcon.icon}
           />
         );
       })
