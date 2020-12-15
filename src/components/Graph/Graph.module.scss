@@ -4,7 +4,7 @@
 .graphContainer {
   background-color: $colour-2;
   text-align: center;
-
+  margin: 70px auto;
   position: relative;
   border-radius: 50%;
 }
@@ -14,7 +14,6 @@
   
     width: 200px;
     height: 200px;
-    margin: auto;
   }
 }
 
@@ -22,7 +21,6 @@
   .graphContainer {
     width: 500px;
     height: 500px;
-    margin: auto;
   }
 }
 
