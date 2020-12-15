@@ -20,6 +20,11 @@
       margin-left: 20px;
       font-size: 15px;
       color: #fff;
+
+      &:hover {
+        cursor: pointer;
+        color: $colour-1;
+      }
     }
 
     .lifeComponent__score {

@@ -5,7 +5,7 @@ import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
 
-const Task = ({user}) => {
+const Task = ({user, signOut}) => {
   const [tasks, setTasks] = useState([]);
 
   const addTaskToDatabase = (task) => {
@@ -45,7 +45,7 @@ const fetchTaskFromDataBase = () => {
 
   return (
     <section className={styles.tasksContent}>
-    {/* <NavBar /> */}
+    <NavBar signOut={signOut} />
 
       <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} /> {/* addTask={addTask} */}
 

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScoreDisplay.module.scss";
 
-// import NavBar from "../../components/Navbar";
+import Navbar from "../../components/Navbar"
 import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
 import { firestore } from "../../firebase";
 
 const ScoreDisplay = (props) => {
-  const { user } = props;
+  const { signOut, user } = props;
+
   const [scores, setScore] = useState(null);
 
   const getScores = () => {
@@ -52,6 +53,7 @@ const ScoreDisplay = (props) => {
 
   return (
     <section className={styles.scoreDisplay}>
+       <Navbar signOut={signOut}/> 
       {/* <NavBar text="Happiness Scores" /> */}
       <div className={styles.overallContainer}>
         <AverageScore data={currentScores} />
