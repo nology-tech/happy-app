@@ -3,72 +3,100 @@ import styles from "./Graph.module.scss";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import GraphIcons from "../GraphIcons";
-
+import { firestore } from "../../firebase";
 
 const Graph = () => {
   const [graphSize, setGraphSize] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
-  
+  const [scores, setScore] = useState(null);
 
-const defaultOptions = {
-  axes: true, 
-  scales: 10, 
-  captions: false, 
-  captionMargin: 10,
-  dots: true,
-  roundStrokes: true,
+  const defaultOptions = {
+    axes: true,
+    scales: 10,
+    captions: false,
+    captionMargin: 10,
+    dots: false,
+    roundStrokes: true,
+    dotProps: () => ({
+      className: "dot",
+      mouseEnter: (dot) => {
+        console.log(dot);
+      },
+      mouseLeave: (dot) => {
+        console.log(dot);
+      }
+    })
+  };
 
-  dotProps: () => ({
-    className: 'dot',
-    mouseEnter: (dot) => { console.log(dot) },
-    mouseLeave: (dot) => {  console.log (dot) }
-  })
-  
-}
+  const getScores = () => {
+    firestore
+      .collection("users")
+      .doc("Ezio")
+      .collection("scores")
+      .get()
+      .then((input) => {
+        const score = input.docs.map((doc) => doc.data()).sort((a, b) => b.date.seconds - a.date.seconds)[0];
+        setScore(score);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const getScore = () => {
+    const emptyObj = {};
+    if (scores) {
+      scores.lifeComponentScores.forEach((score) => {
+        emptyObj[score.name] = score.score / 10;
+      });
+      return emptyObj;
+    } else {
+      return {
+        "General Health": 0.1,
+        Finances: 0.1,
+        Career: 0.1,
+        "Love life": 0.1,
+        Family: 0.1,
+        Friends: 0.1,
+        "Fun And recreation": 0.1,
+        "Physical Fitness": 0.1,
+        "Mental Fitness": 0.1,
+        "Contribution to Society": 0.1,
+        "Self Worth": 0.1,
+        "Personal Development": 0.1,
+        "Physical Environment": 0.1,
+        Purpose: 0.1,
+        Spirituality: 0.1
+      };
+    }
+  };
 
   const data = [
     {
-      data: {
-        generalHappiness: 0.4, 
-        finances: 0.6,
-        career: 0.9,
-        loveLife: 0.5,
-        family: 0.3, 
-        friends: 0.5, 
-        funAndRecreation: 0.4, 
-        physicalHealth: 0.4,
-        mentalHealth: 0.8,
-        contributionToSociety: 0.7, 
-        selfWorth: 0.5, 
-        personalDevelopment: 0.8, 
-        physicalEnvironment: 0.5,
-        purpose: 0.8,
-        spirituality: 0.4, 
-      },
-      meta: {color: "#4a0fd3"}
-
-    },
-
+      data: getScore(),
+      meta: { color: "#4a0fd3" }
+    }
   ];
 
   const captions = {
-        generalHappiness: "General Happiness",
-        finances:"Finances",
-        career:  "Career",
-        loveLife: "Love Life",
-        family: "Family",
-        friends: "Friends",
-        funAndRecreation: "Fun and Recreation",
-        physicalHealth: "Physical Health",
-        mentalHealth: "Mental Health",
-        contributionToSociety: "Contribution to Society",
-        selfWorth: "Selfworth",
-        personalDevelopment: "Personal Development",
-        physicalEnvironment: "Physical Environment",
-        purpose: "Purpose",
-        spirituality: "Spirituality",
+    "Contribution to Society": "Contribution to Society",
+    Career: "Career",
+    Finances: "Finances",
+    Family: "Family",
+    "Fun And recreation": "Fun and Recreation",
+    Friends: "Friends",
+    "General Health": "General Health",
+    "Love life": "Love Life",
+    "Mental Fitness": "Mental Fitness",
+    "Physical Fitness": "Physical Fitness",
+    "Personal Development": "Personal Development",
+    "Physical Environment": "Physical Environment",
+    Purpose: "Purpose",
+    "Self Worth": "Self Worth",
+    Spirituality: "Spirituality"
   };
+
   useEffect(() => {
+    getScores();
+
     let size;
     if (width > 300 && width < 500) {
       size = 200;
@@ -77,24 +105,25 @@ const defaultOptions = {
     } else {
       size = 200;
     }
+
     setGraphSize(size);
+
     const handleResize = () => setWidth(window.innerWidth);
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
 
-
   return (
-    <div className={styles.graphContainer}>
-      <RadarChart 
-        captions={captions}
-        data={data}
-        size={graphSize}
-        options={defaultOptions}
-      /> 
-      <GraphIcons />
+    <div>
+      <button onClick={getScores}>Today</button>
+
+      <div className={styles.graphContainer}>
+        <RadarChart captions={captions} data={data} size={graphSize} options={defaultOptions} />
+        <GraphIcons />
+      </div>
     </div>
   );
 };
-
 export default Graph;

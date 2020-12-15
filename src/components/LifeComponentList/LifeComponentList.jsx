@@ -6,14 +6,22 @@ const LifeComponentList = (props) => {
   const { scores, updateScore } = props;
 
   const allLifeComponents = scores.map((component) => {
-    return <LifeComponent rangeValue={component.score} handleChange={(event) => updateScore(event, component.id)} lifeComponentSuggestion={component.suggestion} key={component.id} lifeComponentNames={component.name} />
-  })
+    return (
+      <LifeComponent
+        rangeValue={component.score}
+        handleChange={(event) => updateScore(event, component.id)}
+        lifeComponentSuggestion={component.suggestion}
+        key={component.id}
+        lifeComponentNames={component.name}
+      />
+    );
+  });
 
   return (
     <>
-      {allLifeComponents}
-    </>
-  );
+   {allLifeComponents}
+   </>
+ );
 };
 
 export default LifeComponentList;

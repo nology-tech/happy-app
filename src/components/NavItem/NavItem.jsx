@@ -15,30 +15,26 @@ const NavItem = (props) => {
         <FontAwesomeIcon icon="times" className={styles.faIcon} />
       </span>
       <ul className={styles.navList}>
-        <Link to="/">
+        <Link to="/" onClick={() => setOpenMenu(false)}>
           <li>Home</li>
         </Link>
-        <Link to="setscores">
+        <Link to="../setscores" onClick={() => setOpenMenu(false)}>
           <li>Set Scores</li>
         </Link>
-        <Link to="scores">
+        <Link to="../scoredisplay" onClick={() => setOpenMenu(false)}>
           <li>My Scores</li>
-          <li>Home</li>
         </Link>
-        <Link to="happinessgraph">
+        <Link to="../happinessgraph" onClick={() => setOpenMenu(false)}>
           <li>Happiness Graph</li>
         </Link>
-        <Link to="task">
+        <Link to="../task" onClick={() => setOpenMenu(false)}>
           <li>Tasks</li>
         </Link>
-        <Link to="accountsettings">
+        <Link to="../accountsettings" onClick={() => setOpenMenu(false)}>
           <li>Account Settings</li>
         </Link>
-        <Link to="about">
+        <Link to="../about" onClick={() => setOpenMenu(false)}>
           <li>About</li>
-        </Link>
-        <Link to="termsconditions">
-          <li>Terms and Conditions</li>
         </Link>
         <li className={styles.signOutButton} onClick={signOut}>
           Sign Out

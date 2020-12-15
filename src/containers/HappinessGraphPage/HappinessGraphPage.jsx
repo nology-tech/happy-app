@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./HappinessGraphPage.module.scss";
 import Graph from "../../components/Graph";
+import Navbar from "../../components/Navbar"
 
-const HappinessGraphPage = () => {
+const HappinessGraphPage = (props) => {
+  const { signOut } = props;
+
   return (
     <div className={styles.happinessPageDiv}>
-      <p>HappinessGraphPage works</p>
+      <Navbar signOut={signOut}/>
+
       <Graph />
     </div>
   );
