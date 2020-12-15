@@ -195,10 +195,7 @@ const clearForm = () => {
             type="checkbox" 
             id="SelfWorth" 
             value="Self Worth" 
-            onInput={(event) => {
-              let value = (event.target.checked) = event.target.value;
-              tagnames.push(value);
-            }}
+            onInput={handleChkBoxChange}
             />
           
           <label htmlFor="Personal Development">Personal Development: </label>         
@@ -217,10 +214,7 @@ const clearForm = () => {
             type="checkbox" 
             id="physicalEnvironment" 
             value="Physical Environment" 
-            onInput={(event) => {
-              let value = (event.target.checked) = event.target.value;
-              tagnames.push(value);
-            }}
+            onInput={handleChkBoxChange}
             />
           
           <label htmlFor="Purpose">Purpose: </label>        
@@ -228,10 +222,7 @@ const clearForm = () => {
             type="checkbox" 
             id="Purpose" 
             value="Purpose" 
-            onInput={(event) => {
-              let value = (event.target.checked) = event.target.value;
-              tagnames.push(value);
-            }}
+            onInput={handleChkBoxChange}
           /> 
           
           <label htmlFor="Spirituality">Spirituality: </label> 
@@ -239,10 +230,7 @@ const clearForm = () => {
             type="checkbox" 
             id="Spirituality" 
             value="Spirituality" 
-            onInput={(event) => {
-              let value = (event.target.checked) = event.target.value;
-              tagnames.push(value);
-            }}
+            onInput={handleChkBoxChange}
           />
           
         </fieldset>      
