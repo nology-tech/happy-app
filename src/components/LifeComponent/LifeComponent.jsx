@@ -14,7 +14,6 @@ const LifeComponent = (props) => {
     icon
   } = props;
 
-
   const [isClicked, setIsClicked] = useState(false);
 
   return (

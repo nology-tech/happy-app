@@ -14,7 +14,8 @@ import PrivateRoutes from "../../containers/PrivateRoutes";
 import ScoreDisplay from "../ScoreDisplay";
 
 const Routes = (props) => {
-  const { signIn, user } = props;
+  const { signIn, user, signOut } = props;
+  const isScoreDisplay = false;
 
   return (
     <Router>
@@ -23,11 +24,11 @@ const Routes = (props) => {
       <Login path="login" signIn={signIn} />
       <Register path="register" />
       <PrivateRoutes path="/">
-        <Task path="task" />
-        <InitialScorePage path="setscores" />
-        <HappinessGraphPage path="happinessgraph" />
+        <Task path="task" signOut={signOut} />
+        <InitialScorePage path="setscores" isScoreDisplay={isScoreDisplay} signOut={signOut}/>
+        <HappinessGraphPage path="happinessgraph" signOut={signOut} />
         <AccountSettings path="accountsettings" />
-        <ScoreDisplay user={user} path="scoredisplay" />
+        <ScoreDisplay user={user} path="scoredisplay" isScoreDisplay={isScoreDisplay} signOut={signOut} />
       </PrivateRoutes>
       <TermsConditions path="termsconditions" />
     </Router>

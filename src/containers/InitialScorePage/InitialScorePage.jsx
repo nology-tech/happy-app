@@ -5,8 +5,9 @@ import Footer from "../../components/Footer";
 import lifeComponents from "../../data/lifeComponents";
 import { firestore } from "../../firebase";
 
-const InitialScorePage = () => {
+const InitialScorePage = (props) => {
   const [scores, setScores] = useState(lifeComponents);
+  const { isScoreDisplay } = props;
 
   const updateScore = (event, id) => {
     const newScores = scores.map((scoreObj) => {
@@ -52,7 +53,7 @@ const InitialScorePage = () => {
         <hr />
         <LifeComponentList scores={scores} updateScore={updateScore} />
       </section>
-      <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} />
+      <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} isScoreDisplay={false} />
     </>
   );
 };

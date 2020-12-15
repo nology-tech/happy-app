@@ -33,9 +33,6 @@ const NavItem = (props) => {
         <Link to="accountsettings">
           <li>Account Settings</li>
         </Link>
-        <Link to="termsconditions">
-          <li>Terms and Conditions</li>
-        </Link>
         <li className={styles.signOutButton} onClick={signOut}>
           Sign Out
         </li>
