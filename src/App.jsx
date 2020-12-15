@@ -37,10 +37,14 @@ const signIn = () => {
       }
     });
   };
+  
 
   useEffect(() => { 
     getUser();
   },);
+
+  // console.log(user);
+
 
   return (
     <div className={styles.body}>
