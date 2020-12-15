@@ -28,7 +28,7 @@ const InitialScorePage = () => {
   const addScoreToDataBase = () => {
     firestore
       .collection("users")
-      .doc("Ezio") // Change this to UID of user, evenually
+      .doc("users.id") // Change this to UID of user, evenually
       .collection("scores")
       .add({
         lifeComponentScores,
