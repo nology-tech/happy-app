@@ -8,7 +8,7 @@ const TaskList = (props) => {
   const {addTask, tasks, addTaskToDatabase} = props;
 
   const getTaskJsx = (task) => (
-    <div className={styles.task} key={task.id}>
+    <div className={styles.task} key={task.dateCreated}>
       <IndivualTask taskText={task.text}/>
     </div>
   );

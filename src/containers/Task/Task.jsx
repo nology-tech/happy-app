@@ -6,15 +6,7 @@ import NavBar from "../../components/Navbar";
 
 
 const Task = ({user}) => {
-
   const [tasks, setTasks] = useState([]);
-
-// // console.log(tasks);
-//   const addTask = (task) => {
-//     const newtasks = [task, ...tasks]
-//     setTasks(newtasks);
-//     console.log([task, ...tasks])
-//   };
 
   const addTaskToDatabase = (task) => {
     firestore
@@ -37,7 +29,6 @@ const fetchTaskFromDataBase = () => {
     .collection("users")
     .doc(user.uid)
     .collection("tasks")
-    .doc()
     .get()
     .then((querySnapshot) => {
       const currentData = querySnapshot.docs.map((doc) => doc.data());
@@ -46,11 +37,11 @@ const fetchTaskFromDataBase = () => {
     .catch((err) => console.log(err));
 };
 
-  useEffect(() =>{
+  useEffect(() => {
     if (user) {
-      fetchTaskFromDataBase();
+      fetchTaskFromDataBase()
     }
-  }, [])
+  }, [user])
 
   return (
     <section className={styles.tasksContent}>

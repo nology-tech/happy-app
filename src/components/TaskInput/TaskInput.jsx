@@ -11,7 +11,9 @@ const emptyTask = {
   duedate: "",
   isCompleted: false
 };
+
 let tagnamesToAdd = [];
+
 
 const TaskInput = ({addTaskToDatabase}) => {
 
@@ -19,7 +21,6 @@ const [inputtedTasktext, setInputtedTasktext] = useState("");
 const [idCount, setIdCount] = useState(1);
 const [tagnames, setTagnames] = useState([]);
 
-  
 
 // const [allChecked, setAllChecked] = useState(false);
 // const [isChecked, setIsChecked] = useState();
@@ -34,13 +35,10 @@ const {
   isCompleted
 } = task;
 
-// console.log(tagged);
   const handleChange = (e) => {
     const name = e.target.name;
     setTagnames(tagnamesToAdd)
     setInputtedTasktext(e.target.value);
-    // let text = e.target.value;
-    // addTask();
     setTask({
       ...task,
       id: idCount,
@@ -50,13 +48,6 @@ const {
       isCompleted: false
 });
 };
-  
-// const addTask = (task) => {
-//   const newtask = task;
-//   setTask(newtask);
-//   // console.log(task);
-// }
-
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -104,7 +95,7 @@ const clearForm = () => {
         onChange={handleChange}
         placeholder="Set task here..." 
         id="textInput"
-        value={text}
+        value={inputtedTasktext}
         required
         />
         <fieldset className={styles.tagFieldset}>      
@@ -139,7 +130,7 @@ const clearForm = () => {
             type="checkbox" 
             id="loveLife" 
             value="Love Life"
-           onInput={handleChkBoxChange}
+            onInput={handleChkBoxChange}
             />
               
           <label htmlFor="Family">Family: </label>        
@@ -147,7 +138,7 @@ const clearForm = () => {
             type="checkbox" 
             id="Family" 
             value="Family" 
-           onInput={handleChkBoxChange}
+            onInput={handleChkBoxChange}
             />
               
           <label htmlFor="Friends">Friends: </label>        
@@ -155,7 +146,7 @@ const clearForm = () => {
             type="checkbox" 
             id="Friends" 
             value="Friends" 
-           onInput={handleChkBoxChange}
+            onInput={handleChkBoxChange}
             />
             
           <label htmlFor="Fun and Recreation">Fun and Recreation:  </label>        
@@ -163,7 +154,7 @@ const clearForm = () => {
             type="checkbox" 
             id="funAndRecreation" 
             value="Fun and Recreation" 
-           onInput={handleChkBoxChange}
+            onInput={handleChkBoxChange}
             />
           
           <label htmlFor="Physical Health">Physical Health: </label>         
@@ -203,10 +194,7 @@ const clearForm = () => {
             type="checkbox" 
             id="personalDevelopment" 
             value="Personal Development" 
-            onInput={(event) => {
-              let value = (event.target.checked) = event.target.value;
-              tagnames.push(value);
-            }}
+            onInput={handleChkBoxChange}
           />
           
           <label htmlFor="Physical Environment">Physical Environment: </label>         
