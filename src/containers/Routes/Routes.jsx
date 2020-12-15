@@ -23,7 +23,7 @@ const Routes = (props) => {
       <Login path="login" signIn={signIn} />
       <Register path="register" />
       <PrivateRoutes path="/">
-        <Task path="task" />
+        <Task path="task" user={user} />
         <InitialScorePage path="setscores" />
         <HappinessGraphPage path="happinessgraph" />
         <AccountSettings path="accountsettings" />

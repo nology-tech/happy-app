@@ -28,6 +28,22 @@
             outline: none;
         }
     }
+    .tagFieldset {
+        color: $white;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        height: auto;
+        width: 40vw;
+        // height: 280px;
+        // wrap: nowrap;
+        // justify-content: flex-start;
+        align-content: space-evenly;
+        justify-items: center;
+        justify-content: space-between;
+        text-align: center;
+        input {}
+    }
     .submitButton {
         height: 5vh;
         width: 5%;

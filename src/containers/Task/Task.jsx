@@ -1,37 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Task.module.scss";
 import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
-const Task = () => {
 
-  const [tasks, settasks] = useState([]);
+const Task = ({user}) => {
 
-const addTask = (task) => {
-  const newtasks = [task, ...tasks]
-  settasks(newtasks);
-  console.log([task, ...tasks])
-}
+  const [tasks, setTasks] = useState([]);
 
-const addTaskToDatabase = (task) => {
+// // console.log(tasks);
+//   const addTask = (task) => {
+//     const newtasks = [task, ...tasks]
+//     setTasks(newtasks);
+//     console.log([task, ...tasks])
+//   };
+
+  const addTaskToDatabase = (task) => {
+    firestore
+      .collection("users")
+      .doc(user.uid) // user: user.uid
+      .collection("tasks")
+      .doc()
+      .set(task)
+      .then(() => {
+        console.log("document written!");
+      })
+      .catch(function (error) {
+        console.error("error writing,", error)
+      })
+  };
+
+
+const fetchTaskFromDataBase = () => {
   firestore
-  .collection("tasks")
-  .doc()
-  .set(task)
-  .then(function () {
-    console.log("document written!");
-  })
-  .catch(function (error) {
-    console.error("error wrting,", error)
-  })
-}
+    .collection("users")
+    .doc(user.uid)
+    .collection("tasks")
+    .doc()
+    .get()
+    .then((querySnapshot) => {
+      const currentData = querySnapshot.docs.map((doc) => doc.data());
+      setTasks(currentData);
+    })
+    .catch((err) => console.log(err));
+};
+
+  useEffect(() =>{
+    if (user) {
+      fetchTaskFromDataBase();
+    }
+  }, [])
 
   return (
     <section className={styles.tasksContent}>
-    <NavBar />
+    {/* <NavBar /> */}
 
-      <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
+      <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} /> {/* addTask={addTask} */}
 
     </section>
   );
