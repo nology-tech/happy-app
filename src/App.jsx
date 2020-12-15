@@ -3,7 +3,6 @@ import styles from "./App.module.scss";
 import "./data/fa-library";
 import Routes from "./containers/Routes";
 import { navigate } from "@reach/router";
-import Navbar from "./components/Navbar";
 
 import firebase, { googleProvider } from "./firebase";
 
@@ -11,9 +10,10 @@ import firebase, { googleProvider } from "./firebase";
 const App = () => {
   const [user, setUser] = useState(null);
 
-  const signIn = () => {
-    firebase.auth().signInWithRedirect(googleProvider);
-    navigate("/");
+const signIn = () => {
+    firebase.auth().signInWithRedirect(googleProvider); 
+    navigate("setscores"); 
+  
   };
 
   const signOut = () => {
@@ -38,14 +38,16 @@ const App = () => {
     });
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     getUser();
-  }, []);
+  },);
 
   return (
     <div className={styles.body}>
-      <Navbar signOut={signOut} />
-      <Routes user={user} signIn={signIn} signOut={signOut}/>
+      <Routes user={user}
+       signIn={signIn}
+       signOut={signOut}
+      />
     </div>
   );
 };

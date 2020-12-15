@@ -9,6 +9,7 @@
   margin: auto;
   z-index: 1;
 
+  
 }
 
 
@@ -57,10 +58,13 @@
     &:hover {
       cursor: pointer;
       color: $color-primary;
-    }
-  }
-}
 
+      
+    }
+    
+  }
+  
+}
 
   
 

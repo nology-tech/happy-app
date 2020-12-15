@@ -3,7 +3,6 @@ import { Router } from "@reach/router";
 
 import About from "../About";
 import AccountSettings from "../AccountSettings";
-import Home from "../Home";
 import Login from "../Login";
 import Register from "../Register";
 import Task from "../Task";
@@ -19,18 +18,17 @@ const Routes = (props) => {
 
   return (
     <Router>
-      <Home path="/" />
-      <About path="about" />
-      <Login path="login" signIn={signIn} />
-      <Register path="register" />
+      <About path="about" signOut={signOut}/>
+      <Login path="/" signIn={signIn} />
+      <Register path="register"signOut={signOut} />
       <PrivateRoutes path="/">
         <Task path="task" signOut={signOut} />
         <InitialScorePage path="setscores" isScoreDisplay={isScoreDisplay} signOut={signOut}/>
         <HappinessGraphPage path="happinessgraph" signOut={signOut} />
-        <AccountSettings path="accountsettings" />
+        <AccountSettings path="accountsettings" signOut={signOut} />
         <ScoreDisplay user={user} path="scoredisplay" isScoreDisplay={isScoreDisplay} signOut={signOut} />
       </PrivateRoutes>
-      <TermsConditions path="termsconditions" />
+      <TermsConditions path="termsconditions" signOut={signOut}/>
     </Router>
   );
 };
