@@ -14,20 +14,14 @@ const handleChange = (e) => {
   setInputttedTasktext(e.target.value);
   setTask({
     id: idCount,
-    text: inputtedTasktext,
+    text: e.target.value,
   });
 }
 
 const handleSubmit = (e) => {
   e.preventDefault();
   setIdCount(idCount + 1);
-  addTask({
-    id: idCount,
-    text: inputtedTasktext
-  });
-  console.log(task);
   addTaskToDatabase(task);
-  setInputttedTasktext("");
 };
 
   return (

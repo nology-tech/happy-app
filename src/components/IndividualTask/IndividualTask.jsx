@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./IndividualTask.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const IndividualTask = ({task, tasks, setTasks, taskText, RemoveTaskFromDatabase}) => {
 
@@ -12,14 +14,43 @@ const IndividualTask = ({task, tasks, setTasks, taskText, RemoveTaskFromDatabase
   // const handleButtonToggle = () => {
     
   // }
+
+// const handleOpacityCHange = (e) => {
+//  if 
+// }
+
+// handleClick = (event) => {
+//   // accessible
+//   event.target.style
+//   event.target.classList //to change style via css
+// }
+
+const [isComplete, setIsComplete] = useState(false)
+// const toggleChecked = () => setIsComplete(value => !value)
+
+const handleOpacityChange = (e) =>{
+  if(isComplete === true) {
+    e.target.style.opacity = 0.7;
+  } else {
+    e.target.style.opacity = 1;
+  }
+  setIsComplete(!isComplete);
+};
+
   return (
     <div className={styles.task}>{taskText}
         <div className={styles.buttonContainer}>
-          <button className={styles.taskDelete} onClick={RemoveTaskFromDatabase}>D</button>
-          <button  className={styles.taskNotComplete}>C</button>
+          <button className={styles.taskDelete} onClick={RemoveTaskFromDatabase}>X</button>
+          <button onClick={handleOpacityChange} className={styles.taskNotComplete}>
+            <FontAwesomeIcon icon="check" className={styles.checkIcon}/>
+          </button>
         </div>
       </div>
     
+    // <FontAwesomeIcon
+    //           onClick={() => setIsClicked(!isClicked)}
+    //           icon={["fas", "info"]}
+    //         />
   );
 };
 

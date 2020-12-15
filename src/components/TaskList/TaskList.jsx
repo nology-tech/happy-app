@@ -9,7 +9,7 @@ const TaskList = (props) => {
 
   const getTaskJsx = (task) => (
     <div className={styles.task} key={task.id}>
-      <IndivualTask RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tasks={tasks} taskText={task.text}/>
+      <IndivualTask RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tasks={tasks} taskText={task.text}/> 
     </div>
   );
   return (
