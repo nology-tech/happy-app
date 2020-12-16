@@ -14,6 +14,8 @@ const Task = () => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState(emptyTask);
   const [isComplete, setIsComplete] = useState(false)
+
+  
   
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
@@ -38,13 +40,13 @@ const addTaskToDatabase = (task) => {
 // do a filter before a map !!!!!!!!!!!!!!! ???? MATT SAID w
 // before map of task we filter through the task to check if they are checked 
 
-const updateTaskFromDataBase = (id) => { 
+const updateTaskFromDataBase = (id, isComplete) => { 
   firestore
   .collection("users")
   .doc("testUser")
   .collection("tasks")
   .doc(`${id}`)
-  .update({isComplete: isComplete})
+  .update({isComplete: !isComplete})
   .then(function() {
     console.log("Document successfully changed")
     fetchTaskFromDataBase();

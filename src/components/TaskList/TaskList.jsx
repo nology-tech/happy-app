@@ -12,18 +12,12 @@ const TaskList = (props) => {
       return el;
     }
   })
-console.log(tickedTasks)
 
-  const taskCompletedness = (task) => {
-   tickedTasks.forEach(((el) => {
 
-  }))
-  }
- console.log(taskCompletedness)
 
   const getTaskJsx = (task) => (
     <div className={styles.task} key={task.id}>
-      <IndivualTask taskCompletedness={taskCompletedness} updateTaskFromDataBase={() => updateTaskFromDataBase(task.id)}  setIsComplete={setIsComplete} isComplete={isComplete} toggleComplete={props.toggleComplete} RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tickedTasks={tickedTasks} tasks={tasks} taskIsComplete={task.taskIsComplete} taskText={task.text}/> 
+      <IndivualTask updateTaskFromDataBase={updateTaskFromDataBase}  setIsComplete={setIsComplete} isComplete={isComplete} toggleComplete={props.toggleComplete} RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tickedTasks={tickedTasks} tasks={tasks} taskIsComplete={task.taskIsComplete} taskText={task.text}/> 
     </div>
   );
   return (

@@ -3,15 +3,24 @@ import styles from "./IndividualTask.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-const IndividualTask = ({task, tasks, tickedTasks, setTasks, taskText, RemoveTaskFromDatabase,  setIsComplete, isComplete, updateTaskFromDataBase, taskCompletedness}) => {
+const IndividualTask = ({task, tasks, tickedTasks, setTasks, taskText, RemoveTaskFromDatabase,  /*setIsComplete, isComplete,*/ updateTaskFromDataBase,}) => {
+  const [isComplete, setIsComplete] = useState(task.isComplete);
 
 
+let taskCompletedness
+
+if (isComplete === false) {
+  taskCompletedness = styles.taskNotComplete;
+} else {
+  taskCompletedness = styles.taskComplete;
+}
 
 
 
 const handleisCompleteChange = () =>{ 
-  setIsComplete(!isComplete); 
-  updateTaskFromDataBase();
+  updateTaskFromDataBase(task.id, isComplete);
+  setIsComplete(!isComplete);
+  console.log(isComplete)
 };
 
 

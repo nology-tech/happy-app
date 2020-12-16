@@ -1,5 +1,6 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  
   faSearch,
   faLaptopHouse,
   faDonate,
@@ -22,7 +23,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 export default library.add(
-  faInfo,
+  
   faSearch,
   faLaptopHouse,
   faDonate,
