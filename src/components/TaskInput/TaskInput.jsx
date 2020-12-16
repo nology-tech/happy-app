@@ -3,7 +3,7 @@ import styles from "./TaskInput.module.scss";
 
 
 
-const TaskInput = ({task, setTask, addTask, addTaskToDatabase}) => {
+const TaskInput = ({task, setTask, addTask, addTaskToDatabase,isComplete, setIsComplete}) => {
 
 const [inputtedTasktext, setInputttedTasktext] = useState("");
 const [idCount, setIdCount] = useState(1);
@@ -15,12 +15,21 @@ const handleChange = (e) => {
   setTask({
     id: idCount,
     text: e.target.value,
+    isComplete: isComplete
   });
 }
 
 const handleSubmit = (e) => {
   e.preventDefault();
   setIdCount(idCount + 1);
+  setIsComplete(isComplete)
+  setTask({
+    id: idCount,
+    text: e.target.value,
+    isComplete: isComplete
+  });
+  setInputttedTasktext("");
+  addTask(task);
   addTaskToDatabase(task);
 };
 

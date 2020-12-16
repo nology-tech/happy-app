@@ -13,17 +13,17 @@ const Task = () => {
 
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState(emptyTask);
+  const [isComplete, setIsComplete] = useState(false)
   
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
   setTasks(newtasks);
-  console.log([task, ...tasks])
 }
 
 const addTaskToDatabase = (task) => {
   firestore
   .collection("users")
-  .doc("Ezio")
+  .doc("testUser")
   .collection("tasks")
   .doc(`${task.id}`)
   .set(task)
@@ -35,10 +35,28 @@ const addTaskToDatabase = (task) => {
   })
 }
 
+// do a filter before a map !!!!!!!!!!!!!!! ???? MATT SAID w
+// before map of task we filter through the task to check if they are checked 
+
+const updateTaskFromDataBase = (id) => { 
+  firestore
+  .collection("users")
+  .doc("testUser")
+  .collection("tasks")
+  .doc(`${id}`)
+  .update({isComplete: isComplete})
+  .then(function() {
+    console.log("Document successfully changed")
+    fetchTaskFromDataBase();
+  }).catch(function(error) {
+    console.error("Error chan document: ", error);
+  });
+}
+
 const fetchTaskFromDataBase = () => {
   firestore
     .collection("users")
-    .doc("Ezio")
+    .doc("testUser")
     .collection("tasks")
     .get()
     .then((querySnapshot) => {
@@ -47,10 +65,11 @@ const fetchTaskFromDataBase = () => {
     });
 };
 
+
 const RemoveTaskFromDatabase = (id) => {
   firestore
   .collection("users")
-  .doc("Ezio")
+  .doc("testUser")
   .collection("tasks")
   .doc(`${id}`)
   .delete()
@@ -71,24 +90,14 @@ useEffect(() =>{
 },[])
 
 
-// useEffect(() => {
-//   firebase
-//   .firestore
-//   .collection("tasks")
-//   .doc()
-//   .get()
-//   .then(() => {
-    
-//   })
-// },[])
 
   return (
     <section className={styles.tasksContent}>
       <NavBar />
       <TaskList 
-      RemoveTaskFromDatabase={RemoveTaskFromDatabase} 
-      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
-
+      RemoveTaskFromDatabase={RemoveTaskFromDatabase} updateTaskFromDataBase={updateTaskFromDataBase}
+      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask} setIsComplete={setIsComplete} isComplete={isComplete} isComplete={isComplete}/>
+     
     </section>
   );
 

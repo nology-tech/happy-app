@@ -5,16 +5,30 @@ import IndivualTask from "../IndividualTask";
 
 const TaskList = (props) => {
 
-  const {task, setTask, setTasks, addTask, tasks, addTaskToDatabase, RemoveTaskFromDatabase } = props;
+  const {task, setTask, setTasks, addTask, tasks, addTaskToDatabase, RemoveTaskFromDatabase, updateTaskFromDataBase,  setIsComplete, isComplete} = props;
+
+  const tickedTasks = tasks.filter((el) => {
+    if(el.isComplete === true) {
+      return el;
+    }
+  })
+console.log(tickedTasks)
+
+  const taskCompletedness = (task) => {
+   tickedTasks.forEach(((el) => {
+
+  }))
+  }
+ console.log(taskCompletedness)
 
   const getTaskJsx = (task) => (
     <div className={styles.task} key={task.id}>
-      <IndivualTask RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tasks={tasks} taskText={task.text}/> 
+      <IndivualTask taskCompletedness={taskCompletedness} updateTaskFromDataBase={() => updateTaskFromDataBase(task.id)}  setIsComplete={setIsComplete} isComplete={isComplete} toggleComplete={props.toggleComplete} RemoveTaskFromDatabase={() => RemoveTaskFromDatabase(task.id)} setTasks={setTasks} task={task} tickedTasks={tickedTasks} tasks={tasks} taskIsComplete={task.taskIsComplete} taskText={task.text}/> 
     </div>
   );
   return (
     <>
-      <TaskInput task={task} setTask={setTask}  addTaskToDatabase={addTaskToDatabase} addTask={addTask}/>
+      <TaskInput isComplete={isComplete} setIsComplete={setIsComplete} task={task} setTask={setTask}  addTaskToDatabase={addTaskToDatabase} addTask={addTask}/>
       <section className={styles.displayTasks}>{tasks.map(getTaskJsx)}</section>
     </>
     
