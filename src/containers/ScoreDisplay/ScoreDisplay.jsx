@@ -10,7 +10,7 @@ import { firestore } from "../../firebase";
 import lifeComponents from "../../data/lifeComponents";
 
 const ScoreDisplay = (props) => {
-  const { signOut, user } = props;
+  const { signOut, user, linkTo } = props;
 
   const [scores, setScore] = useState(null);
 
@@ -43,6 +43,8 @@ const ScoreDisplay = (props) => {
 
   const getComponents = scores
     ? scores.lifeComponentScores.map((score) => {
+      const link = score.name === "Career" ? "careerdeepdive" : "";
+
       const getIcon = lifeComponents.find((lifecomponent) => {
           let lifeComponentIcon;
           
@@ -58,6 +60,7 @@ const ScoreDisplay = (props) => {
             rangeValue={score.score}
             key={score.name}
             icon={getIcon.icon}
+            linkTo={link}
           />
         );
       })

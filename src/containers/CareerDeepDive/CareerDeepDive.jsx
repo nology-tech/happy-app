@@ -27,28 +27,29 @@ const CareerDeepDive = () => {
   "Connection/Alignment with business"
   ];
   const returnedComponents = careerComponentList.map((component) => {
-    return <div>
-    <main className={styles.lifeComponent}>
-      <div className={styles.lifeComponent__topElements}>
-        <h3 className={styles.lifeComponent__title}>{component}</h3>
-        <p className={styles.lifeComponent__score}>6/10</p>
-      </div>
+    return (
+      <div>
+        <main className={styles.lifeComponent}>
+          <div className={styles.lifeComponent__topElements}>
+            <h3 className={styles.lifeComponent__title}>{component}</h3>
+            <p className={styles.lifeComponent__score}>6/10</p>
+          </div>
 
-      <div className={styles.lifeComponent__bottomElements}>
-        <span>
-          <div className={styles.lifeComponent__circle}></div>
-        </span>
-          <input
-            className={styles.lifeComponentSlider}
-            type="range"
-            min="1"
-            max="10"
-            step="1"
-          />
-      </div>
-  
-    </main>
+          <div className={styles.lifeComponent__bottomElements}>
+            <span>
+              <div className={styles.lifeComponent__circle}></div>
+            </span>
+            <input
+              className={styles.lifeComponentSlider}
+              type="range"
+              min="1"
+              max="10"
+              step="1"
+            />
+          </div>
+        </main>
     </div>
+    )
 
   });
 

@@ -21,9 +21,10 @@ const LifeComponent = (props) => {
   return (
     <main className={styles.lifeComponent}>
       <div className={styles.lifeComponent__topElements}>
-      <Link to={`../${linkTo}`}>
-        <h2 className={styles.lifeComponent__title}>
-          {lifeComponentNames}{" "}
+        <h2>
+          <Link to={`../${linkTo}`} className={styles.lifeComponent__title}>
+            {lifeComponentNames}{" "}
+          </Link>
           <span className={styles.lifeComponent__infoIcon}>
             {isReadOnly ? (
               ""
@@ -35,7 +36,6 @@ const LifeComponent = (props) => {
             )}
           </span>
         </h2>
-        </Link>
         <p className={styles.lifeComponent__score}>{rangeValue}/10</p>
       </div>
 
