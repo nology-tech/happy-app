@@ -1,12 +1,4 @@
-@import "../../variables.scss";
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import '../../variables.scss';
 .taskInput {
     display: flex;
     border-radius: 50px;
@@ -30,7 +22,7 @@
         justify-content: center;
         &::placeholder {
             color: white;
-            font-size: $font-size-components/2;
+            font-size: $font-size-components / 1.2;
         }
         &:focus {
             outline: none;
@@ -42,9 +34,9 @@
         background: $colour-2;
         border-radius: 50%;
         border: none;
-        font-size: $font-size-components/1.6;
+        font-size: $font-size-components * 1.5;
         text-align: center;
-        color: white;
+        color: $colour-1;
         cursor: pointer;
         &:focus {
             outline: none;

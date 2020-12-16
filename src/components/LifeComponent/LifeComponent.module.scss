@@ -1,13 +1,5 @@
 @import "../../variables.scss";
 
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .lifeComponent {
   width: 90%;
   margin: 0 auto;
@@ -28,6 +20,11 @@
       margin-left: 20px;
       font-size: 15px;
       color: #fff;
+
+      &:hover {
+        cursor: pointer;
+        color: $colour-1;
+      }
     }
 
     .lifeComponent__score {
@@ -38,11 +35,12 @@
 
   .lifeComponent__bottomElements {
     display: flex;
-
-    .lifeComponent__icons {
-      color: $colour-2;
+    .lifeComponent__circle {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: $tick-colour;
       margin-right: 20px;
-      opacity: 0.7;
     }
   }
 
@@ -59,11 +57,9 @@
   .lifeComponentSlider {
     width: 100%;
     border-radius: 10px;
-    // margin-left: 10px;
-    // box-shadow: 0px 0px 10px 0px $colour-2;
-    // transform: translateY(2px);
+    box-shadow: 0px 0px 15px rgba(41, 103, 179, 0.7);
+    outline: none;
   }
-
   // Special styling for google chrome (the tube part of the slider)
   input[type="range"]::-webkit-slider-runnable-track {
     cursor: pointer;
@@ -85,7 +81,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50px;
-    box-shadow: -500px 0 0 490px $colour-2;
+    box-shadow: -2000px 0 0 1990px $colour-2;
     border-radius: 10px;
     border: 1px solid #000000;
     margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
