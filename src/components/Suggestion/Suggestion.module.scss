@@ -1,22 +1,12 @@
 @import "../../variables.scss";
 
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .message {
-  // width: 90%;
   margin-top: 30px;
   min-height: 30px;
   height: fit-content;
   font-family: $default-font-family;
   font-size: 1rem;
   text-align: center;
-  // background-color: $darker-blue;
   color: $white;
   padding: 10px;
   border-radius: 20px;

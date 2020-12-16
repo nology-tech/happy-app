@@ -11,6 +11,7 @@ const LifeComponent = (props) => {
     handleChange,
     rangeValue,
     isReadOnly,
+    icon
   } = props;
 
   const [isClicked, setIsClicked] = useState(false);
@@ -36,7 +37,7 @@ const LifeComponent = (props) => {
 
       <div className={styles.lifeComponent__bottomElements}>
         <span>
-          <div className={styles.lifeComponent__circle}></div>
+          <div className={styles.lifeComponent__circle}> <FontAwesomeIcon className={styles.icon} icon={icon} /></div>
         </span>
         {isReadOnly ? (
           <input

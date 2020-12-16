@@ -6,7 +6,6 @@ const LifeComponentList = (props) => {
   const { scores, updateScore } = props;
 
   const allLifeComponents = scores.map((component) => {
-    console.log(component.id);
     return (
       <LifeComponent
         rangeValue={component.score}
@@ -14,11 +13,16 @@ const LifeComponentList = (props) => {
         lifeComponentSuggestion={component.suggestion}
         key={component.id}
         lifeComponentNames={component.name}
+        icon={component.icon}
       />
     );
   });
 
-  return <>{allLifeComponents}</>;
+  return (
+    <>
+   {allLifeComponents}
+   </>
+ );
 };
 
 export default LifeComponentList;

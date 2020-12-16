@@ -1,8 +1,6 @@
 @import "../../variables.scss";
 
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +10,7 @@
     width: 100%;
     min-height: 100px;
     font-size: 12px;
-    background-color: $background-blue1;
+    background-color: $gradient;
     color: $white;
     display: grid;
     grid-template-columns: 0.3fr 0.5fr 1fr;

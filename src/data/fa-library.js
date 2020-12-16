@@ -1,6 +1,6 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faInfo } from "@fortawesome/free-solid-svg-icons";
 import {
+  faSearch,
   faLaptopHouse,
   faDonate,
   faBrain,
@@ -17,6 +17,9 @@ import {
   faHandsHelping,
   faSmile,
   faTimes,
+  faInfo,
+  faPlus,
+  faPencilAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -37,5 +40,8 @@ export default library.add(
   faUmbrellaBeach,
   faHandsHelping,
   faSmile,
-  faTimes
+  faTimes,
+  faInfo,
+  faPlus,
+  faPencilAlt
 );

@@ -1,22 +1,14 @@
 @import "../../variables";
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-  box-sizing: border-box;
-}
 .task {
     font-size: $font-size-components/1.5;
     min-height: 2rem;
     margin-top: 3%;
     width: 100%;
-    background: $color-primary-dark;
+    background: #000d80;
     border-radius: 50px;
     height: 5vh;
     padding: 0.5% 2.5% 0.5% 2.5%;
-    color: white;
+    color: $white;
     border: none;
     display: flex;
     align-items: center;

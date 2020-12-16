@@ -1,13 +1,5 @@
 @import "../../variables.scss";
 
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .logoContainer {
   display: flex;
   justify-content: center;
@@ -17,9 +9,9 @@
   .textLogo {
     color: $text-colour-primary;
   }
-  .personLogo {
-    height: $height-logo-img;
-    width: $width-logo-img;
+  .newLogo {
+    height: $height-logo-img * 3;
+    width: $width-logo-img * 3;
     margin: auto $margin-logo-img;
   }
 }

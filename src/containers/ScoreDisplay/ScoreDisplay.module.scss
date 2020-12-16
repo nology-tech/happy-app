@@ -1,6 +1,11 @@
 @import "../../variables.scss";
 
 .scoreDisplay {
+  padding-bottom: 50px;
+  overflow: hidden;
+  @media only screen and (max-width: 600px) {
+    padding-bottom: 100px;
+  }
   background-image: linear-gradient(
     to top,
     #001544,

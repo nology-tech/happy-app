@@ -7,8 +7,12 @@
   left: 0;
   margin: auto;
   z-index: 1;
-  color: transparent;
 }
+
+.tooltip {
+  color: $colour-2;
+}
+
 @mixin on-circle($item-count, $circle-size, $item-size) {
   position: relative;
   width: $circle-size;

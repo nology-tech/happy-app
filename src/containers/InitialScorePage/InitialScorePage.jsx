@@ -4,10 +4,10 @@ import LifeComponentList from "../../components/LifeComponentList";
 import Footer from "../../components/Footer";
 import lifeComponents from "../../data/lifeComponents";
 import { firestore } from "../../firebase";
-// import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 const InitialScorePage = (props) => {
-  // const { signOut } = props;
+  const { signOut } = props;
   const [scores, setScores] = useState(lifeComponents);
   const updateScore = (event, id) => {
     const newScores = scores.map((scoreObj) => {
@@ -73,14 +73,18 @@ const InitialScorePage = (props) => {
   return (
     <>
       <section className={styles.initialScorePage}>
-        {/* <Navbar signOut={signOut} /> */}
+        <Navbar signOut={signOut} text="Set Scores" />
         <p className={styles.initialScorePage__question}>
           Please rate your happiness for each component out of 10
         </p>
         <hr />
         <LifeComponentList scores={scores} updateScore={updateScore} />
       </section>
-      <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} />
+      <Footer
+        addScoreToDataBase={addScoreToDataBase}
+        scores={scores}
+        isScoreDisplay={false}
+      />
     </>
   );
 };

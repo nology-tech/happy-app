@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ScoreDisplay.module.scss";
 
-// import NavBar from "../../components/Navbar";
+import Navbar from "../../components/Navbar";
 import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
+import Footer from "../../components/Footer";
 import { firestore } from "../../firebase";
 
+import lifeComponents from "../../data/lifeComponents";
+
 const ScoreDisplay = (props) => {
-  const { user } = props;
+  const { signOut, user } = props;
+
   const [scores, setScore] = useState(null);
 
   const getScores = () => {
@@ -39,25 +43,37 @@ const ScoreDisplay = (props) => {
 
   const getComponents = scores
     ? scores.lifeComponentScores.map((score) => {
+      const getIcon = lifeComponents.find((lifecomponent) => {
+          let lifeComponentIcon;
+          
+          if(lifecomponent.name === score.name) {
+          lifeComponentIcon = lifecomponent.icon;
+        } return lifeComponentIcon
+      })
+
         return (
           <LifeComponent
             isReadOnly
             lifeComponentNames={score.name}
             rangeValue={score.score}
             key={score.name}
+            icon={getIcon.icon}
           />
         );
       })
     : null;
 
   return (
+    <>
     <section className={styles.scoreDisplay}>
-      {/* <NavBar text="Happiness Scores" /> */}
+      <Navbar signOut={signOut} text="Happiness Scores" /> 
       <div className={styles.overallContainer}>
         <AverageScore data={currentScores} />
       </div>
       {getComponents}
     </section>
+    <Footer isScoreDisplay={true}/>
+    </>
   );
 };
 

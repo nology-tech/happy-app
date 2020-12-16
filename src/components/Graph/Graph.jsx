@@ -132,6 +132,8 @@ const Graph = () => {
   }, []);
 
   useEffect(() => {
+    getScores();
+
     let size;
     if (width > 300 && width < 500) {
       size = 200;
@@ -140,9 +142,13 @@ const Graph = () => {
     } else {
       size = 200;
     }
+
     setGraphSize(size);
+
     const handleResize = () => setWidth(window.innerWidth);
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
   return (
