@@ -11,7 +11,7 @@ const Task = ({user, signOut}) => {
   const addTaskToDatabase = (task) => {
     firestore
       .collection("users")
-      .doc(user.uid) // user: user.uid
+      .doc(user.uid)
       .collection("tasks")
       .doc()
       .set(task)
