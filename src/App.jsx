@@ -39,9 +39,11 @@ const signIn = () => {
   };
   
 
-  useEffect(() => { 
-    getUser();
-  },);
+  useEffect(() => {
+    if (user) {
+      getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+    }
+  }, [user]);
 
   // console.log(user);
 
