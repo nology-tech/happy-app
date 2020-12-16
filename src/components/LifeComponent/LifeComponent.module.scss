@@ -3,6 +3,7 @@
 .lifeComponent {
   width: 90%;
   margin: 0 auto;
+  
 
   .lifeComponent__topElements {
     display: flex;
@@ -10,10 +11,17 @@
     margin: 20px 0;
     margin-left: 37px;
 
+    a {
+      text-decoration: none;
+     
+    }
+    
+
     .lifeComponent__title {
       font-size: 20px;
       color: $white;
       font-weight: 200;
+      
     }
 
     .lifeComponent__infoIcon {
