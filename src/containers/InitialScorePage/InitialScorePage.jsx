@@ -21,7 +21,7 @@ const InitialScorePage = (props) => {
     });
     setScores(newScores);
   };
- 
+
 
   const lifeComponentScores = scores.map((score) => {
     const databaseName = score.name;
