@@ -1,17 +1,14 @@
 @import "../../variables";
 .task {
     font-size: $font-size-components/1.5;
-    // padding: 20px;
     min-height: 2rem;
     margin-top: 3%;
     width: 100%;
-    background: $color-primary-dark;
-    // box-shadow: 5px 4px 16px $black;
+    background: #000d80;
     border-radius: 50px;
     height: 5vh;
     padding: 0.5% 2.5% 0.5% 2.5%;
-    color: white;
-    // font-size: 2rem;
+    color: $white;
     border: none;
     display: flex;
     align-items: center;
@@ -22,9 +19,7 @@
     .checkTaskComplete {
         height: 160%;
         width: 5vw;
-        //color: $background-blue1;
         background: $submit-green;
-        //border-radius: 50%;
         border: none;
         font-size: $font-size-components;
         color: $submit-green;

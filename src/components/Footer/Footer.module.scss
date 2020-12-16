@@ -27,7 +27,7 @@
     font-size: 2rem;
     color: $white;
     box-shadow: 0px 0px 30px rgb(158, 12, 151);
-
+  
     &:hover,
     &:active,
     &:focus {
@@ -36,6 +36,11 @@
       border: none;
     }
   }
+
+  a:link, a:visited, a:hover, a:active {
+      text-decoration: none;
+      color: $white;
+    }
 }
 
 @media only screen and (max-width: 600px) {

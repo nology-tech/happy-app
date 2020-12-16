@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../data/fa-library";
 
 const Footer = (props) => {
-  const { addScoreToDataBase, scores } = props;
-  const allScore = scores.map((score) => Number(score.score));
+const { addScoreToDataBase, scores, isScoreDisplay } = props;
 
-  return (
-    <div>
-      <footer className={styles.footer}>
+  const showButton = () => {
+    if(isScoreDisplay === false) {
+      const allScore = scores.map((score) => Number(score.score));
+
+      return (
         <button
           type="submit"
           className={styles.submitButton}
@@ -23,9 +25,25 @@ const Footer = (props) => {
         >
           <FontAwesomeIcon icon={["fas", "plus"]} />
         </button>
-        {/* <p>Submit</p> */}
+      )
+    } else {
+      return (
+        <button className={styles.submitButton}>
+          <Link to="/setscores">
+            <FontAwesomeIcon icon={["fas", "pencil-alt"]} />
+          </Link>
+        </button>
+      )
+    }
+  }
+
+  return (
+    <div>
+      <footer className={styles.footer}>
+        {showButton()}
       </footer>
     </div>
   );
 };
+
 export default Footer;
