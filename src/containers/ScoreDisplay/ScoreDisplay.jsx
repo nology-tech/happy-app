@@ -14,26 +14,28 @@ const ScoreDisplay = (props) => {
 
   const [scores, setScore] = useState(null);
 
-  const getScores = () => {
-    firestore
-      .collection("users")
-      .doc(user.uid)
-      .collection("scores")
-      .get()
-      .then((input) => {
-        const score = input.docs
-          .map((doc) => doc.data())
-          .sort((a, b) => b.date.seconds - a.date.seconds)[0];
-        setScore(score);
-      })
-      .catch((err) => console.error(err));
-  };
+ 
 
   useEffect(() => {
-    
+    const getScores = () => {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .collection("scores")
+        .get()
+        .then((input) => {
+          const score = input.docs
+            .map((doc) => doc.data())
+            .sort((a, b) => b.date.seconds - a.date.seconds)[0];
+          setScore(score);
+        })
+        .catch((err) => console.error(err));
+    };
+
+    if (user) {
       getScores(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
-    
-  }, );
+    }
+  }, [user]);
 
   const currentScores = scores
     ? scores.lifeComponentScores.map((score) => {

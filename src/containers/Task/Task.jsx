@@ -18,7 +18,7 @@ const addTask = (task) => {
 const addTaskToDatabase = (task) => {
   firestore
   .collection("tasks")
-  .doc(user)
+  .doc(user.uid)
   .set(task)
   .then(function () {
     console.log("document written!");
