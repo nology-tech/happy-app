@@ -44,9 +44,11 @@ const ScoreDisplay = (props) => {
   const getComponents = scores
     ? scores.lifeComponentScores.map((score) => {
       const getIcon = lifeComponents.find((lifecomponent) => {
-        if(lifecomponent.name === score.name) {
-          return lifecomponent.icon;
-        } 
+          let lifeComponentIcon;
+          
+          if(lifecomponent.name === score.name) {
+          lifeComponentIcon = lifecomponent.icon;
+        } return lifeComponentIcon
       })
 
         return (
