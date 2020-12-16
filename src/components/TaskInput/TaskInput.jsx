@@ -61,14 +61,18 @@ const handleSubmit = (e) => {
     isCompleted: false
   });
   console.log(task);
-  // addTask();
   addTaskToDatabase(task);
   clearForm();
 };
 
+  const [checked, setChecked] = useState(false)
+
 
   function handleChkBoxChange(event) {
-    let value = (event.target.on) = event.target.value;
+    let value = (event.target) = event.target.value;
+
+    // if (value )
+    // setChecked(!checked)
 
     if (!tagnamesToAdd.includes(value)) {
       tagnamesToAdd.push(value)
@@ -82,6 +86,9 @@ const handleSubmit = (e) => {
 
 const clearForm = () => {
   setTask(emptyTask);
+  setInputtedTasktext('')
+  setTagnames([])
+  setChecked(false)
 };
 
   return (
@@ -99,14 +106,15 @@ const clearForm = () => {
         required
         />
         <fieldset className={styles.tagFieldset}>      
-          <legend>Which Life Components does this Task cover?</legend>  
+          <legend>Which Life Components will this Task cover?</legend>  
           
-          <label htmlFor="happinessInput">General Happiness: </label>  
+          <label htmlFor="happinessInput">General Happiness:   </label>
           <input
             type="checkbox"
             id="happinessInput"
             value="General Happiness"
             onInput={handleChkBoxChange}
+            defaultChecked={checked}
             />
             
           <label htmlFor="Finances">Finances: </label> 
@@ -115,6 +123,7 @@ const clearForm = () => {
             id="Finances"
             value="Finances"
             onInput={handleChkBoxChange}
+            defaultChecked={checked}
           />
           
           <label htmlFor="Career">Career: </label>
@@ -123,6 +132,7 @@ const clearForm = () => {
             id="Career" 
             value="Career" 
             onInput={handleChkBoxChange}
+            defaultChecked={checked}
             />
             
           <label htmlFor="Love Life">Love Life: </label>          
@@ -222,7 +232,7 @@ const clearForm = () => {
           />
           
         </fieldset>      
-      <button type="submit" className={`${styles.submitButton}`}>+</button>
+      <button type="submit" className={`${styles.submitButton}`}>Submit</button>
     </form>
     </>
   );

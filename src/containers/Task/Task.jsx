@@ -8,6 +8,7 @@ import NavBar from "../../components/Navbar";
 const Task = ({user, signOut}) => {
   const [tasks, setTasks] = useState([]);
 
+
   const addTaskToDatabase = (task) => {
     firestore
       .collection("users")
@@ -47,7 +48,7 @@ const fetchTaskFromDataBase = () => {
     <section className={styles.tasksContent}>
     <NavBar signOut={signOut} />
 
-      <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} /> {/* addTask={addTask} */}
+      <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} /> 
 
     </section>
   );

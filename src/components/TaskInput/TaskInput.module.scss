@@ -1,61 +1,94 @@
-@import '../../variables.scss';
-.taskInput {
-    display: flex;
-    border-radius: 50px;
-    border: none;
-    width: 90%;
-    font-weight: 400;
-    margin: 40px auto;
-    background: $color-primary-dark;
-    .input {
-        position: relative;
-        width: 100%;
-        border-radius: 50px;
-        height: 5vh;
-        background: transparent;
-        padding: 0% 2%;
-        color: $colour-2;
-        font-size: $font-size-components/ 1.2;
-        border: none;
-        display: flex;
-        align-self: space-between;
-        justify-content: center;
-        &::placeholder {
-            color: white;
-            font-size: $font-size-components / 1.2;
+        @import '../../variables.scss';
+        .taskInput {
+            display: flex;
+            flex-direction: column;
+            border-radius: 50px;
+            border: none;
+            width: 90%;
+            mix-blend-mode: exclusion;
+            font-weight: 400;
+            margin: 40px auto;
+            background: $color-primary-dark;
+            .input {
+                // margin: 5% 0;
+                width: 100%;
+                border-radius: 25px;
+                height: 5vh;
+                background: transparent;
+                padding: 10% 5%;
+                color: $colour-2;
+                font-size: $font-size-components/ 1.2;
+                border: none;
+                display: flex;
+                align-self: space-between;
+                justify-content: center;
+                &::placeholder {
+                    color: white;
+                    font-size: $font-size-components / 1.2;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            .tagFieldset {
+                color: $white;
+                padding: 2%;
+                margin: 0 auto;
+                flex-direction: column;
+                height: auto;
+                width: 60vw;
+                // height: 280px;
+                // justify-content: flex-start;
+                align-content: space-around;
+                justify-items: center;
+                justify-content: center;
+                text-align: center;
+                input {
+                    margin: 10px 10px;
+                    mix-blend-mode: color-dodge;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+            .submitButton {
+                height: 60px;
+                width: 120px;
+                background: $color-blue-bright;
+                border-radius: 50px;
+                border: none;
+                font-size: $font-size-components * 1.5;
+                text-align: center;
+                color: $colour-1;
+                margin: 10px auto;
+                cursor: pointer;
+                transition: all .3s ease;
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background: $color-fire;
+                    color: $colour-2;
+                }
+                &:active {
+                    background: darken($color-fire, 20);
+                    &:focus {
+                        outline: none;
+                    }
+                    &:hover {
+                        background: $color-fire;
+                        color: $colour-2;
+                    }
+                    &:active {
+                        background: darken($color-fire, 20);
+                        outline: none;
+                    }
+                    &:hover {
+                        background: $color-fire;
+                        color: $colour-2;
+                    }
+                    &:active {
+                        background: darken($color-fire, 20);
+                    }
+                }
+            }
         }
-        &:focus {
-            outline: none;
-        }
-    }
-    .tagFieldset {
-        color: $white;
-        display: flex;
-        margin: 0;
-        flex-direction: column;
-        height: auto;
-        width: 40vw;
-        // height: 280px;
-        // wrap: nowrap;
-        // justify-content: flex-start;
-        align-content: space-evenly;
-        justify-items: center;
-        justify-content: space-between;
-        text-align: center;
-        input {}
-    }
-    .submitButton {
-        height: 5vh;
-        width: 5%;
-        background: $colour-2;
-        border-radius: 50px;
-        border: none;
-        font-size: $font-size-components * 1.5;
-        text-align: center;
-        color: $colour-1;
-        cursor: pointer;
-        &:focus {
-            outline: none;
-        }
-    }
-}

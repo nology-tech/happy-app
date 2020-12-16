@@ -21,7 +21,7 @@ const Routes = (props) => {
       <Login path="/" signIn={signIn} />
       <Register path="register"signOut={signOut} />
       <PrivateRoutes path="/">
-        <Task path="task" signOut={signOut}/>
+        <Task path="task" signOut={signOut} user={user} />
         <InitialScorePage path="setscores" signOut={signOut}/>
         <HappinessGraphPage path="happinessgraph" signOut={signOut} />
         <AccountSettings path="accountsettings"signOut={signOut} />
