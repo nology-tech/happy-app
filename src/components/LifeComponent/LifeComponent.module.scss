@@ -12,24 +12,23 @@
 
     .lifeComponent__title {
       font-size: 20px;
-      color: #fff;
+      color: $white;
       font-weight: 200;
     }
 
     .lifeComponent__infoIcon {
       margin-left: 20px;
       font-size: 15px;
-      color: #fff;
+      color: $white;
 
       &:hover {
         cursor: pointer;
-        color: $colour-1;
       }
     }
 
     .lifeComponent__score {
       font-size: 20px;
-      color: #fff;
+      color: $white;
     }
   }
 

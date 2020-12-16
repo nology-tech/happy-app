@@ -10,7 +10,7 @@ import { firestore } from "../../firebase";
 import lifeComponents from "../../data/lifeComponents";
 
 const ScoreDisplay = (props) => {
-  const { signOut, user, isScoreDisplay } = props;
+  const { signOut, user } = props;
 
   const [scores, setScore] = useState(null);
 
@@ -46,7 +46,7 @@ const ScoreDisplay = (props) => {
       const getIcon = lifeComponents.find((lifecomponent) => {
         if(lifecomponent.name === score.name) {
           return lifecomponent.icon;
-        }
+        } 
       })
 
         return (

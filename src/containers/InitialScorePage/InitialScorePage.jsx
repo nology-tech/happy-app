@@ -7,7 +7,7 @@ import { firestore } from "../../firebase";
 import Navbar from "../../components/Navbar";
 
 const InitialScorePage = (props) => {
-  const { signOut, isScoreDisplay } = props;
+  const { signOut } = props;
   const [scores, setScores] = useState(lifeComponents);
 
   const updateScore = (event, id) => {
