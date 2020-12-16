@@ -8,7 +8,7 @@ const HappinessGraphPage = (props) => {
 
   return (
     <div className={styles.happinessPageDiv}>
-      <Navbar signOut={signOut}/>
+      <Navbar signOut={signOut} text="Happiness Graph" />
 
       <Graph />
     </div>

@@ -16,6 +16,7 @@ const LifeComponentList = (props) => {
         key={component.id}
         lifeComponentNames={component.name}
         linkTo={link}
+        icon={component.icon}
       />
     );
   });
