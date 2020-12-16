@@ -27,10 +27,10 @@ const ScoreDisplay = (props) => {
   };
 
   useEffect(() => {
-    if (user) {
+    
       getScores(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
-    }
-  }, [getScores]);
+    
+  }, );
 
   const currentScores = scores
     ? scores.lifeComponentScores.map((score) => {
