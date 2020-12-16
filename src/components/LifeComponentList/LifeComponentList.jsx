@@ -6,7 +6,7 @@ const LifeComponentList = (props) => {
   const { scores, updateScore } = props;
 
   const allLifeComponents = scores.map((component) => {
-    const link = component.name === "Career" ? "deepdive" : "";
+    const link = component.name === "Career" ? "careerdeepdive" : "";
 
     return (
       <LifeComponent
