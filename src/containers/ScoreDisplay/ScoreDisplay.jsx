@@ -64,7 +64,7 @@ const ScoreDisplay = (props) => {
   return (
     <>
     <section className={styles.scoreDisplay}>
-      <Navbar signOut={signOut} text="Happiness Scores"/> 
+      <Navbar signOut={signOut} text="Happiness Scores" /> 
       <div className={styles.overallContainer}>
         <AverageScore data={currentScores} />
       </div>

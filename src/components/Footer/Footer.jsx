@@ -7,8 +7,6 @@ import "../../data/fa-library";
 const Footer = (props) => {
 const { addScoreToDataBase, scores, isScoreDisplay } = props;
 
-console.log(isScoreDisplay);
-
   const showButton = () => {
     if(isScoreDisplay === false) {
       const allScore = scores.map((score) => Number(score.score));
