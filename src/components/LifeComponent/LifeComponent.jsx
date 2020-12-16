@@ -3,6 +3,7 @@ import styles from "./LifeComponent.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Suggestion from "../Suggestion";
 import "../../data/fa-library";
+import { Link } from "@reach/router"
 
 const LifeComponent = (props) => {
   const {
@@ -11,6 +12,7 @@ const LifeComponent = (props) => {
     handleChange,
     rangeValue,
     isReadOnly,
+    linkTo,
   } = props;
 
   const [isClicked, setIsClicked] = useState(false);
@@ -18,6 +20,7 @@ const LifeComponent = (props) => {
   return (
     <main className={styles.lifeComponent}>
       <div className={styles.lifeComponent__topElements}>
+      <Link to={`../${linkTo}`}>
         <h2 className={styles.lifeComponent__title}>
           {lifeComponentNames}{" "}
           <span className={styles.lifeComponent__infoIcon}>
@@ -31,6 +34,7 @@ const LifeComponent = (props) => {
             )}
           </span>
         </h2>
+        </Link>
         <p className={styles.lifeComponent__score}>{rangeValue}/10</p>
       </div>
 

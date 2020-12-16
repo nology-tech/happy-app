@@ -49,6 +49,7 @@ const InitialScorePage = (props) => {
   return (
     <>
       <section className={styles.initialScorePage}>
+      
         <Navbar signOut={signOut} />
         <p className={styles.initialScorePage__question}>
           Please rate your happiness for each component out of 10
