@@ -2,16 +2,14 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyBta08ifXtszI3nFkSCCFLW3CkiQ2xmqgc",
-  authDomain: "happy-app-dbb3b.firebaseapp.com",
-  databaseURL: "https://happy-app-dbb3b.firebaseio.com",
-  projectId: "happy-app-dbb3b",
-  storageBucket: "happy-app-dbb3b.appspot.com",
-  messagingSenderId: "403448054375",
-  appId: "1:403448054375:web:b47470887743b54aad0ac2",
-  measurementId: "G-P6KWD6DLP8"
+  apiKey: "AIzaSyCC8BkGlpjWpc2VPSAuHjmJBbY1sVORmGo",
+  authDomain: "happy-app-86830.firebaseapp.com",
+  projectId: "happy-app-86830",
+  storageBucket: "happy-app-86830.appspot.com",
+  messagingSenderId: "685498532245",
+  appId: "1:685498532245:web:a80b513aa0c31e916c369c",
+  measurementId: "G-ZV5XSWGHXR",
 };
 
 firebase.initializeApp(firebaseConfig);

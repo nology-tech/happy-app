@@ -15,11 +15,11 @@ const ScoreDisplay = (props) => {
       .collection("users")
       .doc("Ezio")
       .collection("scores")
+      .orderBy("date", "desc")
+      .limit(1)
       .get()
       .then((input) => {
-        const score = input.docs
-          .map((doc) => doc.data())
-          .sort((a, b) => b.date.seconds - a.date.seconds)[0];
+        const score = input.docs.map((doc) => doc.data())[0];
         setScore(score);
       })
       .catch((err) => console.error(err));
@@ -27,7 +27,7 @@ const ScoreDisplay = (props) => {
 
   useEffect(() => {
     if (user) {
-      getScores(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+      getScores();
     }
   }, [user]);
 
