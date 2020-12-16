@@ -46,7 +46,7 @@ const fetchTaskFromDataBase = () => {
 
   return (
     <section className={styles.tasksContent}>
-    <NavBar signOut={signOut} />
+    <NavBar signOut={signOut} text="Set Tasks" />
 
       <TaskList addTaskToDatabase={addTaskToDatabase} tasks={tasks} /> 
 
