@@ -37,9 +37,6 @@ const addTaskToDatabase = (task) => {
   })
 }
 
-// do a filter before a map !!!!!!!!!!!!!!! ???? MATT SAID w
-// before map of task we filter through the task to check if they are checked 
-
 const updateTaskFromDataBase = (id, isComplete) => { 
   firestore
   .collection("users")
@@ -82,7 +79,6 @@ const RemoveTaskFromDatabase = (id) => {
     console.error("Error removing document: ", error);
   });
 
-  // console.log(id)
 };
 
 

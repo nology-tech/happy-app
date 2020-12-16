@@ -18,12 +18,15 @@ import {
   faHandsHelping,
   faSmile,
   faTimes,
+  faInfo,
+  faPlus,
+  faPencilAlt,
   faCheck,
 
 } from '@fortawesome/free-solid-svg-icons'
 
+
 export default library.add(
-  
   faSearch,
   faLaptopHouse,
   faDonate,
@@ -42,4 +45,7 @@ export default library.add(
   faSmile,
   faTimes,
   faCheck,
+  faInfo,
+  faPlus,
+  faPencilAlt
 );

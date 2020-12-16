@@ -12,6 +12,10 @@
   
 }
 
+.tooltip {
+  color: $colour-2
+}
+
 
 
 @mixin on-circle($item-count, $circle-size, $item-size) {
@@ -49,7 +53,7 @@
   @include on-circle($item-count: 15, $circle-size: 28em, $item-size: 4em);
  
   .faStyle {
-    color: $color-tertiary-light; 
+    color: $colour-1; 
 
     text-align: center;
     padding-top: 10px;
@@ -57,7 +61,7 @@
     
     &:hover {
       cursor: pointer;
-      color: $color-primary;
+      color: $colour-2;
 
       
     }

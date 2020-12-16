@@ -8,7 +8,7 @@ const GraphIcons = () => {
   return (
     <div className={styles.iconsDiv}>
       <div className={styles.circleContainer}>
-        <span className={styles.faStyle}><Tooltip content="General Happiness"><FontAwesomeIcon icon="smile" /></Tooltip></span>
+        <span className={styles.faStyle}><Tooltip className={styles.tooltip} content="General Happiness"><FontAwesomeIcon icon="smile" /></Tooltip></span>
 
         <span className={styles.faStyle}><Tooltip content="Finances"><FontAwesomeIcon icon="donate" /></Tooltip></span>
 
