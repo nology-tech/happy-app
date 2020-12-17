@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Task.module.scss";
 import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
@@ -51,7 +51,12 @@ const updateTaskFromDataBase = (id, isComplete) => {
   });
 }
 
-const fetchTaskFromDataBase = () => {
+
+
+
+const fetchTaskFromDataBase = useCallback(() => {
+  if (!user) return;
+  
   firestore
     .collection("users")
     .doc(user.uid)
@@ -61,7 +66,7 @@ const fetchTaskFromDataBase = () => {
       const currentData = querySnapshot.docs.map((doc) => doc.data());
       setTasks(currentData);
     });
-};
+}, [user]);
 
 
 const RemoveTaskFromDatabase = (id) => {
@@ -81,10 +86,8 @@ const RemoveTaskFromDatabase = (id) => {
 };
 
 useEffect(() =>{
-  if (user) {
-    fetchTaskFromDataBase();
-  }
-},[user])
+  fetchTaskFromDataBase();
+},[user, fetchTaskFromDataBase])
 
   return (
     <section className={styles.tasksContent}>
