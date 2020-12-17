@@ -4,7 +4,6 @@ import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import GraphIcons from "../GraphIcons";
 import { firestore } from "../../firebase";
-// import { act } from "react-dom/test-utils";
 
 const Graph = () => {
   const [clicked, setClicked] = useState(true);

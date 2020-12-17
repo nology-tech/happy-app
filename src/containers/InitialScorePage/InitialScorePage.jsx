@@ -7,7 +7,8 @@ import { firestore } from "../../firebase";
 import Navbar from "../../components/Navbar";
 
 const InitialScorePage = (props) => {
-  const { signOut } = props;
+  const { signOut, user } = props;
+
   const [scores, setScores] = useState(lifeComponents);
   const updateScore = (event, id) => {
     const newScores = scores.map((scoreObj) => {
@@ -32,8 +33,9 @@ const InitialScorePage = (props) => {
     return emptyObj;
   };
   const addScoreToDataBase = () => {
-    const docRef = firestore.collection("users").doc("Ezio");
-    docRef // Change this to UID of user, evenually
+    firestore
+      .collection("users")
+      .doc(user.uid)
       .collection("scores")
       .add({
         lifeComponentScores,

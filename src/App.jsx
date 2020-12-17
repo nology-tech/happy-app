@@ -11,9 +11,8 @@ const App = () => {
   const [user, setUser] = useState(null);
 
 const signIn = () => {
-    firebase.auth().signInWithRedirect(googleProvider); 
+    firebase.auth().signInWithRedirect(googleProvider)
     navigate("setscores"); 
-  
   };
 
   const signOut = () => {
@@ -37,13 +36,18 @@ const signIn = () => {
       }
     });
   };
+  
 
-  useEffect(() => { 
-    getUser();
-  },);
+  useEffect(() => {
+    getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+  }, []);
+
+  // console.log(user);
+
 
   return (
     <div className={styles.body}>
+    
       <Routes user={user}
        signIn={signIn}
        signOut={signOut}

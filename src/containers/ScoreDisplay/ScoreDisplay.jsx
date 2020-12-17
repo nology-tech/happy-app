@@ -43,13 +43,14 @@ const ScoreDisplay = (props) => {
 
   const getComponents = scores
     ? scores.lifeComponentScores.map((score) => {
-      const getIcon = lifeComponents.find((lifecomponent) => {
+        const getIcon = lifeComponents.find((lifecomponent) => {
           let lifeComponentIcon;
-          
-          if(lifecomponent.name === score.name) {
-          lifeComponentIcon = lifecomponent.icon;
-        } return lifeComponentIcon
-      })
+
+          if (lifecomponent.name === score.name) {
+            lifeComponentIcon = lifecomponent.icon;
+          }
+          return lifeComponentIcon;
+        });
 
         return (
           <LifeComponent
@@ -65,14 +66,14 @@ const ScoreDisplay = (props) => {
 
   return (
     <>
-    <section className={styles.scoreDisplay}>
-      <Navbar signOut={signOut} text="Happiness Scores" /> 
-      <div className={styles.overallContainer}>
-        <AverageScore data={currentScores} />
-      </div>
-      {getComponents}
-    </section>
-    <Footer isScoreDisplay={true}/>
+      <section className={styles.scoreDisplay}>
+        <Navbar signOut={signOut} text="Happiness Scores" />
+        <div className={styles.overallContainer}>
+          <AverageScore data={currentScores} />
+        </div>
+        {getComponents}
+      </section>
+      <Footer isScoreDisplay={true} />
     </>
   );
 };
