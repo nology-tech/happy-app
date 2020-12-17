@@ -6,6 +6,8 @@ const LifeComponentList = (props) => {
   const { scores, updateScore } = props;
 
   const allLifeComponents = scores.map((component) => {
+    const link = component.name === "Career" ? "careerdeepdive" : "";
+
     return (
       <LifeComponent
         rangeValue={component.score}
@@ -13,6 +15,7 @@ const LifeComponentList = (props) => {
         lifeComponentSuggestion={component.suggestion}
         key={component.id}
         lifeComponentNames={component.name}
+        linkTo={link}
         icon={component.icon}
       />
     );
