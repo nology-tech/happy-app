@@ -24,9 +24,9 @@ const addTask = (task) => {
 const addTaskToDatabase = (task) => {
   firestore
   .collection("users")
-  .doc("testUser")
-  .collection("tasks")
   .doc(user.uid)
+  .collection("tasks")
+  .doc(`${task.id}`)
   .set(task)
   .then(function () {
     console.log("document written!");
@@ -39,7 +39,7 @@ const addTaskToDatabase = (task) => {
 const updateTaskFromDataBase = (id, isComplete) => { 
   firestore
   .collection("users")
-  .doc("testUser")
+  .doc(user.uid)
   .collection("tasks")
   .doc(`${id}`)
   .update({isComplete: !isComplete})
@@ -54,7 +54,7 @@ const updateTaskFromDataBase = (id, isComplete) => {
 const fetchTaskFromDataBase = () => {
   firestore
     .collection("users")
-    .doc("testUser")
+    .doc(user.uid)
     .collection("tasks")
     .get()
     .then((querySnapshot) => {
@@ -67,7 +67,7 @@ const fetchTaskFromDataBase = () => {
 const RemoveTaskFromDatabase = (id) => {
   firestore
   .collection("users")
-  .doc("testUser")
+  .doc(user.uid)
   .collection("tasks")
   .doc(`${id}`)
   .delete()
@@ -81,8 +81,10 @@ const RemoveTaskFromDatabase = (id) => {
 };
 
 useEffect(() =>{
-  fetchTaskFromDataBase();
-},[])
+  if (user) {
+    fetchTaskFromDataBase();
+  }
+},[user])
 
   return (
     <section className={styles.tasksContent}>
