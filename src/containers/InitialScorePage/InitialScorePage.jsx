@@ -33,16 +33,15 @@ const InitialScorePage = (props) => {
     return emptyObj;
   };
   const addScoreToDataBase = () => {
-    firestore
-      .collection("users")
-      .doc(user.uid)
+    const docRef = firestore.collection("users").doc("Ezio");
+    docRef // Change this to UID of user, evenually
       .collection("scores")
       .add({
         lifeComponentScores,
         date: new Date(),
       })
       .then(() => {
-        console.log("Document successfully written!");
+        alert("Scores successfully Saved!");
       })
       .catch(function (error) {
         console.error("Error writing document: ", error);
