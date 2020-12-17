@@ -11,6 +11,7 @@ import InitialScorePage from "../InitialScorePage";
 import HappinessGraphPage from "../HappinessGraphPage";
 import PrivateRoutes from "../../containers/PrivateRoutes";
 import ScoreDisplay from "../ScoreDisplay";
+import CareerDeepDive from "../../containers/CareerDeepDive";
 
 const Routes = (props) => {
   const { signIn, user, signOut } = props;
@@ -18,6 +19,7 @@ const Routes = (props) => {
 
   return (
     <Router>
+      
       <About path="about" signOut={signOut}/>
       <Login path="/" signIn={signIn} />
       <Register path="register"signOut={signOut} />
@@ -25,6 +27,7 @@ const Routes = (props) => {
         <Task path="task" signOut={signOut} />
         <InitialScorePage path="setscores" isScoreDisplay={isScoreDisplay} signOut={signOut}/>
         <HappinessGraphPage path="happinessgraph" signOut={signOut} />
+        <CareerDeepDive path="careerdeepdive"/>
         <AccountSettings path="accountsettings" signOut={signOut} />
         <ScoreDisplay user={user} path="scoredisplay" isScoreDisplay={isScoreDisplay} signOut={signOut} />
       </PrivateRoutes>
