@@ -77,6 +77,7 @@ const getComponents = (practicalScores => practicalScores ? practicalScores.map(
             rangeValue={score.score}
             key={score.name}
             icon={getIcon.icon}
+            isScoreDisplay={true}
           />
         );
       })
