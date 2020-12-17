@@ -9,11 +9,12 @@ const emptyTask = {
   text: "",
 };
 
-const Task = () => {
 
-  const [tasks, setTasks] = useState([]);
-  const [task, setTask] = useState(emptyTask);
- 
+  const Task = (props) => {
+
+    const { signOut, user } = props;
+    const [tasks, setTasks] = useState([]);
+    const [task, setTask] = useState(emptyTask);
 
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
@@ -25,7 +26,7 @@ const addTaskToDatabase = (task) => {
   .collection("users")
   .doc("testUser")
   .collection("tasks")
-  .doc(`${task.id}`)
+  .doc(user.uid)
   .set(task)
   .then(function () {
     console.log("document written!");
@@ -85,7 +86,7 @@ useEffect(() =>{
 
   return (
     <section className={styles.tasksContent}>
-      <NavBar />
+      <NavBar signOut={signOut} text="Set Tasks"/>
       <TaskList 
       RemoveTaskFromDatabase={RemoveTaskFromDatabase} updateTaskFromDataBase={updateTaskFromDataBase}
       setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
