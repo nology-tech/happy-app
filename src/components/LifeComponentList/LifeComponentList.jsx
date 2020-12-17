@@ -21,8 +21,8 @@ const LifeComponentList = (props) => {
     return score.category === "activity";
   });
 
-  const x = (newScores) => {
-    const showComponents = newScores.map((component) => {
+  const showComponents = (newScores) => {
+    const listComponents = newScores.map((component) => {
       const link = component.name === "Career" ? "careerdeepdive" : "";
 
       return (
@@ -37,21 +37,21 @@ const LifeComponentList = (props) => {
         />
       );
     });
-    return showComponents;
+    return listComponents;
   };
 
   return (
     <>
       <h2 className={styles.subheading}>Wellbeing</h2>
-      {x(wellbeingScores)}
+      {showComponents(wellbeingScores)}
       <h2 className={styles.subheading}>Relationships</h2>
-      {x(relationshipsScores)}
+      {showComponents(relationshipsScores)}
       <h2 className={styles.subheading}>Activity</h2>
-      {x(activityScores)}
+      {showComponents(activityScores)}
       <h2 className={styles.subheading}>Practical</h2>
-      {x(practicalScores)}
+      {showComponents(practicalScores)}
       <h2 className={styles.subheading}>Higher Thoughts</h2>
-      {x(higherThoughtsScores)}
+      {showComponents(higherThoughtsScores)}
     </>
   );
 };

@@ -41,15 +41,40 @@ const ScoreDisplay = (props) => {
       })
     : null;
 
-  const getComponents = scores
-    ? scores.lifeComponentScores.map((score) => {
-      const getIcon = lifeComponents.find((lifecomponent) => {
+  console.log();
+
+  const practicalScores = scores
+    ? scores.lifeComponentScores.slice(0, 3)
+    : null;
+
+  const wellbeingScores = scores
+    ? scores.lifeComponentScores.slice(3, 6)
+    : null;
+
+  const relationshipsScores = scores
+    ? scores.lifeComponentScores.slice(6, 9)
+    : null;
+
+  const higherThoughtsScores = scores
+    ? scores.lifeComponentScores.slice(9, 12)
+    : null;
+
+  const activityScores = scores
+    ? scores.lifeComponentScores.slice(12, 15)
+    : null;
+
+  const getComponents = (scores) => {
+    if (scores) {
+      console.log(scores);
+      scores.map((score) => {
+        const getIcon = lifeComponents.find((lifecomponent) => {
           let lifeComponentIcon;
-          
-          if(lifecomponent.name === score.name) {
-          lifeComponentIcon = lifecomponent.icon;
-        } return lifeComponentIcon
-      })
+
+          if (lifecomponent.name === score.name) {
+            lifeComponentIcon = lifecomponent.icon;
+          }
+          return lifeComponentIcon;
+        });
 
         return (
           <LifeComponent
@@ -58,21 +83,25 @@ const ScoreDisplay = (props) => {
             rangeValue={score.score}
             key={score.name}
             icon={getIcon.icon}
+            isScoreDisplay={true}
           />
         );
-      })
-    : null;
+      });
+    } else {
+      return null;
+    }
+  };
 
   return (
     <>
-    <section className={styles.scoreDisplay}>
-      <Navbar signOut={signOut} text="Happiness Scores" /> 
-      <div className={styles.overallContainer}>
-        <AverageScore data={currentScores} />
-      </div>
-      {getComponents}
-    </section>
-    <Footer isScoreDisplay={true}/>
+      <section className={styles.scoreDisplay}>
+        <Navbar signOut={signOut} text="Happiness Scores" />
+        <div className={styles.overallContainer}>
+          <AverageScore data={currentScores} />
+        </div>
+        {getComponents(practicalScores)}
+      </section>
+      <Footer isScoreDisplay={true} />
     </>
   );
 };

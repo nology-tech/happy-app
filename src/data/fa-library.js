@@ -20,6 +20,8 @@ import {
   faInfo,
   faPlus,
   faPencilAlt,
+  faChevronCircleLeft,
+  faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
@@ -43,5 +45,7 @@ export default library.add(
   faTimes,
   faInfo,
   faPlus,
-  faPencilAlt
+  faPencilAlt,
+  faChevronCircleLeft,
+  faChevronCircleRight
 );

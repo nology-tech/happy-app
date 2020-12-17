@@ -7,10 +7,9 @@ const TermsConditions = (props) => {
 
   return (
     <>
-      <Navbar signOut={signOut}/>
+      <Navbar signOut={signOut} />
 
-
-      <p className={styles.text}>TermsConditions works</p>
+      <p className={styles.text}></p>
     </>
   );
 };
