@@ -5,9 +5,9 @@ import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
 
-const Task = ({user, signOut}) => {
+const Task = (props) => {
+  const { signOut, user } = props;
   const [tasks, setTasks] = useState([]);
-
 
   const addTaskToDatabase = (task) => {
     firestore
@@ -25,24 +25,18 @@ const Task = ({user, signOut}) => {
   };
 
 
-const fetchTaskFromDataBase = () => {
+const fetchTaskFromDataBase = (task) => {
   firestore
-    .collection("users")
-    .doc(user.uid)
-    .collection("tasks")
-    .get()
-    .then((querySnapshot) => {
-      const currentData = querySnapshot.docs.map((doc) => doc.data());
-      setTasks(currentData);
-    })
-    .catch((err) => console.log(err));
-};
-
-  useEffect(() => {
-    if (user) {
-      fetchTaskFromDataBase()
-    }
-  }, [user])
+  .collection("tasks")
+  .doc(user.uid)
+  .set(task)
+  .then(function () {
+    console.log("document written!");
+  })
+  .catch(function (error) {
+    console.error("error wrting,", error)
+  })
+}
 
   return (
     <section className={styles.tasksContent}>
