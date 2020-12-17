@@ -5,6 +5,7 @@ import "react-svg-radar-chart/build/css/index.css";
 import GraphIcons from "../GraphIcons";
 import { firestore } from "../../firebase";
 
+
 const Graph = () => {
   const [graphSize, setGraphSize] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
@@ -72,7 +73,8 @@ const Graph = () => {
   const data = [
     {
       data: getScore(),
-      meta: { color: "#4a0fd3" }
+      meta: { color: "#4a0fd3"},
+
     }
   ];
 
