@@ -1,38 +1,10 @@
     @import "../../variables.scss";
-.navBar {
-    z-index: 2;
-    background: $gradient;
-    width: 60vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .navList {
-        list-style-type: none;
-        color: $white;
-        padding: 20px;
-        font-size: 1.6rem;
-        line-height: 3.2rem;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-        transition: 0.6s ease-in-out;
-        a:link,
-        a:visited,
-        a:active {
-            text-decoration: none;
-            color: $white;
-        }
-        a:hover {
-            text-decoration: none;
-            color: $colour-1;
-        }
-    }
-    .faIcon {
-        font-size: 3rem;
+    .navBar {
+        z-index: 2;
+        background: $gradient;
+        width: 60vw;
+        height: 100vh;
+        position: fixed;
         top: 0;
         left: 0;
         display: flex;
@@ -47,29 +19,58 @@
             text-align: center;
             cursor: pointer;
             text-decoration: none;
-            a:link {
-                text-decoration: none;
-            }
-            a:visited {
+            transition: 0.6s ease-in-out;
+            a:link,
+            a:visited,
+            a:active {
                 text-decoration: none;
                 color: $white;
             }
             a:hover {
                 text-decoration: none;
-            }
-            a:active {
-                text-decoration: none;
+                color: $colour-1;
             }
         }
         .faIcon {
             font-size: 3rem;
             top: 0;
             left: 0;
-            position: fixed;
-            margin: 5%;
-            color: $colour-2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .navList {
+                list-style-type: none;
+                color: $white;
+                padding: 20px;
+                font-size: 1.6rem;
+                line-height: 3.2rem;
+                text-align: center;
+                cursor: pointer;
+                text-decoration: none;
+                a:link {
+                    text-decoration: none;
+                }
+                a:visited {
+                    text-decoration: none;
+                    color: $white;
+                }
+                a:hover {
+                    text-decoration: none;
+                }
+                a:active {
+                    text-decoration: none;
+                }
+            }
+            .faIcon {
+                font-size: 3rem;
+                top: 0;
+                left: 0;
+                position: fixed;
+                margin: 5%;
+                color: $colour-2;
+            }
         }
-    }
-    .signOutButton {
-        color: $colour-1;
+        .signOutButton {
+            color: $colour-1;
+        }
     }
