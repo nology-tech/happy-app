@@ -126,10 +126,10 @@ const Graph = () => {
 
   useEffect(() => {
     let size;
-    if (width > 300 && width < 500) {
-      size = 200;
-    } else if (width > 500) {
-      size = 500;
+    if (width >= 376 && width <= 768) {
+      size = 350;
+    } else if (width >= 500) {
+      size = 400;
     } else {
       size = 200;
     }
@@ -159,6 +159,15 @@ const Graph = () => {
 
   return (
     <div>
+      <div className={styles.graphContainer}>
+        <RadarChart
+          captions={captions}
+          data={data}
+          size={graphSize}
+          options={defaultOptions}
+        />
+        <GraphIcons />
+      </div>
       <div className={styles.buttonContainer}>
         <button
           className={clicked ? styles.clicked : styles.unClicked}
@@ -172,15 +181,6 @@ const Graph = () => {
         >
           All Time Happiness
         </button>
-      </div>
-      <div className={styles.graphContainer}>
-        <RadarChart
-          captions={captions}
-          data={data}
-          size={graphSize}
-          options={defaultOptions}
-        />
-        <GraphIcons />
       </div>
     </div>
   );

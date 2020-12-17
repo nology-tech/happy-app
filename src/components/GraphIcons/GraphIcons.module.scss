@@ -52,26 +52,50 @@
     }
   }
 }
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 499px) {
   .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 5px);
+    @include on-circle($item-count: 15, $circle-size: 6.5em, $item-size: 25px);
   }
   .iconsDiv {
     margin: auto;
+    top: 12%;
+    left: 16.9%;
+    .faStyle {
+      width: 0.86em;
+      height: 0.86em;
+      font-size: 27.5px;
+    }
   }
 }
-@media screen and (min-width: 500px) {
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 15em, $item-size: 4em);
+    @include on-circle($item-count: 15, $circle-size: 10em, $item-size: 2.5em);
   }
   .iconsDiv {
-    top: 31%;
+    top: 27.5%;
+    left: 30%;
+    margin: auto;
+    .faStyle {
+      width: 1em;
+      height: 1em;
+      font-size: 31.5px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .circleContainer {
+    @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 2.5em);
+  }
+  .iconsDiv {
+    top: 28%;
     left: 31%;
     margin: auto;
     .faStyle {
-      width: 1.2em;
-      height: 1.2em;
-      font-size: 30px;
+      width: 0.9em;
+      height: 0.9em;
+      font-size: 33px;
     }
   }
 }

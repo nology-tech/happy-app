@@ -7,10 +7,14 @@ const TermsConditions = (props) => {
 
   return (
     <>
-      <Navbar signOut={signOut}/>
-
-
-      <p className={styles.text}>TermsConditions works</p>
+      <Navbar signOut={signOut} />
+      <div className={styles.text}>
+        <h1>Wellcome !</h1>
+        <p>
+          This page is a Work in Progress. Please use Navigation menu to visit
+          more interesting pages !
+        </p>
+      </div>
     </>
   );
 };

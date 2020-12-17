@@ -1,15 +1,15 @@
 @import "../../variables.scss";
 
 .buttonContainer {
-  width: 500px;
-  margin: 100px auto 0 auto;
+  width: 40vw;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
 .unClicked {
   border: none;
-  color: $colour-2;
+  color: $white;
   height: 6vh;
   width: 150px;
   text-align: center;
@@ -22,15 +22,11 @@
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-  // &:hover {
-  //   color: $colour-1;
-  //   background-color: $colour-2;
-  // }
 }
 
 .clicked {
   border: none;
-  color: $colour-2;
+  color: $white;
   height: 6vh;
   width: 150px;
   text-align: center;
@@ -43,33 +39,66 @@
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-  // &:hover {
-  //   color: $colour-1;
-  //   background-color: $colour-2;
-  // }
 }
 
 .graphContainer {
-  margin-top: 100px;
   background-color: #0c1d42;
   text-align: center;
   position: relative;
   border-radius: 50%;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 499px) {
   .graphContainer {
     width: 200px;
     height: 200px;
     margin: auto;
-    margin: 5% auto;
+    margin: 20% auto;
+  }
+  .buttonContainer {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 375px) {
+  .buttonContainer {
+    width: 80vw;
+    height: 30vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .graphContainer {
-    width: 500px;
-    height: 500px;
-    margin: 5% auto; // MARGIN TOP
+    width: 350px;
+    height: 350px;
+    margin: 20% auto;
+  }
+  .buttonContainer {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .graphContainer {
+    width: 400px;
+    height: 400px;
+    margin: 7% auto;
+  }
+  .buttonContainer {
+    width: 40vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
   }
 }
