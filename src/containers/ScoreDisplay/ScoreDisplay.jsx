@@ -14,13 +14,11 @@ const ScoreDisplay = (props) => {
 
   const [scores, setScore] = useState(null);
 
- 
-
   useEffect(() => {
     const getScores = () => {
       firestore
         .collection("users")
-        .doc(user.uid)
+        .doc("Ezio")
         .collection("scores")
         .get()
         .then((input) => {
@@ -43,8 +41,6 @@ const ScoreDisplay = (props) => {
       })
     : null;
 
-  console.log();
-
   const practicalScores = scores
     ? scores.lifeComponentScores.slice(0, 3)
     : null;
@@ -65,18 +61,14 @@ const ScoreDisplay = (props) => {
     ? scores.lifeComponentScores.slice(12, 15)
     : null;
 
-  const getComponents = (scores) => {
-    if (scores) {
-      console.log(scores);
-      scores.map((score) => {
-        const getIcon = lifeComponents.find((lifecomponent) => {
+const getComponents = (practicalScores => practicalScores ? practicalScores.map((score) => {
+      const getIcon = lifeComponents.find((lifecomponent) => {
           let lifeComponentIcon;
-
-          if (lifecomponent.name === score.name) {
-            lifeComponentIcon = lifecomponent.icon;
-          }
-          return lifeComponentIcon;
-        });
+          
+          if(lifecomponent.name === score.name) {
+          lifeComponentIcon = lifecomponent.icon;
+        } return lifeComponentIcon
+      })
 
         return (
           <LifeComponent
@@ -85,14 +77,11 @@ const ScoreDisplay = (props) => {
             rangeValue={score.score}
             key={score.name}
             icon={getIcon.icon}
-            isScoreDisplay={true}
           />
         );
-      });
-    } else {
-      return null;
-    }
-  };
+      })
+    : null
+)
 
   return (
     <>
@@ -101,7 +90,16 @@ const ScoreDisplay = (props) => {
         <div className={styles.overallContainer}>
           <AverageScore data={currentScores} />
         </div>
+        <h2 className={styles.subheading}>Wellbeing</h2>
+        {getComponents(wellbeingScores)}
+        <h2 className={styles.subheading}>Relationships</h2>
+        {getComponents(relationshipsScores)}
+        <h2 className={styles.subheading}>Activity</h2>
+        {getComponents(activityScores)}
+        <h2 className={styles.subheading}>Practical</h2>
         {getComponents(practicalScores)}
+        <h2 className={styles.subheading}>Higher Thoughts</h2>
+        {getComponents(higherThoughtsScores)}
       </section>
       <Footer isScoreDisplay={true} />
     </>
