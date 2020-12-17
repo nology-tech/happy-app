@@ -18,7 +18,7 @@ const ScoreDisplay = (props) => {
     const getScores = () => {
       firestore
         .collection("users")
-        .doc("Ezio")
+        .doc(user.uid)
         .collection("scores")
         .get()
         .then((input) => {
