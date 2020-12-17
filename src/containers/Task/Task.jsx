@@ -5,7 +5,7 @@ import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
 const Task = (props) => {
-  const { signOut } = props;
+  const { signOut, user } = props;
  
   const [tasks, settasks] = useState([]);
 
@@ -18,7 +18,7 @@ const addTask = (task) => {
 const addTaskToDatabase = (task) => {
   firestore
   .collection("tasks")
-  .doc()
+  .doc(user.uid)
   .set(task)
   .then(function () {
     console.log("document written!");

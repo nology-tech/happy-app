@@ -7,7 +7,8 @@ import { firestore } from "../../firebase";
 import Navbar from "../../components/Navbar";
 
 const InitialScorePage = (props) => {
-  const { signOut } = props;
+  const { signOut, user } = props;
+
   const [scores, setScores] = useState(lifeComponents);
 
   const updateScore = (event, id) => {
@@ -21,6 +22,7 @@ const InitialScorePage = (props) => {
     setScores(newScores);
   };
 
+
   const lifeComponentScores = scores.map((score) => {
     const databaseName = score.name;
     const databaseScore = Number(score.score);
@@ -30,7 +32,7 @@ const InitialScorePage = (props) => {
   const addScoreToDataBase = () => {
     firestore
       .collection("users")
-      .doc("Ezio") // Change this to UID of user, evenually
+      .doc(user.uid) 
       .collection("scores")
       .add({
         lifeComponentScores,
@@ -44,6 +46,9 @@ const InitialScorePage = (props) => {
         console.error("Error writing document: ", error);
       });
   };
+
+
+
 
   return (
     <>
