@@ -7,57 +7,57 @@ const GraphIcons = () => {
     <div className={styles.iconsDiv}>
       <div className={styles.circleContainer}>
         <span className={styles.faStyle}>
-          <Tooltip content="General Happiness">
+          <Tooltip className={styles.tooltip} content="General Happiness">
             <FontAwesomeIcon icon="smile" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Finances">
+          <Tooltip className={styles.tooltip} content="Finances">
             <FontAwesomeIcon icon="donate" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Career">
+          <Tooltip className={styles.tooltip} content="Career">
             <FontAwesomeIcon icon="user-tie" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Love Life">
+          <Tooltip className={styles.tooltip} content="Love Life">
             <FontAwesomeIcon icon="heart" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Family">
+          <Tooltip className={styles.tooltip} content="Family">
             <FontAwesomeIcon icon="users" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Friends">
+          <Tooltip className={styles.tooltip} content="Friends">
             <FontAwesomeIcon icon="user-friends" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Fun and Recreation">
+          <Tooltip className={styles.tooltip} content="Fun and Recreation">
             <FontAwesomeIcon icon="umbrella-beach" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Physical Health">
+          <Tooltip className={styles.tooltip} content="Physical Health">
             <FontAwesomeIcon icon="heartbeat" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Mental Health">
+          <Tooltip className={styles.tooltip} content="Mental Health">
             <FontAwesomeIcon icon="brain" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Contribution to Society">
+          <Tooltip className={styles.tooltip} content="Contribution to Society">
             <FontAwesomeIcon icon="hands-helping" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Self Worth">
+          <Tooltip className={styles.tooltip} content="Self Worth">
             <FontAwesomeIcon
               icon="hand-holding-heart"
               className={styles.faStyle}
@@ -65,22 +65,22 @@ const GraphIcons = () => {
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Personal Development">
+          <Tooltip className={styles.tooltip} content="Personal Development">
             <FontAwesomeIcon icon="lightbulb" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Physical Environment">
+          <Tooltip className={styles.tooltip} content="Physical Environment">
             <FontAwesomeIcon icon="laptop-house" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Purpose">
+          <Tooltip className={styles.tooltip} content="Purpose">
             <FontAwesomeIcon icon="bullseye" className={styles.faStyle} />
           </Tooltip>
         </span>
         <span className={styles.faStyle}>
-          <Tooltip content="Spirituality">
+          <Tooltip className={styles.tooltip} content="Spirituality">
             <FontAwesomeIcon
               icon="place-of-worship"
               className={styles.faStyle}

@@ -4,8 +4,10 @@ import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import GraphIcons from "../GraphIcons";
 import { firestore } from "../../firebase";
+// import { act } from "react-dom/test-utils";
 
 const Graph = () => {
+  const [clicked, setClicked] = useState(true);
   const [graphSize, setGraphSize] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
   const [scores, setScore] = useState({
@@ -33,15 +35,6 @@ const Graph = () => {
     captionMargin: 10,
     dots: true,
     roundStrokes: true,
-    dotProps: () => ({
-      className: "dot",
-      mouseEnter: (dot) => {
-        console.log(dot);
-      },
-      mouseLeave: (dot) => {
-        console.log(dot);
-      },
-    }),
   };
 
   const getScores = () => {
@@ -106,7 +99,7 @@ const Graph = () => {
   const data = [
     {
       data: scores,
-      meta: { color: "#00ffcc" },
+      meta: { color: " #00ffcc" },
     },
   ];
   const captions = {
@@ -132,8 +125,6 @@ const Graph = () => {
   }, []);
 
   useEffect(() => {
-    getScores();
-
     let size;
     if (width > 300 && width < 500) {
       size = 200;
@@ -151,10 +142,37 @@ const Graph = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
+  const oneClick = () => {
+    handleClick();
+    getScores();
+  };
+
+  const secondClick = () => {
+    handleClick();
+    getAllTimeAverageScores();
+  };
+
   return (
     <div>
-      <button onClick={getScores}>Today</button>
-      <button onClick={getAllTimeAverageScores}>All Time</button>
+      <div className={styles.buttonContainer}>
+        <button
+          className={clicked ? styles.clicked : styles.unClicked}
+          onClick={oneClick}
+        >
+          Today Happiness
+        </button>
+        <button
+          className={clicked ? styles.unClicked : styles.clicked}
+          onClick={secondClick}
+        >
+          All Time Happiness
+        </button>
+      </div>
       <div className={styles.graphContainer}>
         <RadarChart
           captions={captions}

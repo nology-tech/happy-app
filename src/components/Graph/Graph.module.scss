@@ -1,21 +1,57 @@
 @import "../../variables.scss";
 
-button {
+.buttonContainer {
+  width: 500px;
+  margin: 100px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.unClicked {
   border: none;
-  color: $white;
-  height: 4vh;
-  width: 80px;
+  color: $colour-2;
+  height: 6vh;
+  width: 150px;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
   border-radius: 50px;
+  position: relative;
+  background-color: #ac058a;
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  // &:hover {
+  //   color: $colour-1;
+  //   background-color: $colour-2;
+  // }
+}
+
+.clicked {
+  border: none;
+  color: $colour-2;
+  height: 6vh;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+  position: relative;
   background-color: $colour-1;
   margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  // &:hover {
+  //   color: $colour-1;
+  //   background-color: $colour-2;
+  // }
 }
 
 .graphContainer {
-  margin-top: 200px;
-  background-color: rgba(31, 0, 80, 0.3);
+  margin-top: 100px;
+  background-color: #0c1d42;
   text-align: center;
   position: relative;
   border-radius: 50%;
@@ -26,7 +62,7 @@ button {
     width: 200px;
     height: 200px;
     margin: auto;
-    margin: 10% auto;
+    margin: 5% auto;
   }
 }
 
@@ -34,6 +70,6 @@ button {
   .graphContainer {
     width: 500px;
     height: 500px;
-    margin: 10% auto; // MARGIN TOP
+    margin: 5% auto; // MARGIN TOP
   }
 }

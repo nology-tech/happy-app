@@ -42,13 +42,13 @@
 .circleContainer {
   @include on-circle($item-count: 15, $circle-size: 28em, $item-size: 4em);
   .faStyle {
-    color: $colour-2;
+    color: #b7c6db;
     text-align: center;
     padding-top: 10px;
     padding-left: 10px;
     &:hover {
       cursor: pointer;
-      color: $colour-1;
+      color: $colour-2;
     }
   }
 }
