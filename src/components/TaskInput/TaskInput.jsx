@@ -3,11 +3,10 @@ import styles from "./TaskInput.module.scss";
 
 
 
-const TaskInput = ({task, setTask, addTask, addTaskToDatabase,isComplete,}) => {
+const TaskInput = ({task, setTask, addTask, addTaskToDatabase}) => {
 
 const [inputtedTasktext, setInputttedTasktext] = useState("");
 const [idCount, setIdCount] = useState(1);
-
 
 
 const handleChange = (e) => {

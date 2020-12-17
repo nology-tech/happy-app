@@ -13,10 +13,8 @@ const Task = () => {
 
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState(emptyTask);
-  const [isComplete, setIsComplete] = useState(false)
+ 
 
-  
-  
 const addTask = (task) => {
   const newtasks = [task, ...tasks]
   setTasks(newtasks);
@@ -81,21 +79,16 @@ const RemoveTaskFromDatabase = (id) => {
 
 };
 
-
-
 useEffect(() =>{
   fetchTaskFromDataBase();
 },[])
-
-
 
   return (
     <section className={styles.tasksContent}>
       <NavBar />
       <TaskList 
       RemoveTaskFromDatabase={RemoveTaskFromDatabase} updateTaskFromDataBase={updateTaskFromDataBase}
-      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask} setIsComplete={setIsComplete} isComplete={isComplete} isComplete={isComplete}/>
-     
+      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
     </section>
   );
 
