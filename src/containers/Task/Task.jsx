@@ -4,100 +4,92 @@ import TaskList from "../../components/TaskList"
 import { firestore } from "../../firebase";
 import NavBar from "../../components/Navbar";
 
-const emptyTask = {
-  id: "",
-  text: "",
-};
+const Task = (props) => {
+  const { signOut, user } = props;
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState({text: ""});
 
+  const addTask = (task) => {
+    const newtasks = [task, ...tasks]
+    setTasks(newtasks);
+  }
 
-  const Task = (props) => {
+  const addTaskToDatabase = (task) => {
+    const docRef = firestore.collection("users").doc(user.uid).collection("tasks").doc()
+    
+    docRef
+      .set({...task, id: docRef.id})
+      .then(() => {
+        console.log("document written!");
+        addTask({...task, id: docRef.id})
+      })
+      .catch((error) => {
+        console.error("error wrting,", error)
+      })
+  }
 
-    const { signOut, user } = props;
-    const [tasks, setTasks] = useState([]);
-    const [task, setTask] = useState(emptyTask);
+  const updateTaskFromDataBase = (id, isComplete) => { 
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .collection("tasks")
+      .doc(`${id}`)
+      .update({isComplete: !isComplete})
+      .then(() => {
+        console.log("Document successfully changed")
+        fetchTaskFromDataBase();
+      }).catch((error) => {
+        console.error("Error changing document: ", error);
+      });
+  }
 
-const addTask = (task) => {
-  const newtasks = [task, ...tasks]
-  setTasks(newtasks);
-}
+  const fetchTaskFromDataBase = useCallback(() => {
+    if (!user) return;
+    
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .collection("tasks")
+      .get()
+      .then((querySnapshot) => {
+        const currentData = querySnapshot.docs.map((doc) => doc.data());
+        setTasks(currentData);
+      });
+  }, [user]);
 
-const addTaskToDatabase = (task) => {
-  firestore
-  .collection("users")
-  .doc(user.uid)
-  .collection("tasks")
-  .doc(`${task.id}`)
-  .set(task)
-  .then(function () {
-    console.log("document written!");
-  })
-  .catch(function (error) {
-    console.error("error wrting,", error)
-  })
-}
+  const RemoveTaskFromDatabase = (id) => {
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .collection("tasks")
+      .doc(`${id}`)
+      .delete()
+      .then(() => {
+        console.log("Document successfully deleted!");
+        fetchTaskFromDataBase();
+      }).catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  };
 
-const updateTaskFromDataBase = (id, isComplete) => { 
-  firestore
-  .collection("users")
-  .doc(user.uid)
-  .collection("tasks")
-  .doc(`${id}`)
-  .update({isComplete: !isComplete})
-  .then(function() {
-    console.log("Document successfully changed")
+  useEffect(() => {
     fetchTaskFromDataBase();
-  }).catch(function(error) {
-    console.error("Error chan document: ", error);
-  });
-}
-
-
-
-
-const fetchTaskFromDataBase = useCallback(() => {
-  if (!user) return;
-  
-  firestore
-    .collection("users")
-    .doc(user.uid)
-    .collection("tasks")
-    .get()
-    .then((querySnapshot) => {
-      const currentData = querySnapshot.docs.map((doc) => doc.data());
-      setTasks(currentData);
-    });
-}, [user]);
-
-
-const RemoveTaskFromDatabase = (id) => {
-  firestore
-  .collection("users")
-  .doc(user.uid)
-  .collection("tasks")
-  .doc(`${id}`)
-  .delete()
-  .then(function() {
-    console.log("Document successfully deleted!");
-    fetchTaskFromDataBase();
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  });
-
-};
-
-useEffect(() =>{
-  fetchTaskFromDataBase();
-},[user, fetchTaskFromDataBase])
+  },[user, fetchTaskFromDataBase])
 
   return (
-    <section className={styles.tasksContent}>
-      <NavBar signOut={signOut} text="Set Tasks"/>
+    <section className={styles.tasksContent} >
+      <NavBar signOut={signOut} text="Set Tasks" />
       <TaskList 
-      RemoveTaskFromDatabase={RemoveTaskFromDatabase} updateTaskFromDataBase={updateTaskFromDataBase}
-      setTasks={setTasks} task={task} setTask={setTask} addTaskToDatabase={addTaskToDatabase} tasks={tasks} addTask={addTask}/>
+        RemoveTaskFromDatabase={RemoveTaskFromDatabase} 
+        updateTaskFromDataBase={updateTaskFromDataBase}
+        setTasks={setTasks} 
+        task={task} 
+        setTask={setTask} 
+        addTaskToDatabase={addTaskToDatabase} 
+        tasks={tasks} 
+      />
     </section>
   );
-
 };
 
 

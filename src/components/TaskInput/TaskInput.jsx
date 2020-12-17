@@ -3,16 +3,14 @@ import styles from "./TaskInput.module.scss";
 
 
 
-const TaskInput = ({task, setTask, addTask, addTaskToDatabase}) => {
+const TaskInput = ({task, setTask, addTaskToDatabase}) => {
 
 const [inputtedTasktext, setInputttedTasktext] = useState("");
-const [idCount, setIdCount] = useState(1);
 
 
 const handleChange = (e) => {
   setInputttedTasktext(e.target.value);
   setTask({
-    id: idCount,
     text: e.target.value,
     isComplete: false
   });
@@ -20,14 +18,11 @@ const handleChange = (e) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  setIdCount(idCount + 1);
   setTask({
-    id: idCount,
     text: e.target.value,
     isComplete: false
   });
   setInputttedTasktext("");
-  addTask(task);
   addTaskToDatabase(task);
 };
 
