@@ -1,8 +1,8 @@
 @import "../../variables.scss";
 
 .scoreDisplay {
-    padding-bottom: 50px;
-    overflow: hidden;
+  padding-bottom: 50px;
+  overflow: hidden;
   @media only screen and (max-width: 600px) {
     padding-bottom: 100px;
   }
@@ -15,16 +15,19 @@
     #014491
   );
   width: 100%;
+  padding-bottom: 50px;
 
-  .overallContainer{
+  overflow: hidden;
+
+  .overallContainer {
     height: 10vh;
     margin-top: 6vh;
   }
   .subheading {
-    color:$white;
+    color: $white;
     font-weight: 400;
     text-shadow: 1px 1px 5px rgba(135, 14, 135, 0.975);
-  
+
     border-bottom: 2px solid $colour-1;
     width: 95%;
     text-align: right;

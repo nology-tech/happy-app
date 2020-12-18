@@ -14,9 +14,11 @@ const Login = (props) => {
       </div>
       <div className={styles.button}>
         <LandingPageButton text={"Log In"} cardType="primary" click={signIn} />
-        <Link className={styles.link} to="register">
-          <LandingPageButton text={"Sign Up"} cardType="secondary" />
-        </Link>
+        <LandingPageButton
+          text={"Sign Up"}
+          cardType="secondary"
+          click={signIn}
+        />
         <Link className={styles.link} to="termsconditions">
           <li className={styles.TandC}>Terms and Conditions</li>
         </Link>

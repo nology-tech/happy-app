@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 2rem;
+  color: $colour-2;
+
+  h1 {
+    margin-bottom: $base-margin * 2;
+  }
+}
