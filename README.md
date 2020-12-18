@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Happy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created, built and designed by Nology everest intakes in collaboration with Darren Ryemill.
 
-## Available Scripts
+Happy, has been built as a web app to help people keep track of their general wellbeing and happiness.
 
-In the project directory, you can run:
+The first prototype can be found [Here](happy-app-86830.web.app/).
+
+## Getting Started
+
+- First, clone the repo onto your local computer - `git clone https://github.com/nology-tech/happy-app.git`
+
+- Then, install [yarn](https://yarnpkg.com/en/docs/getting-started) as your package manager.
+- Then, run `yarn install` within the project folder and it will install all of the dependencies.
 
 ### `yarn start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits.<br>
+You will also see any errors in the console.
 
-### `yarn test`
+### `yarn run eject`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### `yarn build`
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tests
 
-### `yarn eject`
+This project used [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### `yarn run test`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Launches the test runner.<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Code example:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+import React from "react";
+import { render } from "@testing-library/react";
+import X from "X";
 
-## Learn More
+describe("AverageScore tests", () => {
+  it("should render", () => {
+    expect(render(<X />)).toBeTruthy();
+  });
+});
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+To ensure code quality, Github Actions was set up at the beginning of the project. Before each merge, Github Actions would check the code against the locally written tests and check if code would compile. If all the tests passed Github Actions would automatically deploy.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tech Stack
 
-### Analyzing the Bundle Size
+Developing the app, the following technologies have been used:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React
+- GitHub/Git
+- Enzyme
+- Github Actions
+- Sass
+- Firebase
+- Reach Router
+- NPM/Yarn
 
-### Making a Progressive Web App
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Features in:
 
-### Advanced Configuration
+- Authentication
+- Setting life component scores
+- Overall life component scores
+- Initial career deep dive
+- Graph showcasing total scores
+- Set / Delete / CheckCompleted tasks
+- Data for scores and tasks saved to firebase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Features not-in:
 
-### Deployment
+- Week / Month view of scores
+- App features tutorial
+- Trust pilot section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Bugs:
 
-### `yarn build` fails to minify
+- After logging in via auth, it leaves you on the login page
+- In you navlist, the 'Home' button shouldn't take you back to the login page if you are already logged in. Instead should link back to scoreDisplay or graph page
+- Home button redirects to login page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Built By
+
+This app was created, built and designed by ology everest intakes in collaboration with Darren Ryemill.
