@@ -50,15 +50,6 @@
   border-radius: 50%;
 }
 
-// @media screen and (max-width: 499px) {
-//   .graphContainer {
-//     width: 200px;
-//     height: 200px;
-//     margin: auto;
-//     margin: 20% auto;
-//   }
-// }
-
 @media screen and (max-width: 375px) {
   .graphContainer {
     width: 310px;
@@ -75,13 +66,13 @@
     justify-content: space-around;
 
     .clicked {
-      font-size: 0.9rem;
+      font-size: auto;
       height: 6vh;
       margin-bottom: 10px;
     }
 
     .unClicked {
-      font-size: 0.9rem;
+      font-size: auto;
       height: 6vh;
     }
   }
@@ -102,12 +93,12 @@
     justify-content: space-between;
 
     .clicked {
-      font-size: 0.9rem;
+      font-size: auto;
       height: 6vh;
     }
 
     .unClicked {
-      font-size: 0.9rem;
+      font-size: auto;
       height: 6vh;
     }
   }
