@@ -2,7 +2,7 @@
 .navBar {
   z-index: 2;
   background: $gradient;
-  width: 60vw;
+  width: 40vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -50,3 +50,8 @@
   color: $colour-1;
 }
 
+@media only screen and (max-width: 600px) {
+  .navBar {
+    width: 100vw;
+  }
+}

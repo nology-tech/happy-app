@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./About.module.scss";
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar";
 
 const About = (props) => {
   const { signOut } = props;
 
   return (
     <>
-    <Navbar signOut={signOut}/>
+      <Navbar signOut={signOut} />
 
-      <p className={styles.text}>About works</p>
+      <p className={styles.text}></p>
     </>
   );
 };

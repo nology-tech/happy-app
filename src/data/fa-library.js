@@ -21,8 +21,9 @@ import {
   faInfo,
   faPlus,
   faPencilAlt,
+  faChevronCircleLeft,
+  faChevronCircleRight,
   faCheck,
-
 } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -47,5 +48,7 @@ export default library.add(
   faCheck,
   faInfo,
   faPlus,
-  faPencilAlt
+  faPencilAlt,
+  faChevronCircleLeft,
+  faChevronCircleRight
 );
