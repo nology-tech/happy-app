@@ -33,12 +33,13 @@
     }
   }
   .faIcon {
-    font-size: 3rem;
+    
+    font-size: 2rem;
     top: 0;
     left: 0;
     position: fixed;
     margin: 5%;
-    color: $colour-2;
+    color: $white;
     
     &:hover {
       cursor: pointer;
@@ -47,7 +48,7 @@
 }
 
 .signOutButton {
-  color: $colour-1;
+  color: $white;
 }
 
 @media only screen and (max-width: 600px) {
