@@ -23,7 +23,7 @@ const LifeComponentList = (props) => {
 
   const showComponents = (newScores) => {
     const listComponents = newScores.map((component) => {
-      const link = component.name === "Career" ? "careerdeepdive" : "";
+      const link = component.name === "Career" ? "careerdeepdive" : "setscores";
 
       return (
         <LifeComponent
