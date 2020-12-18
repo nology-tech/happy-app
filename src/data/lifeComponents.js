@@ -105,5 +105,4 @@ const lifeComponents = [
         icon: "lightbulb"
     }
 ];
-
 export default lifeComponents;

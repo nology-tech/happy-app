@@ -2,36 +2,28 @@ import React, { useState } from "react";
 import styles from "./TaskInput.module.scss";
 
 
-const emptyTask = {
-  id: "",
-  text: "",
-};
 
-const TaskInput = ({addTask, addTaskToDatabase}) => {
+const TaskInput = ({task, setTask, addTaskToDatabase}) => {
 
 const [inputtedTasktext, setInputttedTasktext] = useState("");
-const [idCount, setIdCount] = useState(1);
-const [task, setTask] = useState(emptyTask)
 
 
 const handleChange = (e) => {
   setInputttedTasktext(e.target.value);
   setTask({
-    id: idCount,
-    text: inputtedTasktext,
+    text: e.target.value,
+    isComplete: false
   });
 }
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  setIdCount(idCount + 1);
-  addTask({
-    id: idCount,
-    text: inputtedTasktext
+  setTask({
+    text: e.target.value,
+    isComplete: false
   });
-  console.log(task);
-  addTaskToDatabase(task);
   setInputttedTasktext("");
+  addTaskToDatabase(task);
 };
 
   return (

@@ -1,14 +1,15 @@
 @import "../../variables";
+
+
 .task {
-    font-size: $font-size-components/1.5;
-    min-height: 2rem;
-    margin-top: 3%;
+    font-size: $font-size-components/1.25;
+    height: 4.5vh;
     width: 100%;
-    background: #000d80;
+    margin: 10% 0;
+    background: $bar-colour;
     border-radius: 50px;
-    height: 5vh;
-    padding: 0.5% 2.5% 0.5% 2.5%;
-    color: $white;
+    padding-left:5%;
+    color: white;
     border: none;
     display: flex;
     align-items: center;
@@ -16,24 +17,66 @@
     &:focus {
         outline: none;
     }
-    .checkTaskComplete {
-        height: 160%;
-        width: 5vw;
-        background: $submit-green;
+    .buttonContainer {
+        height: 100%;
+        width:25%;
+        color: $bar-colour;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    .taskNotComplete {
+        margin: 0;
+        opacity: 70%;
+        background-color: $colour-2;
+        height: 5vh;
+        width:5vh;
+        color: $tick-colour;
         border: none;
-        font-size: $font-size-components;
-        color: $submit-green;
-        clip-path: circle(21%);
-        cursor: pointer;
-        &:hover {
-            backdrop-filter: sepia(100%);
+        border-radius: 50%;
+        outline: none;
+        
+
+         .checkIcon {
+            margin: 0;
+            width: 50%;
+            height: 50%;
+            pointer-events: none;
         }
-        &:active {
-            filter: brightness(0.4);
-            -webkit-filter: brightness(0.4);
-        }
-        mix-blend-mode: lighten;
-        filter: hue-rotate(-110deg);
-        -webkit-filter: hue-rotate(-110deg);
+
     }
+
+    .taskComplete {
+        margin: 0;
+        opacity: 100%;
+        background-color: $colour-2;
+        height: 5vh;
+        width:5vh;
+        color: $tick-colour;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        
+
+         .checkIcon {
+            margin: 0;
+            width: 50%;
+            height: 50%;
+            pointer-events: none;
+        }
+
+    }
+
+    .taskDelete {
+        margin: 0;
+        font-size: 0.9rem;
+        background-color: $colour-2;
+        height: 5vh;
+        width: 5vh;
+        color: $tick-colour;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+    }
+}
 }

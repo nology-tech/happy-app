@@ -1,24 +1,23 @@
 @import '../../variables.scss';
+
 .taskInput {
     display: flex;
     border-radius: 50px;
     border: none;
     width: 90%;
     font-weight: 400;
-    margin: 40px auto;
-    background: #000d80;
+    margin: 4.5vh auto;
+    background:$bar-colour;
     .input {
-        position: relative;
+        padding-top: 1%;
         width: 100%;
         border-radius: 50px;
         height: 5vh;
         background: transparent;
-        padding: 0% 2%;
-        color: $colour-2;
-        font-size: $font-size-components/ 1.2;
+        padding-left: 25px;
+        color: $tick-colour;
+        font-size: $font-size-components/1.25;
         border: none;
-        display: flex;
-        align-self: space-between;
         justify-content: center;
         &::placeholder {
             color: white;
@@ -29,14 +28,14 @@
         }
     }
     .submitButton {
+        margin: 0;
         height: 5vh;
-        width: 5%;
+        width: 5vh;
         background: $colour-2;
-        border-radius: 50px;
+        border-radius: 50%;
         border: none;
         font-size: $font-size-components * 1.5;
-        text-align: center;
-        color: $colour-1;
+        color: $tick-colour;
         cursor: pointer;
         &:focus {
             outline: none;
