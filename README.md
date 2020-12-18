@@ -94,6 +94,8 @@ Developing the app, the following technologies have been used:
 - After logging in via auth, it leaves you on the login page
 - In you navlist, the 'Home' button shouldn't take you back to the login page if you are already logged in. Instead should link back to scoreDisplay or graph page
 - Home button redirects to login page
+- Adding too many tasks leaves whitespace at the bottom of the page
+- Holdover console.logs
 
 ## Built By
 
