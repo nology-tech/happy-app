@@ -134,7 +134,7 @@ const Graph = (props) => {
     } else if (width >= 500) {
       size = 400;
     } else {
-      size = 200;
+      size = 310;
     }
 
     setGraphSize(size);

@@ -52,18 +52,18 @@
     }
   }
 }
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 375px) {
   .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 6.5em, $item-size: 25px);
+    @include on-circle($item-count: 15, $circle-size: 8.6em, $item-size: 0.2em);
   }
   .iconsDiv {
     margin: auto;
-    top: 12%;
-    left: 16.9%;
+    top: 16%;
+    left: 19.4%;
     .faStyle {
-      width: 0.86em;
-      height: 0.86em;
-      font-size: 27.5px;
+      width: 0.9em;
+      height: 0.9em;
+      font-size: 32px;
     }
   }
 }
