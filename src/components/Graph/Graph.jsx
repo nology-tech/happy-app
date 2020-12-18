@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "./Graph.module.scss";
 import RadarChart from "react-svg-radar-chart";
-import "react-svg-radar-chart/build/css/index.css";
+import "./graphStyles.css";
 import GraphIcons from "../GraphIcons";
 import { firestore } from "../../firebase";
 
