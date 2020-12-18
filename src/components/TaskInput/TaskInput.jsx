@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 // import TaskList from "../TaskList";
 import styles from "./TaskInput.module.scss";
-// import lifeComponents from "../../data/lifeComponents";
 
 const emptyTask = {
   id: "",
@@ -23,10 +22,8 @@ const [idCount, setIdCount] = useState(1);
 const [tagnames, setTagnames] = useState([]);
 
 
-// const [allChecked, setAllChecked] = useState(false);
-// const [isChecked, setIsChecked] = useState();
-  const [task, setTask] = useState([]);
-  // const [tasks, setTasks] = useState();
+
+const [task, setTask] = useState([]);
 
 // const {
 //   id,
@@ -86,13 +83,6 @@ const [checked15, setChecked15] = useState(false)
   function handleChkBoxChange(event) {
     let value = (event.target) = event.target.value;
 
-    // if (value )
-    // setChecked(!checked)
-
-    // for (let index = 0; index < array.length; index++) {
-    //   const element = array[index];
-      
-    // }
 
     if (!tagnamesToAdd.includes(value)) {
       tagnamesToAdd.push(value)
@@ -103,10 +93,7 @@ const [checked15, setChecked15] = useState(false)
     console.log(tagnamesToAdd)
   }
 
-//   const checkSet5 = (e) => {
-//     setChecked5(e.target.checked);
-//   }
-// {/* <Checkbox value={check1}  /> */}
+
 
 const clearForm = () => {
   setTask(emptyTask);
@@ -161,7 +148,6 @@ const clearForm = () => {
             id="Finances"
             value="Finances"
             onInput={handleChkBoxChange}
-            // checked={checked}
             checked={checked2}
             onChange={e => setChecked2(e.target.checked)}
           />
