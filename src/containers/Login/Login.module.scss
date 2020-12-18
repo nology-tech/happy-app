@@ -27,9 +27,10 @@
   }
 
   .TandC {
+    font-size: 0.75rem;
     text-align: center;
     list-style: none;
-    color: $white;
+    color: $text-colour-primary;
     &:hover {
       text-decoration: underline;
       text-decoration-color: $white;
