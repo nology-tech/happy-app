@@ -28,13 +28,13 @@ const Task = (props) => {
       })
   }
 
-  const updateTaskFromDataBase = (id, isComplete) => { 
+  const updateTaskFromDataBase = (id, isCompleted) => { 
     firestore
       .collection("users")
       .doc(user.uid)
       .collection("tasks")
       .doc(`${id}`)
-      .update({isComplete: !isComplete})
+      .update({isCompleted: !isCompleted})
       .then(() => {
         console.log("Document successfully changed")
         fetchTaskFromDataBase();
