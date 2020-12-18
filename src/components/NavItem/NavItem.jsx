@@ -15,7 +15,7 @@ const NavItem = (props) => {
         <FontAwesomeIcon icon="times" className={styles.faIcon} />
       </span>
       <ul className={styles.navList}>
-        <Link to="../happinessgraph" onClick={() => setOpenMenu(false)}>
+        <Link to="/" onClick={() => setOpenMenu(false)}>
           <li>Home</li>
         </Link>
         <Link to="../setscores" onClick={() => setOpenMenu(false)}>

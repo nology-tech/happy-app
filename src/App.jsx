@@ -10,9 +10,9 @@ import firebase, { googleProvider } from "./firebase";
 const App = () => {
   const [user, setUser] = useState(null);
 
-const signIn = () => {
-    firebase.auth().signInWithRedirect(googleProvider)
-    navigate("setscores"); 
+  const signIn = () => {
+    firebase.auth().signInWithRedirect(googleProvider);
+    navigate("setscores");
   };
 
   const signOut = () => {
@@ -36,7 +36,6 @@ const signIn = () => {
       }
     });
   };
-  
 
   useEffect(() => {
     getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
@@ -44,14 +43,9 @@ const signIn = () => {
 
   // console.log(user);
 
-
   return (
     <div className={styles.body}>
-    
-      <Routes user={user}
-       signIn={signIn}
-       signOut={signOut}
-      />
+      <Routes user={user} signIn={signIn} signOut={signOut} />
     </div>
   );
 };
