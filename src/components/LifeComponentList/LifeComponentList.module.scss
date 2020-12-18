@@ -1,11 +1,11 @@
 @import "../../variables.scss";
 
 .subheading {
-  color: $text-colour-primary;
+  color: $white;
   font-weight: 400;
-  text-shadow: 1px 1px 5px rgba(135, 14, 135, 0.975);
+  
 
-  border-bottom: 4px solid $colour-1;
+  border-bottom: 2px solid $text-colour-primary;
   width: 95%;
   text-align: right;
   padding: $base-padding;
