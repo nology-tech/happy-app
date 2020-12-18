@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../data/fa-library";
 
@@ -18,7 +18,7 @@ const Footer = (props) => {
           onClick={() => {
             if (!allScore.includes(0)) {
               addScoreToDataBase();
-              alert("Scores have been added");
+              navigate('/happinessgraph')
             } else {
               alert("Please rate all your scores before submitting them");
             }
