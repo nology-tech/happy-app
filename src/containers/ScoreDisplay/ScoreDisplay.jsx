@@ -20,18 +20,17 @@ const ScoreDisplay = (props) => {
         .collection("users")
         .doc(user.uid)
         .collection("scores")
+        .orderBy("date", "desc")
+        .limit(1)
         .get()
         .then((input) => {
-          const score = input.docs
-            .map((doc) => doc.data())
-            .sort((a, b) => b.date.seconds - a.date.seconds)[0];
+          const score = input.docs.map((doc) => doc.data())[0];
           setScore(score);
         })
         .catch((err) => console.error(err));
     };
-
     if (user) {
-      getScores(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+      getScores();
     }
   }, [user]);
 
@@ -61,28 +60,30 @@ const ScoreDisplay = (props) => {
     ? scores.lifeComponentScores.slice(12, 15)
     : null;
 
-const getComponents = (practicalScores => practicalScores ? practicalScores.map((score) => {
-      const getIcon = lifeComponents.find((lifecomponent) => {
-          let lifeComponentIcon;
-          
-          if(lifecomponent.name === score.name) {
-          lifeComponentIcon = lifecomponent.icon;
-        } return lifeComponentIcon
-      })
+  const getComponents = (practicalScores) =>
+    practicalScores
+      ? practicalScores.map((score) => {
+          const getIcon = lifeComponents.find((lifecomponent) => {
+            let lifeComponentIcon;
 
-        return (
-          <LifeComponent
-            isReadOnly
-            lifeComponentNames={score.name}
-            rangeValue={score.score}
-            key={score.name}
-            icon={getIcon.icon}
-            isScoreDisplay={true}
-          />
-        );
-      })
-    : null
-)
+            if (lifecomponent.name === score.name) {
+              lifeComponentIcon = lifecomponent.icon;
+            }
+            return lifeComponentIcon;
+          });
+
+          return (
+            <LifeComponent
+              isReadOnly
+              lifeComponentNames={score.name}
+              rangeValue={score.score}
+              key={score.name}
+              icon={getIcon.icon}
+              isScoreDisplay={true}
+            />
+          );
+        })
+      : null;
 
   return (
     <>
@@ -108,4 +109,3 @@ const getComponents = (practicalScores => practicalScores ? practicalScores.map(
 };
 
 export default ScoreDisplay;
-

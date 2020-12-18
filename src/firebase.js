@@ -9,7 +9,7 @@ const firebaseConfig = {
   storageBucket: "happy-app-86830.appspot.com",
   messagingSenderId: "685498532245",
   appId: "1:685498532245:web:a80b513aa0c31e916c369c",
-  measurementId: "G-ZV5XSWGHXR"
+  measurementId: "G-ZV5XSWGHXR",
 };
 
 firebase.initializeApp(firebaseConfig);
