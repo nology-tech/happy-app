@@ -14,7 +14,26 @@
     #05377d,
     #014491
   );
+  width: 100%;
   padding-bottom: 50px;
 
   overflow: hidden;
+
+  .subheading {
+    color: $text-colour-primary;
+    font-weight: 400;
+    text-shadow: 1px 1px 5px rgba(135, 14, 135, 0.975);
+
+    border-bottom: 4px solid $colour-1;
+    width: 95%;
+    text-align: right;
+    padding: $base-padding;
+    margin: $base-margin * 3 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    margin-bottom: 500px;
+  }
 }
