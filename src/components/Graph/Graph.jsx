@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./Graph.module.scss";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import GraphIcons from "../GraphIcons";
 import { firestore } from "../../firebase";
 
-const Graph = () => {
+const Graph = (props) => {
+  const { user } = props;
   const [clicked, setClicked] = useState(true);
   const [graphSize, setGraphSize] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
@@ -36,10 +37,11 @@ const Graph = () => {
     roundStrokes: true,
   };
 
-  const getScores = () => {
+  const getScores = useCallback(() => {
+    if (!user) return;
     firestore
       .collection("users")
-      .doc("Ezio")
+      .doc(user.uid)
       .collection("scores")
       .orderBy("date", "desc")
       .limit(1)
@@ -51,12 +53,12 @@ const Graph = () => {
         setScore(cleanScores);
       })
       .catch((err) => console.error(err));
-  };
+  }, [user]);
 
   const getAllTimeAverageScores = () => {
     firestore
       .collection("users")
-      .doc("Ezio")
+      .doc(user.uid)
       .get()
       .then((doc) => {
         const score = doc.data().allTimeAverage;
@@ -68,6 +70,7 @@ const Graph = () => {
       })
       .catch((err) => console.error(err));
   };
+
   const getScore = (scores) => {
     const emptyObj = {};
     if (scores) {
@@ -121,7 +124,7 @@ const Graph = () => {
 
   useEffect(() => {
     getScores();
-  }, []);
+  }, [getScores, user]);
 
   useEffect(() => {
     let size;
@@ -146,12 +149,12 @@ const Graph = () => {
     setClicked(!clicked);
   };
 
-  const oneClick = () => {
+  const firstButton = () => {
     handleClick();
     getScores();
   };
 
-  const secondClick = () => {
+  const secondButton = () => {
     handleClick();
     getAllTimeAverageScores();
   };
@@ -170,13 +173,13 @@ const Graph = () => {
       <div className={styles.buttonContainer}>
         <button
           className={clicked ? styles.clicked : styles.unClicked}
-          onClick={oneClick}
+          onClick={firstButton}
         >
           Today Happiness
         </button>
         <button
           className={clicked ? styles.unClicked : styles.clicked}
-          onClick={secondClick}
+          onClick={secondButton}
         >
           All Time Happiness
         </button>

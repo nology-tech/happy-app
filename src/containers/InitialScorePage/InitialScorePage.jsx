@@ -33,7 +33,7 @@ const InitialScorePage = (props) => {
     return emptyObj;
   };
   const addScoreToDataBase = () => {
-    const docRef = firestore.collection("users").doc("Ezio");
+    const docRef = firestore.collection("users").doc(user.uid);
     docRef // Change this to UID of user, evenually
       .collection("scores")
       .add({

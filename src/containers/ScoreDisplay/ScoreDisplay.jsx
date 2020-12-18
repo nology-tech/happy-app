@@ -14,22 +14,21 @@ const ScoreDisplay = (props) => {
 
   const [scores, setScore] = useState(null);
 
-  const getScores = () => {
-    firestore
-      .collection("users")
-      .doc("Ezio")
-      .collection("scores")
-      .orderBy("date", "desc")
-      .limit(1)
-      .get()
-      .then((input) => {
-        const score = input.docs.map((doc) => doc.data())[0];
-        setScore(score);
-      })
-      .catch((err) => console.error(err));
-  };
-
   useEffect(() => {
+    const getScores = () => {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .collection("scores")
+        .orderBy("date", "desc")
+        .limit(1)
+        .get()
+        .then((input) => {
+          const score = input.docs.map((doc) => doc.data())[0];
+          setScore(score);
+        })
+        .catch((err) => console.error(err));
+    };
     if (user) {
       getScores();
     }

@@ -19,19 +19,27 @@ const Routes = (props) => {
 
   return (
     <Router>
-      
-      <About path="about" signOut={signOut}/>
+      <About path="about" signOut={signOut} />
       <Login path="/" signIn={signIn} />
-      <Register path="register"signOut={signOut} />
+      <Register path="register" signOut={signOut} />
       <PrivateRoutes path="/">
-        <Task user={user} path="task" signOut={signOut}/>
-        <InitialScorePage  user={user} path="setscores" signOut={signOut}/>
-        <HappinessGraphPage path="happinessgraph" signOut={signOut} />
-        <CareerDeepDive path="careerdeepdive"/>
+        <Task user={user} path="task" signOut={signOut} />
+        <InitialScorePage user={user} path="setscores" signOut={signOut} />
+        <HappinessGraphPage
+          path="happinessgraph"
+          user={user}
+          signOut={signOut}
+        />
+        <CareerDeepDive path="careerdeepdive" />
         <AccountSettings path="accountsettings" signOut={signOut} />
-        <ScoreDisplay user={user} path="scoredisplay" isScoreDisplay={isScoreDisplay} signOut={signOut} />
+        <ScoreDisplay
+          user={user}
+          path="scoredisplay"
+          isScoreDisplay={isScoreDisplay}
+          signOut={signOut}
+        />
       </PrivateRoutes>
-      <TermsConditions path="termsconditions" signOut={signOut}/>
+      <TermsConditions path="termsconditions" signOut={signOut} />
     </Router>
   );
 };
