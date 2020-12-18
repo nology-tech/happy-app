@@ -1,45 +1,118 @@
 @import "../../variables.scss";
 
-button {
+.buttonContainer {
+  width: 40vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.unClicked {
   border: none;
   color: $white;
-  height: 4vh;
-  width: 80px;
+  height: auto;
+  width: 150px;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
   border-radius: 50px;
+  position: relative;
+  background-color: #ac058a;
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  padding: $base-padding;
+}
+
+.clicked {
+  border: none;
+  color: $white;
+  height: auto;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+  position: relative;
   background-color: $colour-1;
   margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  padding: $base-padding;
 }
 
 .graphContainer {
-  background-color: #031E53;
+  background-color: #0c1d42;
   text-align: center;
-  margin: 70px auto;
   position: relative;
   border-radius: 50%;
-
-  .dot {
-    color: red;
-  }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 375px) {
   .graphContainer {
-  
-    width: 200px;
-    height: 200px;
+    width: 310px;
+    height: 310px;
+    margin: auto;
+    margin: 20% auto;
+  }
+  .buttonContainer {
+    height: 15vh;
+    margin: -40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .clicked {
+      font-size: 10px;
+      height: 6vh;
+    }
+
+    .unClicked {
+      font-size: 10px;
+      height: 6vh;
+    }
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .graphContainer {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
+    margin: 10% auto;
+  }
+  .buttonContainer {
+    width: 75vw;
+    height: 30vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .clicked {
+      font-size: 10px;
+      height: 6vh;
+    }
+
+    .unClicked {
+      font-size: 10px;
+      height: 6vh;
+    }
   }
 }
 
-
-
-
+@media screen and (min-width: 769px) {
+  .graphContainer {
+    width: 400px;
+    height: 400px;
+    margin: 7% auto;
+  }
+  .buttonContainer {
+    width: 40vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}

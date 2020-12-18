@@ -1,22 +1,17 @@
 @import "../../variables.scss";
 
-
 .iconsDiv {
   background: transparent;
   position: absolute;
   top: -3%;
-  left: 0 ;
+  left: 0;
   margin: auto;
   z-index: 1;
-
-  
 }
 
 .tooltip {
-  color: $colour-2
+  color: $colour-2;
 }
-
-
 
 @mixin on-circle($item-count, $circle-size, $item-size) {
   position: relative;
@@ -24,7 +19,6 @@
   height: $circle-size;
   border-radius: 50%;
   padding: 0;
-
   > * {
     display: block;
     position: absolute;
@@ -33,70 +27,75 @@
     margin: -($item-size / 2);
     width: $item-size;
     height: $item-size;
-
     $angle: (360 / $item-count);
     $rot: -89;
-
     @for $i from 1 through $item-count {
       &:nth-of-type(#{$i}) {
         transform: rotate($rot * 1deg)
           translate($circle-size / 2)
           rotate($rot * -1deg);
       }
-
       $rot: $rot + $angle;
     }
   }
 }
-
 .circleContainer {
   @include on-circle($item-count: 15, $circle-size: 28em, $item-size: 4em);
- 
   .faStyle {
-    color: $colour-1; 
-
+    color: #b7c6db;
     text-align: center;
     padding-top: 10px;
-    padding-left: 5px;
-    
+    padding-left: 10px;
     &:hover {
       cursor: pointer;
       color: $colour-2;
-
-      
     }
-    
   }
-  
 }
-
-  
-
-@media screen and (min-width: 320px) {
- 
-  
+@media screen and (max-width: 375px) {
   .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 5px);
-
+    @include on-circle($item-count: 15, $circle-size: 8.6em, $item-size: 0.2em);
   }
   .iconsDiv {
     margin: auto;
+    top: 16%;
+    left: 19.4%;
+    .faStyle {
+      width: 0.9em;
+      height: 0.9em;
+      font-size: 32px;
+    }
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
   .circleContainer {
-    @include on-circle($item-count: 15, $circle-size: 15em, $item-size: 4em);
+    @include on-circle($item-count: 15, $circle-size: 10em, $item-size: 2.5em);
   }
-  
   .iconsDiv {
-    top: 31%;
+    top: 27.5%;
+    left: 30%;
+    margin: auto;
+    .faStyle {
+      width: 1em;
+      height: 1em;
+      font-size: 31.5px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .circleContainer {
+    @include on-circle($item-count: 15, $circle-size: 11em, $item-size: 2.5em);
+  }
+  .iconsDiv {
+    top: 28%;
     left: 31%;
     margin: auto;
     .faStyle {
-      width: 2em;
-      height: 2em;
-      font-size: 30px;
+      width: 0.9em;
+      height: 0.9em;
+      font-size: 33px;
     }
   }
 }
