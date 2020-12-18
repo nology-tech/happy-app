@@ -10,7 +10,7 @@
 .unClicked {
   border: none;
   color: $white;
-  height: 6vh;
+  height: auto;
   width: 150px;
   text-align: center;
   text-decoration: none;
@@ -22,12 +22,13 @@
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+  padding: $base-padding;
 }
 
 .clicked {
   border: none;
   color: $white;
-  height: 6vh;
+  height: auto;
   width: 150px;
   text-align: center;
   text-decoration: none;
@@ -39,6 +40,7 @@
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+  padding: $base-padding;
 }
 
 .graphContainer {
@@ -58,12 +60,6 @@
     height: 200px;
     margin: auto;
     margin: 20% auto;
-  }
-  .buttonContainer {
-    width: 80vw;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
   }
 }
 
@@ -87,8 +83,10 @@
   }
   .buttonContainer {
     width: 75vw;
+    height: 30vh;
     margin: auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 }
