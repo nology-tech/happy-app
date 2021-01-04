@@ -12,7 +12,6 @@ const App = () => {
 
   const signIn = () => {
     firebase.auth().signInWithRedirect(googleProvider);
-    navigate("setscores");
   };
 
   const signOut = () => {
@@ -31,17 +30,19 @@ const App = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setUser(user);
+        if (window.location.pathname === "/") {
+          navigate("setscores");
+        }
       } else {
         setUser(null);
+        navigate("/");
       }
     });
   };
 
   useEffect(() => {
-    getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+    getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before log in.
   }, []);
-
-  // console.log(user);
 
   return (
     <div className={styles.body}>
