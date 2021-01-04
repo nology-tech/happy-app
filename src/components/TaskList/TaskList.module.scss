@@ -1,6 +1,9 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
+
 .displayTasks {
-    border-radius: 50px;
-    width: 90%;
-    margin: 0 auto;
+  border-radius: 50px;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-bottom: 20px;
 }

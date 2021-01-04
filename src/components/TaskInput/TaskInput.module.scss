@@ -1,44 +1,44 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .taskInput {
-    display: flex;
+  display: flex;
+  border-radius: 50px;
+  border: none;
+  width: 90%;
+  font-weight: 400;
+  margin: 20px auto;
+  background: $bar-colour;
+  .input {
+    padding-top: 1%;
+    width: 100%;
     border-radius: 50px;
+    height: 5vh;
+    background: transparent;
+    padding-left: 25px;
+    color: $tick-colour;
+    font-size: $font-size-components/1.25;
     border: none;
-    width: 90%;
-    font-weight: 400;
-    margin: 4.5vh auto;
-    background:$bar-colour;
-    .input {
-        padding-top: 1%;
-        width: 100%;
-        border-radius: 50px;
-        height: 5vh;
-        background: transparent;
-        padding-left: 25px;
-        color: $tick-colour;
-        font-size: $font-size-components/1.25;
-        border: none;
-        justify-content: center;
-        &::placeholder {
-            color: white;
-            font-size: $font-size-components / 1.2;
-        }
-        &:focus {
-            outline: none;
-        }
+    justify-content: center;
+    &::placeholder {
+      color: white;
+      font-size: $font-size-components / 1.2;
     }
-    .submitButton {
-        margin: 0;
-        height: 5vh;
-        width: 5vh;
-        background: $colour-2;
-        border-radius: 50%;
-        border: none;
-        font-size: $font-size-components * 1.5;
-        color: $tick-colour;
-        cursor: pointer;
-        &:focus {
-            outline: none;
-        }
+    &:focus {
+      outline: none;
     }
+  }
+  .submitButton {
+    margin: 0;
+    height: 5vh;
+    width: 5vh;
+    background: $colour-2;
+    border-radius: 50%;
+    border: none;
+    font-size: $font-size-components * 1.5;
+    color: $tick-colour;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
 }
