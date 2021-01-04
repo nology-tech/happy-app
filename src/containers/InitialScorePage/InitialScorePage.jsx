@@ -38,7 +38,7 @@ const InitialScorePage = (props) => {
       .collection("scores")
       .add({
         lifeComponentScores,
-        date: new Date(),
+        date: new Date()
       })
       .then(() => {
         alert("Scores successfully Saved!");
@@ -48,9 +48,7 @@ const InitialScorePage = (props) => {
       });
     firestore.runTransaction((transaction) => {
       return transaction.get(docRef).then((doc) => {
-        const numberOfDocuments = doc.get("numberOfDocuments")
-          ? doc.data().numberOfDocuments + 1
-          : 1;
+        const numberOfDocuments = doc.get("numberOfDocuments") ? doc.data().numberOfDocuments + 1 : 1;
         let newAllTimeAverage = createGraphObject(lifeComponentScores);
         if (doc.get("allTimeAverage")) {
           newAllTimeAverage = doc.data().allTimeAverage;
@@ -65,7 +63,7 @@ const InitialScorePage = (props) => {
         } else {
           transaction.update(docRef, {
             numberOfDocuments,
-            allTimeAverage: newAllTimeAverage,
+            allTimeAverage: newAllTimeAverage
           });
         }
       });
@@ -75,17 +73,11 @@ const InitialScorePage = (props) => {
     <>
       <section className={styles.initialScorePage}>
         <Navbar signOut={signOut} text="Set Scores" />
-        <p className={styles.initialScorePage__question}>
-          Please rate your happiness for each component out of 10
-        </p>
+        <p className={styles.initialScorePage__question}>Please rate your happiness for each component out of 10</p>
         <hr />
         <LifeComponentList scores={scores} updateScore={updateScore} />
       </section>
-      <Footer
-        addScoreToDataBase={addScoreToDataBase}
-        scores={scores}
-        isScoreDisplay={false}
-      />
+      <Footer addScoreToDataBase={addScoreToDataBase} scores={scores} isScoreDisplay={false} />
     </>
   );
 };
