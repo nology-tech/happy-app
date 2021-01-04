@@ -89,7 +89,7 @@ Developing the app, the following technologies have been used:
 - App features tutorial
 - Trust pilot section
 
-### Bugs:
+### Known Bugs:
 
 - Holdover console.logs
 

@@ -26,7 +26,7 @@ const Graph = (props) => {
     "Personal Development": 0.1,
     "Physical Environment": 0.1,
     Purpose: 0.1,
-    Spirituality: 0.1,
+    Spirituality: 0.1
   });
 
   const defaultOptions = {
@@ -35,7 +35,7 @@ const Graph = (props) => {
     captions: false,
     captionMargin: 10,
     dots: true,
-    roundStrokes: true,
+    roundStrokes: true
   };
 
   const getScores = useCallback(() => {
@@ -48,7 +48,6 @@ const Graph = (props) => {
       .limit(1)
       .get()
       .then((input) => {
-        console.log(input);
         const score = input.docs.map((doc) => doc.data())[0];
         const cleanScores = getScore(score);
         setScore(cleanScores);
@@ -95,15 +94,15 @@ const Graph = (props) => {
         "Personal Development": 0.1,
         "Physical Environment": 0.1,
         Purpose: 0.1,
-        Spirituality: 0.1,
+        Spirituality: 0.1
       };
     }
   };
   const data = [
     {
       data: scores,
-      meta: { color: " #00ffcc" },
-    },
+      meta: { color: " #00ffcc" }
+    }
   ];
   const captions = {
     "Contribution to Society": "Contribution to Society",
@@ -120,7 +119,7 @@ const Graph = (props) => {
     "Physical Environment": "Physical Environment",
     Purpose: "Purpose",
     "Self Worth": "Self Worth",
-    Spirituality: "Spirituality",
+    Spirituality: "Spirituality"
   };
 
   useEffect(() => {
@@ -163,25 +162,14 @@ const Graph = (props) => {
   return (
     <div>
       <div className={styles.graphContainer}>
-        <RadarChart
-          captions={captions}
-          data={data}
-          size={graphSize}
-          options={defaultOptions}
-        />
+        <RadarChart captions={captions} data={data} size={graphSize} options={defaultOptions} />
         <GraphIcons />
       </div>
       <div className={styles.buttonContainer}>
-        <button
-          className={clicked ? styles.clicked : styles.unClicked}
-          onClick={firstButton}
-        >
+        <button className={clicked ? styles.clicked : styles.unClicked} onClick={firstButton}>
           Today Happiness
         </button>
-        <button
-          className={clicked ? styles.unClicked : styles.clicked}
-          onClick={secondButton}
-        >
+        <button className={clicked ? styles.unClicked : styles.clicked} onClick={secondButton}>
           All Time Happiness
         </button>
       </div>

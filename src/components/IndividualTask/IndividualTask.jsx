@@ -16,7 +16,6 @@ const IndividualTask = ({ task, taskText, RemoveTaskFromDatabase, updateTaskFrom
   const handleisCompleteChange = () => {
     updateTaskFromDataBase(task.id, isComplete);
     setIsComplete(!isComplete);
-    console.log(isComplete);
   };
 
   return (
