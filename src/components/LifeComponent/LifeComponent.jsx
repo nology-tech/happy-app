@@ -14,7 +14,7 @@ const LifeComponent = (props) => {
     isReadOnly,
     linkTo,
     icon,
-    isScoreDisplay,
+    isScoreDisplay
   } = props;
 
   const [isClicked, setIsClicked] = useState(false);
@@ -34,14 +34,7 @@ const LifeComponent = (props) => {
             )}
           </span>
           <span className={styles.lifeComponent__infoIcon}>
-            {isReadOnly ? (
-              ""
-            ) : (
-              <FontAwesomeIcon
-                onClick={() => setIsClicked(!isClicked)}
-                icon={["fas", "info"]}
-              />
-            )}
+            {isReadOnly ? "" : <FontAwesomeIcon onClick={() => setIsClicked(!isClicked)} icon={["fas", "info"]} />}
           </span>
         </h2>
 
@@ -70,17 +63,14 @@ const LifeComponent = (props) => {
             className={styles.lifeComponentSlider}
             type="range"
             value={rangeValue}
-            min="1"
+            min="0"
             max="10"
             step="1"
             onChange={handleChange}
           />
         )}
       </div>
-      <Suggestion
-        isClicked={isClicked}
-        lifeComponentSuggestion={lifeComponentSuggestion}
-      />
+      <Suggestion isClicked={isClicked} lifeComponentSuggestion={lifeComponentSuggestion} />
     </main>
   );
 };
