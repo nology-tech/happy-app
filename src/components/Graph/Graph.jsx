@@ -105,20 +105,20 @@ const Graph = (props) => {
     }
   ];
   const captions = {
-    "Contribution to Society": "Contribution to Society",
-    Career: "Career",
-    Finances: "Finances",
-    Family: "Family",
-    "Fun and Recreation": "Fun and Recreation",
-    Friends: "Friends",
     "General Happiness": "General Happiness",
+    Finances: "Finances",
+    Career: "Career",
     "Love Life": "Love Life",
-    "Mental Health": "Mental Health",
+    Family: "Family",
+    Friends: "Friends",
+    "Fun and Recreation": "Fun and Recreation",
     "Physical Health": "Physical Health",
+    "Mental Health": "Mental Health",
+    "Contribution to Society": "Contribution to Society",
+    "Self Worth": "Self Worth",
     "Personal Development": "Personal Development",
     "Physical Environment": "Physical Environment",
     Purpose: "Purpose",
-    "Self Worth": "Self Worth",
     Spirituality: "Spirituality"
   };
 
