@@ -70,7 +70,7 @@ const LifeComponent = (props) => {
           />
         )}
       </div>
-      <Suggestion isClicked={isClicked} lifeComponentSuggestion={lifeComponentSuggestion} />
+      {isScoreDisplay ? "" : <Suggestion isClicked={isClicked} lifeComponentSuggestion={lifeComponentSuggestion} />}
     </main>
   );
 };
