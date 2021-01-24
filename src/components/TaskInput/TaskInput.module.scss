@@ -1,45 +1,100 @@
-@import '../../variables.scss';
-.taskInput {
-    display: flex;
-    border-radius: 50px;
-    border: none;
-    width: 90%;
-    font-weight: 400;
-    margin: 40px auto;
-    background: $color-primary-dark;
-    .input {
-        position: relative;
-        width: 100%;
-        border-radius: 50px;
-        height: 5vh;
-        background: transparent;
-        padding: 0% 2%;
-        color: $colour-2;
-        font-size: $font-size-components/2;
-        border: none;
+    @import '../../variables.scss';
+    .taskInput {
         display: flex;
-        align-self: space-between;
-        justify-content: center;
-        &::placeholder {
-            color: white;
-            font-size: $font-size-components/2;
-        }
-        &:focus {
-            outline: none;
-        }
-    }
-    .submitButton {
-        height: 5vh;
-        width: 5%;
-        background: $colour-2;
+        flex-direction: column;
         border-radius: 50px;
         border: none;
-        font-size: $font-size-components/1.6;
-        text-align: center;
-        color: white;
-        cursor: pointer;
-        &:focus {
-            outline: none;
+        width: 90%;
+        mix-blend-mode: hard-light;
+        font-weight: 400;
+        margin: 10px auto;
+        background: $gradient;
+        .input {
+            // margin: 5% 0;
+            width: 100%;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            height: 5vh;
+            background: linear-gradient(to top, $background-gradient-1, $background-gradient-2);
+            box-shadow: inset 4px -4px -18px 10px $background-gradient-1;
+            padding: 24px 20px;
+            color: $colour-2;
+            font-size: $font-size-components;
+            border: none;
+            display: flex;
+            align-self: space-between;
+            justify-content: center;
+            &::placeholder {
+                color: white;
+                font-size: $font-size-components;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        .tagFieldset {
+            color: $white;
+            padding: 2%;
+            margin: 10px auto;
+            flex-direction: column;
+            height: auto;
+            width: 80vw;
+            border: none;
+            // height: 280px;
+            // justify-content: flex-start;
+            align-content: space-around;
+            // justify-items: center;
+            // justify-content: center;
+            text-align: center;
+            input {
+                margin: 10px 10px;
+                // mix-blend-mode: ;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        .submitButton {
+            height: 60px;
+            width: 120px;
+            background: lighten(rgba(1, 226, 196, 1), 20);
+            border-radius: 50px;
+            border: none;
+            font-size: $font-size-components * 1.5;
+            text-align: center;
+            color: $colour-1;
+            margin: 10px auto;
+            cursor: pointer;
+            transition: all .3s ease;
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background: darken($colour-1, 20);
+                color: $colour-2;
+            }
+            &:active {
+                background: $colour-1;
+            }
+            // &:focus {
+            //     outline: none;
+            // }
+            // &:hover {
+            //     background: rgba($color: #ff0088, $alpha: 1.0);
+            //     color: $colour-2;
+            // }
+            // &:active {
+            //     background: darken(#ff0088, 20);
+            //     outline: none;
+            // }
+            // &:hover {
+            //     background: $color-fire;
+            //     color: $colour-2;
+            // }
+            // &:active {
+            //     background: darken(#ff0088, 20);
+            // }
+            // }
         }
     }
-}

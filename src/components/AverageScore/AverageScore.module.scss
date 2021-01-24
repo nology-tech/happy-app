@@ -1,13 +1,7 @@
 @import "../../variables.scss";
 
- {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container {
-  width: 80vw;
+  width: 100vw;
   height: 18vh;
   color: $white;
 
@@ -20,5 +14,7 @@
   .scores {
     margin-top: 2%;
     font-size: 1.2rem;
+    width: 80vw;
+    margin: auto;
   }
 }

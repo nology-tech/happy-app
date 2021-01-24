@@ -2,11 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600;700&display=swap");
 $default-font-family: Roboto, "Open Sans", sans-serif;
 $font-size-header: 2rem;
-$font-size-components: 1.8rem;
+$font-size-components: 1.2rem;
 $font-size-nav: 1.3rem;
 $margin-logo-img: 5px;
 $height-logo-img: 45px;
 $width-logo-img: 45px;
+$base-margin: 10px;
+$base-padding: 10p;
 // Colors
 // updated variable names
 $background-gradient-1: #003333;
@@ -19,54 +21,8 @@ $text-colour-secondary: #666666;
 $tick-colour: #ffffff;
 $white: #fdfdfd; // Off-white
 $black: #1d1b1b; // off-black
-// App Gradient
-// $gradient: linear-gradient(0deg, rgb(58, 0, 70) 0%, rgb(31, 0, 80) 72%);
-$gradient: linear-gradient(to top,
-#001544,
-#032056,
-#052b69,
-#05377d,
-#014491);
-// Colours added by Josh from wireframes
-$background-blue1: #117ba2;
-$background-blue2: #0057bc;
-$darker-blue: #003399;
+$gradient: linear-gradient(to top, #001544, #032056, #052b69, #05377d, #014491);
 $submit-green: #99cc66;
-$grey: #999999;
-$yellow: #ffcc33;
-// Initial colours
-$background-purple: #5d116d;
-$color-blue-light: #1d85c2;
-$color-blue-bright: #1db7c2;
-$color-fire: #c21d1d;
-$color-primary: #4a0fd3;
-$color-orange: #eb6121;
-$color-red: #eb213c;
-$color-neon: #21eb3c;
-$color-bluesky: #21ebeb;
-$color-violet: #d421eb;
-$color-primary-light: #9585ee;
-$color-primary-dark: #000d80;
-$color-secondary-light: #e65a76;
-$color-secondary-dark: #bb4f65;
-$color-tertiary-light: #f309f3;
-$color-tertiary-dark: #8f058f;
-$color-grey-light-1: #c0bfbf;
-$color-grey-light-2: #c5baba;
-$color-grey-dark: #665d5d;
-$color-grey-dark-2: #796f6f;
-$color-grey-dark-3: #4e4646;
-$color-green-light: #1eca1e;
-$color-green-medium: #095e4c;
-$color-green-strong: #0f4440;
-$color-yellow: #f1b22d;
-$color-yellow-dark: #88610e;
-$header-yellow-text: #f1b32c;
-$button-inactive: #0c5b7f;
-$navy-blue: #074783;
-$hot-spot-color: #ff0000;
-$white: #dad4d4; // Off-white
-$black: #1d1b1b; // off-black
 // Fonts
 // Whilst html is set to 10px, default font size variable set at 1.6rem will mean that everything to this variable will be 16px
 $default-font-size: 1.6rem;
@@ -85,9 +41,9 @@ $button-border-radius: 15px;
 }
 
 %clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

@@ -1,5 +1,47 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faLaptopHouse,
+  faDonate,
+  faBrain,
+  faUserTie,
+  faHeartbeat,
+  faLightbulb,
+  faUserFriends,
+  faUsers,
+  faHeart,
+  faPlaceOfWorship,
+  faBullseye,
+  faHandHoldingHeart,
+  faUmbrellaBeach,
+  faHandsHelping,
+  faSmile,
+  faTimes,
+  faInfo,
+  faPlus,
+  faPencilAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
-export default library.add(faSearch, faTimes);
-
+export default library.add(
+  faInfo,
+  faSearch,
+  faLaptopHouse,
+  faDonate,
+  faBrain,
+  faUserTie,
+  faHeartbeat,
+  faLightbulb,
+  faUserFriends,
+  faUsers,
+  faHeart,
+  faPlaceOfWorship,
+  faBullseye,
+  faHandHoldingHeart,
+  faUmbrellaBeach,
+  faHandsHelping,
+  faSmile,
+  faTimes,
+  faInfo,
+  faPlus,
+  faPencilAlt
+);

@@ -13,12 +13,17 @@
   &:focus {
     outline: none;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .primary {
   background-color: $colour-2;
+  color: $white;
 }
 
 .secondary {
   background-color: $colour-1;
+  color: $white;
 }

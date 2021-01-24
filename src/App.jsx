@@ -1,21 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./App.module.scss";
-
 import "./data/fa-library";
 import Routes from "./containers/Routes";
 import { navigate } from "@reach/router";
-import Navbar from "./components/Navbar";
-
 
 import firebase, { googleProvider } from "./firebase";
 
 // DONT ADD ANYTHING HERE - GO TO CONTAINERS AND RENDER STUFF THERE
 const App = () => {
-const [ user, setUser ] = useState(null);
+  const [user, setUser] = useState(null);
 
 const signIn = () => {
-    firebase.auth().signInWithRedirect(googleProvider); 
-    navigate("/"); 
+    firebase.auth().signInWithRedirect(googleProvider)
+    navigate("setscores"); 
   };
 
   const signOut = () => {
@@ -30,29 +27,32 @@ const signIn = () => {
       });
   };
 
-const getUser = () => {
-  firebase.auth().onAuthStateChanged ((user) => {
-     if (user) {
-      setUser(user);
-
-    } else {
-      setUser(null);
-    }
-  });
-};
-
-useEffect(() => {
-  getUser();
-}, []);
+  const getUser = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+  };
   
-  
+
+  useEffect(() => {
+    getUser(); // It only works if user is logged in and should be passed in private routing as innacesible before logg in.
+  }, []);
+
+  // console.log(user);
+
+
   return (
     <div className={styles.body}>
+    
       <Routes user={user}
-       signIn = {signIn}
+       signIn={signIn}
+       signOut={signOut}
       />
-      <Navbar signOut={signOut}/>
     </div>
-  ); 
+  );
 };
-export default App; 
+export default App;

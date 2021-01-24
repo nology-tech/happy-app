@@ -1,56 +1,41 @@
 import React from "react";
 import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavItem = (props) => {
-  const { setOpenMenu, signOut } = props
+  const { setOpenMenu, signOut } = props;
   return (
     <div className={styles.navBar}>
-      <span onClick={() => {
-        setOpenMenu(false)
-      }}>
-       <FontAwesomeIcon icon="times" className={styles.faIcon} />
-       </span>
+      <span
+        onClick={() => {
+          setOpenMenu(false);
+        }}
+      >
+        <FontAwesomeIcon icon="times" className={styles.faIcon} />
+      </span>
       <ul className={styles.navList}>
-    
-        <Link to="/">
-          <li>
-            Home
-          </li>
-        </Link>  
-
-        <Link to="scores">
-          <li>
-            My Scores
-          </li>
+        <Link to="/" onClick={() => setOpenMenu(false)}>
+          <li>Home</li>
         </Link>
-
-        <Link to="task">
-          <li>
-            Tasks
-          </li>
+        <Link to="../setscores" onClick={() => setOpenMenu(false)}>
+          <li>Set Scores</li>
         </Link>
-        
-        <Link to="accountsettings">
-          <li>
-            Account Settings
-          </li>
+        <Link to="../scoredisplay" onClick={() => setOpenMenu(false)}>
+          <li>My Scores</li>
         </Link>
-
-        <Link to="about">
-          <li>
-            About
-          </li>
+        <Link to="../happinessgraph" onClick={() => setOpenMenu(false)}>
+          <li>Happiness Graph</li>
         </Link>
-
-        <Link to="termsconditions">
-          <li>
-            Terms and Conditions
-          </li>
+        <Link to="../task" onClick={() => setOpenMenu(false)}>
+          <li>Tasks</li>
         </Link>
-
+        <Link to="../accountsettings" onClick={() => setOpenMenu(false)}>
+          <li>Account Settings</li>
+        </Link>
+        <Link to="../about" onClick={() => setOpenMenu(false)}>
+          <li>About</li>
+        </Link>
         <li className={styles.signOutButton} onClick={signOut}>
           Sign Out
         </li>
@@ -58,5 +43,4 @@ const NavItem = (props) => {
     </div>
   );
 };
-
 export default NavItem;
