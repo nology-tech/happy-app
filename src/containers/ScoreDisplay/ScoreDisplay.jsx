@@ -5,7 +5,8 @@ import Navbar from "../../components/Navbar";
 import AverageScore from "../../components/AverageScore";
 import LifeComponent from "../../components/LifeComponent";
 import Footer from "../../components/Footer";
-import { firestore } from "../../firebase";
+
+import getScores from "../../services/getScores.service";
 
 import lifeComponents from "../../data/lifeComponents";
 
@@ -15,22 +16,11 @@ const ScoreDisplay = (props) => {
   const [scores, setScore] = useState(null);
 
   useEffect(() => {
-    const getScores = () => {
-      firestore
-        .collection("users")
-        .doc(user.uid)
-        .collection("scores")
-        .orderBy("date", "desc")
-        .limit(1)
-        .get()
-        .then((input) => {
-          const score = input.docs.map((doc) => doc.data())[0];
-          setScore(score);
-        })
-        .catch((err) => console.error(err));
+    const updateState = async () => {
+      setScore(await getScores(user));
     };
     if (user) {
-      getScores();
+      updateState();
     }
   }, [user]);
 
@@ -40,25 +30,15 @@ const ScoreDisplay = (props) => {
       })
     : null;
 
-  const practicalScores = scores
-    ? scores.lifeComponentScores.slice(0, 3)
-    : null;
+  const practicalScores = scores ? scores.lifeComponentScores.slice(0, 3) : null;
 
-  const wellbeingScores = scores
-    ? scores.lifeComponentScores.slice(3, 6)
-    : null;
+  const wellbeingScores = scores ? scores.lifeComponentScores.slice(3, 6) : null;
 
-  const relationshipsScores = scores
-    ? scores.lifeComponentScores.slice(6, 9)
-    : null;
+  const relationshipsScores = scores ? scores.lifeComponentScores.slice(6, 9) : null;
 
-  const higherThoughtsScores = scores
-    ? scores.lifeComponentScores.slice(9, 12)
-    : null;
+  const higherThoughtsScores = scores ? scores.lifeComponentScores.slice(9, 12) : null;
 
-  const activityScores = scores
-    ? scores.lifeComponentScores.slice(12, 15)
-    : null;
+  const activityScores = scores ? scores.lifeComponentScores.slice(12, 15) : null;
 
   const getComponents = (practicalScores) =>
     practicalScores
